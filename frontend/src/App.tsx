@@ -30,15 +30,15 @@ function App() {
   if (showDashboard) {
     return (
       <div>
-        <div className="bg-gradient-to-r from-[#667eea] to-[#764ba2] p-4 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-[#667eea] to-[#764ba2] p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
           <button
             onClick={handleBackToUpload}
-            className="px-4 py-2 bg-white/20 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/30 transition-all flex items-center gap-2"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/20 backdrop-blur-md text-white rounded-lg text-sm sm:text-base font-semibold hover:bg-white/30 transition-all flex items-center gap-1.5 sm:gap-2"
           >
             <span>←</span>
             <span>Back to Upload</span>
           </button>
-          <h1 className="text-xl font-bold text-white">
+          <h1 className="text-base sm:text-lg md:text-xl font-bold text-white">
             {uploadedFiles.length} File(s) Processed
           </h1>
         </div>
