@@ -106,19 +106,19 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
   };
 
   return (
-    <section className="min-h-screen py-16 px-8 bg-gradient-to-b from-gray-50 to-gray-200">
+    <section className="min-h-screen py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-gray-50 to-gray-200">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center mb-3 sm:mb-4">
           Upload Order Documents
         </h2>
-        <p className="text-base md:text-lg text-gray-600 text-center mb-12">
+        <p className="text-sm sm:text-base md:text-lg text-gray-600 text-center mb-8 sm:mb-10 md:mb-12 px-4">
           Upload one or more images (JPEG, PNG, WEBP) or PDF files containing
           order information
         </p>
 
         {/* Dropzone */}
         <div
-          className={`border-3 border-dashed rounded-3xl p-16 text-center cursor-pointer transition-all duration-300 bg-white ${
+          className={`border-3 border-dashed rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 text-center cursor-pointer transition-all duration-300 bg-white ${
             isDragging
               ? "border-[#667eea] bg-gray-100 scale-105"
               : "border-gray-300 hover:border-[#667eea] hover:bg-gray-50"
@@ -129,12 +129,16 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
           onClick={() => fileInputRef.current?.click()}
         >
           <div className="pointer-events-none">
-            <div className="text-5xl mb-4 animate-float">📁</div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+            <div className="text-4xl sm:text-5xl mb-3 sm:mb-4 animate-float">
+              📁
+            </div>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
               Drag & Drop Files Here
             </h3>
-            <p className="text-base text-gray-600 mb-4">or click to browse</p>
-            <div className="flex flex-col gap-2 text-sm text-gray-500">
+            <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
+              or click to browse
+            </p>
+            <div className="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-500">
               <span>Supported: JPG, PNG, WEBP, PDF</span>
               <span>Max size: 10MB per file</span>
             </div>
@@ -151,13 +155,13 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
 
         {/* Files Preview */}
         {files.length > 0 && (
-          <div className="mt-12 bg-white rounded-3xl p-8 shadow-lg">
-            <div className="flex justify-between items-center mb-6 pb-4 border-b-2 border-gray-200">
-              <h3 className="text-xl font-semibold text-gray-800">
+          <div className="mt-8 sm:mt-10 md:mt-12 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 sm:gap-0 mb-4 sm:mb-6 pb-3 sm:pb-4 border-b-2 border-gray-200">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">
                 Uploaded Files ({files.length})
               </h3>
               <button
-                className="px-4 py-2 bg-transparent text-red-500 border-2 border-red-500 rounded-lg font-semibold transition-all duration-300 hover:bg-red-500 hover:text-white"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-transparent text-red-500 border-2 border-red-500 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-red-500 hover:text-white"
                 onClick={() => {
                   setFiles([]);
                   onFilesUpload([]);
@@ -167,13 +171,13 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {files.map((fileWithPreview, index) => (
                 <div
                   key={index}
                   className="relative border-2 border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-[#667eea] bg-white group"
                 >
-                  <div className="w-full h-48 flex items-center justify-center bg-gray-50 overflow-hidden">
+                  <div className="w-full h-40 sm:h-48 flex items-center justify-center bg-gray-50 overflow-hidden">
                     {fileWithPreview.preview ? (
                       <img
                         src={fileWithPreview.preview}
@@ -182,16 +186,16 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
                       />
                     ) : (
                       <div className="flex flex-col items-center gap-2">
-                        <span className="text-5xl">📄</span>
-                        <span className="text-base font-semibold text-gray-600">
+                        <span className="text-4xl sm:text-5xl">📄</span>
+                        <span className="text-sm sm:text-base font-semibold text-gray-600">
                           PDF
                         </span>
                       </div>
                     )}
                   </div>
-                  <div className="p-4">
+                  <div className="p-3 sm:p-4">
                     <p
-                      className="text-sm font-semibold text-gray-800 mb-1 truncate"
+                      className="text-xs sm:text-sm font-semibold text-gray-800 mb-1 truncate"
                       title={fileWithPreview.file.name}
                     >
                       {fileWithPreview.file.name}
@@ -201,7 +205,7 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
                     </p>
                   </div>
                   <button
-                    className="absolute top-2 right-2 w-8 h-8 rounded-full bg-red-500/90 text-white text-xl flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-red-600 hover:scale-110"
+                    className="absolute top-2 right-2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-500/90 text-white text-lg sm:text-xl flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-red-600 hover:scale-110"
                     onClick={(e) => {
                       e.stopPropagation();
                       removeFile(index);
@@ -216,12 +220,12 @@ const FileUpload = ({ onFilesUpload, onProcess }: FileUploadProps) => {
 
             <button
               onClick={onProcess}
-              className="w-full px-8 py-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-xl text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#667eea]/40"
+              className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#667eea]/40"
             >
               <span>
                 Process {files.length} File{files.length > 1 ? "s" : ""}
               </span>
-              <span className="text-xl transition-transform duration-300 group-hover:translate-x-1">
+              <span className="text-lg sm:text-xl transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </button>
