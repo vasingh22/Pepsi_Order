@@ -4,17 +4,17 @@ A modern React + TypeScript application for uploading and processing unstructure
 
 ## Features
 
-- 🎨 **Modern UI/UX** - Beautiful landing page with gradient backgrounds and smooth animations
-- 📤 **File Upload** - Drag & drop or click to upload multiple files
-- 🖼️ **Image Preview** - Real-time preview of uploaded images
+- 📊 **Invoice Review Dashboard** - Comprehensive interface for reviewing extracted data
+- 📤 **Integrated Upload Sidebar** - Upload files directly from the dashboard
+- 📋 **Excel-style Table View** - Display invoice items in a clean, tabular format with grid borders
+- 🖼️ **Image Preview** - Real-time preview of uploaded images in the upload sidebar
 - 📄 **PDF Support** - Upload and process PDF documents
 - ✅ **Validation** - File type and size validation (max 10MB per file)
 - 🎯 **Multi-file Support** - Upload one or multiple files at once
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
-- 📊 **Invoice Review Dashboard** - Comprehensive 2-panel interface for reviewing extracted data
-- 📋 **Excel-style Table View** - Display invoice items in a clean, tabular format
 - 🎯 **Status Management** - Track invoices with Approved, Flagged, Pending, and In Review states
+- 📱 **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile devices
 - 🔄 **Mock Data** - Sample invoices for UI demonstration before backend integration
+- 🚀 **Smart Layout** - Upload sidebar disappears after processing files for cleaner view
 
 ## Supported File Types
 
@@ -57,9 +57,8 @@ npm run preview
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── Hero.tsx           # Landing page hero section
-│   │   ├── FileUpload.tsx     # File upload component
-│   │   └── Dashboard.tsx      # Invoice review dashboard
+│   │   ├── Dashboard.tsx      # Invoice review dashboard with integrated upload
+│   │   └── FileUpload.tsx     # File upload component (legacy - not used)
 │   ├── data/
 │   │   └── mockInvoices.ts    # Mock invoice data (5 samples)
 │   ├── types/
@@ -79,47 +78,57 @@ frontend/
 
 ## Component Overview
 
-### Hero Component
-Displays the landing page with:
-- Project description
-- Problem statement
-- Solution overview
-- Key features
-
-### FileUpload Component
-Handles file uploads with:
-- Drag and drop functionality
-- File validation
-- Image preview
-- File management (add/remove)
-- Ready for backend integration
-
 ### Dashboard Component
-Invoice review interface with:
-- **2-panel layout**: Invoice list and detail view
-- **Excel-style table**: Display items with qty, rate, and totals
-- **Status indicators**: Approved, Flagged, Pending, In Review
+All-in-one invoice review interface with:
+- **Integrated upload sidebar**: Upload files directly in the dashboard
+  - Drag & drop or click to browse
+  - File validation and preview
+  - Automatically hides after processing
+- **Invoice list panel**: View all pending/flagged invoices with status badges
+- **Detail view panel**: 
+  - Excel-style table with grid borders (Item, HSN Code, Qty, Unit, Rate, Total)
+  - Store information and invoice metadata
+  - Tax calculations and totals
+  - Status indicators and warning messages
 - **Action buttons**: Approve, Edit, Re-parse, Skip, Save & Send
+- **Responsive 3-column layout**: Adapts to 2-column when upload sidebar is hidden
 - **Mock data**: 5 sample invoices for demonstration
-- See `DASHBOARD_USAGE.md` for detailed documentation
 
 ## Backend Integration
 
-The application is designed to send uploaded files to a backend API. The file handling logic in `App.tsx` includes a placeholder for backend integration:
+The application is designed to send uploaded files to a backend API. The file handling logic in `Dashboard.tsx` includes a placeholder for backend integration:
 
 ```typescript
-const handleFilesUpload = (files: File[]) => {
-  setUploadedFiles(files)
-  console.log('Files ready to send to backend:', files)
-  // TODO: Integrate with backend API when ready
-}
+const handleProcessFiles = () => {
+  if (uploadedFiles.length > 0) {
+    console.log("Processing files:", uploadedFiles);
+    // TODO: Send files to backend
+    // For now, just hide the upload sidebar
+    setShowUploadSidebar(false);
+  }
+};
 ```
 
 To integrate with your backend:
-1. Add axios or fetch calls in the `handleFilesUpload` function
-2. Create FormData with the uploaded files
-3. Send POST request to your backend endpoint
-4. Handle response and error states
+1. Import the API utilities: `import { uploadFiles } from '../utils/api'`
+2. Update the `handleProcessFiles` function to send files to backend:
+```typescript
+const handleProcessFiles = async () => {
+  if (uploadedFiles.length > 0) {
+    try {
+      const files = uploadedFiles.map(f => f.file);
+      const response = await uploadFiles(files);
+      console.log('Files processed:', response);
+      setShowUploadSidebar(false);
+      // Update invoice list with response data
+    } catch (error) {
+      console.error('Upload failed:', error);
+      alert('Failed to process files. Please try again.');
+    }
+  }
+};
+```
+3. Handle response and update the invoice list with real data
 
 ## Development
 
