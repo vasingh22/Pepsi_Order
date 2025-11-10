@@ -1,0 +1,18 @@
+http://127.0.0.1:8000/docs
+
+
+
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+
+
+
+
+  curl -sS "http://127.0.0.1:8000/ocr/extract/sample?filename=AW_Marshall_order_for_delivery_5_May_25_____PO_271931_2XNW31ZWT2JYBY6D2L__PO_271931_1761477064755.pdf&include_raw=false" > /tmp/out.json
+
+
+
+to run
+  cd /Users/vasingh/Desktop/Backend/backend
+source venv/bin/activate
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000

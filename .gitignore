@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+.tmp/
+*.log
+
+# Large data files (optional - uncomment if you don't want to push PDFs and results)
+# backend/PickSample200/*.pdf
+# backend/PickSample200/*.PDF
+# backend/results/*.json
+# backend/ocr-response.json
+
+# Excel and CSV mapping files (optional - uncomment if you don't want to push these)
+# backend/file_mapping*.xlsx
+# backend/file_mapping*.csv
+# backend/file_mapping*.txt
+
