@@ -1,6 +1,0 @@
-services:
-  backend:
-    environment:
-      - SURYA_OCR_ENABLED=true
-      - SURYA_OCR_API_URL=http://host.docker.internal:8010/ocr
-      - SURYA_OCR_API_KEY=dev_local_key
