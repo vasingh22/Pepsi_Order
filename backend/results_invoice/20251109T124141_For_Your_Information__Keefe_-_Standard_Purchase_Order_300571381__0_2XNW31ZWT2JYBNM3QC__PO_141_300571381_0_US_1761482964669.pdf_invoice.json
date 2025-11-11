@@ -1,0 +1,118 @@
+{
+  "seller_name": {
+    "value": "FRITO LAY INC",
+    "confidence": null
+  },
+  "buyer_name": {
+    "value": "KEEFE SUPPLY COMPANY",
+    "confidence": null
+  },
+  "po_number": {
+    "value": "300571381",
+    "confidence": 0.9,
+    "notes": "Extracted from filename as the 'purchase_order_number' field was incorrect."
+  },
+  "invoice_number": {
+    "value": null,
+    "confidence": null
+  },
+  "po_date": {
+    "value": null,
+    "confidence": null
+  },
+  "invoice_date": {
+    "value": null,
+    "confidence": null
+  },
+  "delivery_date": {
+    "value": null,
+    "confidence": null
+  },
+  "gst_number": {
+    "value": null,
+    "confidence": null
+  },
+  "address_information": {
+    "seller_address": {
+      "value": "FRITO LAY INC\n165 S COUNTY RD 300 W\nFRANKFORT, IN 46041-8766",
+      "confidence": null
+    },
+    "buyer_address": {
+      "value": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132",
+      "confidence": null
+    },
+    "ship_to_address": {
+      "value": "KF DC OHIO (C-370)\n21848 COMMERCE PARKWAY\nSTRONGSVILLE, OH 44149",
+      "confidence": null
+    },
+    "contact_information": {
+      "buyer_contact_name": "Arielle Kellerman",
+      "buyer_email": "Arielle.Kellerman@keefegroup.com",
+      "buyer_phone": "40-572-5377"
+    }
+  },
+  "line_items": [],
+  "financial_information": {
+    "subtotal": {
+      "value": null,
+      "confidence": null
+    },
+    "tax_details": [],
+    "discount_total": {
+      "value": null,
+      "confidence": null
+    },
+    "shipping_charges": {
+      "value": null,
+      "confidence": null
+    },
+    "grand_total": {
+      "value": 20545.14,
+      "raw": "20,545.14",
+      "confidence": 1.0
+    },
+    "currency": {
+      "value": null,
+      "confidence": null
+    }
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571381__0_2XNW31ZWT2JYBNM3QC__PO_141_300571381_0_US_1761482964669.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.3
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "totals_verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    },
+    "anomalies": []
+  }
+}

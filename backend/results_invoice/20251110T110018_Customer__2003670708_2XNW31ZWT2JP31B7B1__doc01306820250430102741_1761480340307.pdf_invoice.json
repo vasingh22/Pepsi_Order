@@ -1,0 +1,71 @@
+{
+  "invoice_details": {
+    "seller_name": null,
+    "buyer_name": null,
+    "invoice_number": null,
+    "invoice_date": null,
+    "po_number": null,
+    "po_date": null,
+    "delivery_date": null,
+    "seller_tax_id": null,
+    "buyer_tax_id": null
+  },
+  "address_details": {
+    "seller_address": null,
+    "buyer_address": null,
+    "shipping_address": null,
+    "contact_info": null
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 20.0,
+    "currency": "USD"
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "metadata": {
+    "document_summary": {
+      "filename": "Customer__2003670708_2XNW31ZWT2JP31B7B1__doc01306820250430102741_1761480340307.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.25
+    },
+    "original_fields": {},
+    "original_addresses": {},
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "20",
+        "normalized": "20",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

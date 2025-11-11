@@ -1,0 +1,253 @@
+{
+  "invoice_details": {
+    "seller_name": "FRITO LAY INC",
+    "buyer_name": "KEEFE SUPPLY COMPANY",
+    "invoice_number": null,
+    "order_number": null,
+    "po_number": "300571148",
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": null,
+    "delivery_date": null,
+    "seller_tax_id": null,
+    "buyer_tax_id": null
+  },
+  "addresses": {
+    "seller_address": "FRITO LAY INC, 165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+    "buyer_address": "KEEFE SUPPLY COMPANY, 10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "ship_to_address": "KF DC MIDWEST (M-300), 13870 CORPORATE WOODS TRAIL, BRIDGETON, MO 63044"
+  },
+  "contact_info": {
+    "phone": "314-264-2900",
+    "email": null,
+    "vendor_contact": "IRENE ADAMES"
+  },
+  "line_items": [],
+  "financials": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 24283.62,
+    "currency": null
+  },
+  "payment_info": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "source_data": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571148__0_2XNW31ZWT2JY4S8QQS__PO_141_300571148_0_US_1761482969858.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.4444444444444444
+    },
+    "fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "raw_addresses": {
+      "bill_to": {
+        "raw": "Vendor :\\nVendor\\n:\\nKEEFE SUPPLY COMPANY\\nKEEFE\\nSUPPLY\\nCOMPANY\\nFRITO LAY INC\\nFRITO\\nLAY\\nINC\\n10880 LIN PAGE PLACE\\n10880\\nLIN\\nPAGE\\nPLACE\\nIRENE ADAMES\\nIRENE\\nADAMES\\nSAINT LOUIS, MO  63132\\nSAINT\\nLOUIS,\\nMO\\n63132\\n165 S COUNTY RD 300 W\\n165\\nS\\nCOUNTY\\nRD\\n300\\nW\\nFRANKFORT IN 460418766\\nFRANKFORT\\nIN\\n460418766\\nVendor Contact:\\nVendor\\nContact:\\nShip To :\\nShip\\nTo\\n:\\nKF DC MIDWEST (M-300)\\nKF\\nDC\\nMIDWEST\\n(M-300)\\n13870 CORPORATE WOODS TRAIL\\n13870\\nCORPORATE\\nWOODS\\nTRAIL\\nBRIDGETON, MO  63044\\nBRIDGETON,\\nMO\\n63044\\n314-264-2900\\n314-264-2900\\nItem  Description\\nItem\\nDescription\\nItem  Number\\nItem\\nNumber\\n10354\\n10354\\ndritos  tortilla chips  cool ranch  8\\ndritos\\ntortilla\\nchips\\ncool\\nranch\\n8\\nOZ  8/CS  BAG CLEAR WINDOW\\nOZ\\n8/CS\\nBAG\\nCLEAR\\nWINDOW\\nYour#: 16164\\nYour#:\\n16164",
+        "normalized": {
+          "lines": [
+            "Vendor :",
+            "Vendor",
+            ":",
+            "KEEFE SUPPLY COMPANY",
+            "KEEFE",
+            "SUPPLY",
+            "COMPANY",
+            "FRITO LAY INC",
+            "FRITO",
+            "LAY",
+            "INC",
+            "10880 LIN PAGE PLACE",
+            "10880",
+            "LIN",
+            "PAGE",
+            "PLACE",
+            "IRENE ADAMES",
+            "IRENE",
+            "ADAMES",
+            "SAINT LOUIS, MO  63132",
+            "SAINT",
+            "LOUIS,",
+            "MO",
+            "63132",
+            "165 S COUNTY RD 300 W",
+            "165",
+            "S",
+            "COUNTY",
+            "RD",
+            "300",
+            "W",
+            "FRANKFORT IN 460418766",
+            "FRANKFORT",
+            "IN",
+            "460418766",
+            "Vendor Contact:",
+            "Vendor",
+            "Contact:",
+            "Ship To :",
+            "Ship",
+            "To",
+            ":",
+            "KF DC MIDWEST (M-300)",
+            "KF",
+            "DC",
+            "MIDWEST",
+            "(M-300)",
+            "13870 CORPORATE WOODS TRAIL",
+            "13870",
+            "CORPORATE",
+            "WOODS",
+            "TRAIL",
+            "BRIDGETON, MO  63044",
+            "BRIDGETON,",
+            "MO",
+            "63044",
+            "314-264-2900",
+            "314-264-2900",
+            "Item  Description",
+            "Item",
+            "Description",
+            "Item  Number",
+            "Item",
+            "Number",
+            "10354",
+            "10354",
+            "dritos  tortilla chips  cool ranch  8",
+            "dritos",
+            "tortilla",
+            "chips",
+            "cool",
+            "ranch",
+            "8",
+            "OZ  8/CS  BAG CLEAR WINDOW",
+            "OZ",
+            "8/CS",
+            "BAG",
+            "CLEAR",
+            "WINDOW",
+            "Your#: 16164",
+            "Your#:",
+            "16164"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.04411764705882353,
+            0.04734848484848485,
+            0.10294117647058823,
+            0.061553030303030304
+          ]
+        }
+      },
+      "ship_to": {
+        "raw": "Buyer :\\nBuyer\\n:\\n13870 CORPORATE WOODS TRAIL\\n13870\\nCORPORATE\\nWOODS\\nTRAIL\\n314-264-2900\\n314-264-2900\\nItem  Description\\nItem\\nDescription\\nItem  Number\\nItem\\nNumber\\n10354\\n10354\\ndritos  tortilla chips  cool ranch  8\\ndritos\\ntortilla\\nchips\\ncool\\nranch\\n8\\nOZ  8/CS  BAG CLEAR WINDOW\\nOZ\\n8/CS\\nBAG\\nCLEAR\\nWINDOW\\nYour#: 16164\\nYour#:\\n16164\\nFRITOS_CORN CHIPS_CHILI CHEESE_10.5\\nFRITOS_CORN\\nCHIPS_CHILI\\nCHEESE_10.5\\nOZ_10/CS_BAG CLEAR WINDOW_\\nOZ_10/CS_BAG\\nCLEAR\\nWINDOW_\\nYour#: 16160\\nYour#:\\n16160\\nFRITOS_CORN CHIPS_CHILI CHEESE_2\\nFRITOS_CORN\\nCHIPS_CHILI\\nCHEESE_2\\n10446\\n10446",
+        "normalized": {
+          "lines": [
+            "Buyer :",
+            "Buyer",
+            ":",
+            "13870 CORPORATE WOODS TRAIL",
+            "13870",
+            "CORPORATE",
+            "WOODS",
+            "TRAIL",
+            "314-264-2900",
+            "314-264-2900",
+            "Item  Description",
+            "Item",
+            "Description",
+            "Item  Number",
+            "Item",
+            "Number",
+            "10354",
+            "10354",
+            "dritos  tortilla chips  cool ranch  8",
+            "dritos",
+            "tortilla",
+            "chips",
+            "cool",
+            "ranch",
+            "8",
+            "OZ  8/CS  BAG CLEAR WINDOW",
+            "OZ",
+            "8/CS",
+            "BAG",
+            "CLEAR",
+            "WINDOW",
+            "Your#: 16164",
+            "Your#:",
+            "16164",
+            "FRITOS_CORN CHIPS_CHILI CHEESE_10.5",
+            "FRITOS_CORN",
+            "CHIPS_CHILI",
+            "CHEESE_10.5",
+            "OZ_10/CS_BAG CLEAR WINDOW_",
+            "OZ_10/CS_BAG",
+            "CLEAR",
+            "WINDOW_",
+            "Your#: 16160",
+            "Your#:",
+            "16160",
+            "FRITOS_CORN CHIPS_CHILI CHEESE_2",
+            "FRITOS_CORN",
+            "CHIPS_CHILI",
+            "CHEESE_2",
+            "10446",
+            "10446"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.04534313725490196,
+            0.14015151515151514,
+            0.11151960784313726,
+            0.1534090909090909
+          ]
+        }
+      }
+    },
+    "totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "24,283.62",
+        "normalized": "24283.62",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": null,
+    "po_number": "Purchase",
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": null,
+    "delivery_date": null
+  },
+  "seller_details": {
+    "seller_name": "Vendor # 146870",
+    "seller_address": null,
+    "gst_number": null,
+    "tax_id": null,
+    "phone": null,
+    "email": null
+  },
+  "buyer_details": {
+    "buyer_name": null,
+    "buyer_address": null,
+    "phone": null,
+    "email": null
+  },
+  "shipping_details": {
+    "ship_to_name": null,
+    "ship_to_address": "2730 S. 98th St., Edwardsville, KS 66111"
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [
+      {
+        "tax_type": "Tax",
+        "tax_rate": null,
+        "tax_amount": 0.0
+      }
+    ],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 1210.0,
+    "currency": "USD"
+  },
+  "payment_details": {
+    "payment_terms": "Net",
+    "payment_mode": null,
+    "due_date": "2025-06-01",
+    "discount_date": "2025-05-22"
+  },
+  "metadata": {
+    "document_summary": {
+      "filename": "Earp-Izze_PO_307644_2XNW31ZWT2JYQDRPYT__R58P4350_EARP0001_29885723_PDF_1761480332791.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor # 146870",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.09090909090909091
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "Purchase",
+        "normalized": "Purchase",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_addresses": {
+      "ship_to": {
+        "raw": "2730 S. 98th St.\\n2730\\nS.\\n98th\\nSt.\\nEdwardsville KS 66111\\nEdwardsville\\nKS\\n66111\\nPayment Due DateNet 06/01/25\\nPayment\\nDue\\nDateNet\\n06/01/25\\nDiscount 05/22/25\\nDiscount\\n05/22/25\\nDiscount 05/22/25\\nDiscount\\n05/22/25\\nCurrency Code  USD\\nCurrency\\nCode\\nUSD\\nBase Currency  USD\\nBase\\nCurrency\\nUSD\\n*Original*\\n*Original*\\nTotal\\nTotal",
+        "normalized": {
+          "lines": [
+            "2730 S. 98th St.",
+            "2730",
+            "S.",
+            "98th",
+            "St.",
+            "Edwardsville KS 66111",
+            "Edwardsville",
+            "KS",
+            "66111",
+            "Payment Due DateNet 06/01/25",
+            "Payment",
+            "Due",
+            "DateNet",
+            "06/01/25",
+            "Discount 05/22/25",
+            "Discount",
+            "05/22/25",
+            "Discount 05/22/25",
+            "Discount",
+            "05/22/25",
+            "Currency Code  USD",
+            "Currency",
+            "Code",
+            "USD",
+            "Base Currency  USD",
+            "Base",
+            "Currency",
+            "USD",
+            "*Original*",
+            "*Original*",
+            "Total",
+            "Total"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.5465686274509803,
+            0.12215909090909091,
+            0.6531862745098039,
+            0.13636363636363635
+          ]
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": {
+        "raw": "0.00",
+        "normalized": "0",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "grand_total": {
+        "raw": "1210",
+        "normalized": "1210",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": [
+      {
+        "code": "anchor_excess",
+        "message": "Anchor 'total' detected 6 times.",
+        "page": null
+      }
+    ]
+  }
+}

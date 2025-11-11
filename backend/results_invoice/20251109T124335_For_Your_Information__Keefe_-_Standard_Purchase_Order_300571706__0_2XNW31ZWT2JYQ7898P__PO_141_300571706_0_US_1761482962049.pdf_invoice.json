@@ -1,0 +1,84 @@
+{
+  "seller_name": "KEEFE SUPPLY COMPANY",
+  "buyer_name": "FRITO LAY INC",
+  "po_number": "300571706",
+  "po_date": null,
+  "invoice_number": null,
+  "invoice_date": null,
+  "delivery_date": null,
+  "gst_number": null,
+  "seller_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+  "buyer_address": "165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+  "ship_to_address": "KF DC MIDWEST (M-300), 13870 CORPORATE WOODS TRAIL, BRIDGETON, MO 63044",
+  "contact_information": {
+    "buyer_contact_person": "IRENE ADAMES",
+    "shipping_contact_phone": "314-264-2900",
+    "email": null
+  },
+  "line_items": [
+    {
+      "material_id": "10513",
+      "description": "dritos tortilla chips nacho CHEESE_1.75 OZ_64/CS_BAG CLEAR WINDOW",
+      "product_code": "16163",
+      "hsn_code": null,
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    },
+    {
+      "material_id": null,
+      "description": "CHEETOS_CHEESE CRUNCHY_ 2 OZ_64/CS_BAG CLEAR WINDOW_",
+      "product_code": "12756",
+      "hsn_code": null,
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 25061.16,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "source_filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571706__0_2XNW31ZWT2JYQ7898P__PO_141_300571706_0_US_1761482962049.pdf",
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571706__0_2XNW31ZWT2JYQ7898P__PO_141_300571706_0_US_1761482962049.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "anomalies": []
+  }
+}

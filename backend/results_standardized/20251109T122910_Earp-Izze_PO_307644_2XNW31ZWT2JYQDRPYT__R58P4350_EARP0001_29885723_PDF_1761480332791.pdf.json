@@ -1,0 +1,112 @@
+{
+  "document_summary": {
+    "filename": "Earp-Izze_PO_307644_2XNW31ZWT2JYQDRPYT__R58P4350_EARP0001_29885723_PDF_1761480332791.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor # 146870",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.09090909090909091
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "Purchase",
+      "normalized": "Purchase",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "2730 S. 98th St.\\n2730\\nS.\\n98th\\nSt.\\nEdwardsville KS 66111\\nEdwardsville\\nKS\\n66111\\nPayment Due DateNet 06/01/25\\nPayment\\nDue\\nDateNet\\n06/01/25\\nDiscount 05/22/25\\nDiscount\\n05/22/25\\nDiscount 05/22/25\\nDiscount\\n05/22/25\\nCurrency Code  USD\\nCurrency\\nCode\\nUSD\\nBase Currency  USD\\nBase\\nCurrency\\nUSD\\n*Original*\\n*Original*\\nTotal\\nTotal",
+      "normalized": {
+        "lines": [
+          "2730 S. 98th St.",
+          "2730",
+          "S.",
+          "98th",
+          "St.",
+          "Edwardsville KS 66111",
+          "Edwardsville",
+          "KS",
+          "66111",
+          "Payment Due DateNet 06/01/25",
+          "Payment",
+          "Due",
+          "DateNet",
+          "06/01/25",
+          "Discount 05/22/25",
+          "Discount",
+          "05/22/25",
+          "Discount 05/22/25",
+          "Discount",
+          "05/22/25",
+          "Currency Code  USD",
+          "Currency",
+          "Code",
+          "USD",
+          "Base Currency  USD",
+          "Base",
+          "Currency",
+          "USD",
+          "*Original*",
+          "*Original*",
+          "Total",
+          "Total"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.5465686274509803,
+          0.12215909090909091,
+          0.6531862745098039,
+          0.13636363636363635
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": {
+      "raw": "0.00",
+      "normalized": "0",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "grand_total": {
+      "raw": "1210",
+      "normalized": "1210",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": [
+    {
+      "code": "anchor_excess",
+      "message": "Anchor 'total' detected 6 times.",
+      "page": null
+    }
+  ]
+}

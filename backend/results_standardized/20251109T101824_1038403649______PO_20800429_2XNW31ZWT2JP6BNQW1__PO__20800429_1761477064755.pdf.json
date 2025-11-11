@@ -1,0 +1,122 @@
+{
+  "document_summary": {
+    "filename": "1038403649______PO_20800429_2XNW31ZWT2JP6BNQW1__PO__20800429_1761477064755.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 2
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.5
+  },
+  "fields": {
+    "purchase_order_date": {
+      "raw": "05/08/2025",
+      "normalized": "2025-08-05",
+      "confidence": 0.5,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "CTNSE@MONTGOMERY\\nCTNSE@MONTGOMERY\\n2080 MCMILLAN ST\\n2080\\nMCMILLAN\\nST\\nAUBURN AL 36832-4272\\nAUBURN\\nAL\\n36832-4272\\nORDER NUMBER:\\nORDER\\nNUMBER:\\n1038403649\\n1038403649\\nCUSTOMER NUMBER:\\nCUSTOMER\\nNUMBER:\\n2003524351\\n2003524351\\nCUSTOMER PO:\\nCUSTOMER\\nPO:\\n20800429\\n20800429\\nORDER REASON:\\nORDER\\nREASON:\\nSHIPPING LOCATION:\\nSHIPPING\\nLOCATION:\\n2018\\n2018\\nITEM\\nITEM\\nGTIN\\nGTIN\\nPACK SIZE\\nPACK\\nSIZE\\nDESCRIPTION\\nDESCRIPTION\\n00028400725774\\n00028400725774\\n120CT JL STK SWC\\n120CT\\nJL\\nSTK\\nSWC\\n00260\\n00260\\n1\\n1\\nADDITIONAL ADJUSTMENTS:\\nADDITIONAL\\nADJUSTMENTS:",
+      "normalized": {
+        "lines": [
+          "CTNSE@MONTGOMERY",
+          "CTNSE@MONTGOMERY",
+          "2080 MCMILLAN ST",
+          "2080",
+          "MCMILLAN",
+          "ST",
+          "AUBURN AL 36832-4272",
+          "AUBURN",
+          "AL",
+          "36832-4272",
+          "ORDER NUMBER:",
+          "ORDER",
+          "NUMBER:",
+          "1038403649",
+          "1038403649",
+          "CUSTOMER NUMBER:",
+          "CUSTOMER",
+          "NUMBER:",
+          "2003524351",
+          "2003524351",
+          "CUSTOMER PO:",
+          "CUSTOMER",
+          "PO:",
+          "20800429",
+          "20800429",
+          "ORDER REASON:",
+          "ORDER",
+          "REASON:",
+          "SHIPPING LOCATION:",
+          "SHIPPING",
+          "LOCATION:",
+          "2018",
+          "2018",
+          "ITEM",
+          "ITEM",
+          "GTIN",
+          "GTIN",
+          "PACK SIZE",
+          "PACK",
+          "SIZE",
+          "DESCRIPTION",
+          "DESCRIPTION",
+          "00028400725774",
+          "00028400725774",
+          "120CT JL STK SWC",
+          "120CT",
+          "JL",
+          "STK",
+          "SWC",
+          "00260",
+          "00260",
+          "1",
+          "1",
+          "ADDITIONAL ADJUSTMENTS:",
+          "ADDITIONAL",
+          "ADJUSTMENTS:"
+        ]
+      },
+      "evidence": {
+        "page": 2,
+        "bounding_box": [
+          0.06985294117647059,
+          0.16287878787878787,
+          0.12990196078431374,
+          0.17613636363636365
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "$",
+      "normalized": null,
+      "confidence": 0.6,
+      "evidence": {
+        "page": 2,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "missing",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

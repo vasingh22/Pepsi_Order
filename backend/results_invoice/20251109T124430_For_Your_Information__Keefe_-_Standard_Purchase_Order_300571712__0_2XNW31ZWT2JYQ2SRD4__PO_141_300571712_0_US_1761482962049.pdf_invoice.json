@@ -1,0 +1,112 @@
+{
+  "core_invoice_fields": {
+    "seller_name": "KEEFE SUPPLY COMPANY",
+    "buyer_name": "FRITO LAY INC",
+    "PO_number": "300571712",
+    "invoice_number": null,
+    "order_number": null,
+    "PO_date": null,
+    "invoice_date": null,
+    "order_date": null,
+    "delivery_date": null,
+    "gst_number": null,
+    "tax_id": null
+  },
+  "address_information": {
+    "seller_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "buyer_address": "165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+    "ship_to_address": "KF DC JACKSONVILLE (F-330), 1371-1 TRADEPORT DRIVE, JACKSONVILLE, FL 32218",
+    "contact_information": {
+      "seller_contact_person": "IRENE ADAMES",
+      "buyer_contact_person": "Arielle Kellerman",
+      "buyer_email": "Arielle.Kellerman@keefegroup.com",
+      "shipping_phone": "904-741-6776"
+    }
+  },
+  "line_items": [
+    {
+      "material_id": "10446",
+      "product_code": "16161",
+      "name": "FRITOS CORN CHIPS CHILI CHEESE",
+      "description": "FRITOS CORN CHIPS CHILI CHEESE 2 OZ 64/CS BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "discount": null
+    },
+    {
+      "material_id": null,
+      "product_code": "16163",
+      "name": "DORITOS TORTILLA CHIPS NACHO CHEESE",
+      "description": "DORITOS_TORTILLA CHIPS_NACHO CHEESE_1.75 OZ_64/CS_BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "discount": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 25780.74,
+    "currency": null
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571712__0_2XNW31ZWT2JYQ2SRD4__PO_141_300571712_0_US_1761482962049.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.375
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "25,780.74",
+        "normalized": "25780.74",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

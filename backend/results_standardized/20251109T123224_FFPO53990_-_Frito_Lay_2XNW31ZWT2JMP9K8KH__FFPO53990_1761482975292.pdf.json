@@ -1,0 +1,131 @@
+{
+  "document_summary": {
+    "filename": "FFPO53990_-_Frito_Lay_2XNW31ZWT2JMP9K8KH__FFPO53990_1761482975292.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor:",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": null,
+    "day_first_date_probability": 0.3333333333333333
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "Purchase",
+      "normalized": "Purchase",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "AHCC CORRECTIONAL INDUSTRIES\\nAHCC\\nCORRECTIONAL\\nINDUSTRIES\\nAHCC CORR. IND. WHSE DOOR 6\\nAHCC\\nCORR.\\nIND.\\nWHSE\\nDOOR\\n6\\nDEL APPT: 509-244-4234\\nDEL\\nAPPT:\\n509-244-4234\\n11919 W SPRAGUE AVE; WEST GATE\\n11919\\nW\\nSPRAGUE\\nAVE;\\nWEST\\nGATE\\nAIRWAY HEIGHTS WA   99001-1959\\nAIRWAY\\nHEIGHTS\\nWA\\n99001-1959\\nConfirmation Number\\nConfirmation\\nNumber\\nlu/m\\nlu/m\\nOrdered\\nOrdered\\nUnit Price\\nUnit\\nPrice\\nExt. Price\\nExt.\\nPrice\\n$6,674.93\\n$6,674.93\\n150.0000\\n150.0000\\n$44.49\\n$44.49\\nCS104\\nCS104\\nDIFO RAW MATERIAL INVENTORY - :   Non Taxable\\nDIFO\\nRAW\\nMATERIAL\\nINVENTORY\\n-\\n:\\nNon\\nTaxable",
+      "normalized": {
+        "lines": [
+          "AHCC CORRECTIONAL INDUSTRIES",
+          "AHCC",
+          "CORRECTIONAL",
+          "INDUSTRIES",
+          "AHCC CORR. IND. WHSE DOOR 6",
+          "AHCC",
+          "CORR.",
+          "IND.",
+          "WHSE",
+          "DOOR",
+          "6",
+          "DEL APPT: 509-244-4234",
+          "DEL",
+          "APPT:",
+          "509-244-4234",
+          "11919 W SPRAGUE AVE; WEST GATE",
+          "11919",
+          "W",
+          "SPRAGUE",
+          "AVE;",
+          "WEST",
+          "GATE",
+          "AIRWAY HEIGHTS WA   99001-1959",
+          "AIRWAY",
+          "HEIGHTS",
+          "WA",
+          "99001-1959",
+          "Confirmation Number",
+          "Confirmation",
+          "Number",
+          "lu/m",
+          "lu/m",
+          "Ordered",
+          "Ordered",
+          "Unit Price",
+          "Unit",
+          "Price",
+          "Ext. Price",
+          "Ext.",
+          "Price",
+          "$6,674.93",
+          "$6,674.93",
+          "150.0000",
+          "150.0000",
+          "$44.49",
+          "$44.49",
+          "CS104",
+          "CS104",
+          "DIFO RAW MATERIAL INVENTORY - :   Non Taxable",
+          "DIFO",
+          "RAW",
+          "MATERIAL",
+          "INVENTORY",
+          "-",
+          ":",
+          "Non",
+          "Taxable"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.5726600985221675,
+          0.2041392285983067,
+          0.6391625615763546,
+          0.21825023518344308
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": {
+      "raw": "$0.00",
+      "normalized": "0",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "tax": {
+      "raw": "$6,674.93",
+      "normalized": "6674.93",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "grand_total": null,
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": "6674.93",
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

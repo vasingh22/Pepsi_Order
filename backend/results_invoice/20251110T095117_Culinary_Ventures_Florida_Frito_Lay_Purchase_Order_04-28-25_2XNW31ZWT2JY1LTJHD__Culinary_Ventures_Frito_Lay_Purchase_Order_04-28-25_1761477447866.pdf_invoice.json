@@ -1,0 +1,84 @@
+{
+  "seller_information": {
+    "seller_name": null,
+    "seller_address": null,
+    "gst_number": null,
+    "tax_id": null,
+    "contact": null
+  },
+  "buyer_information": {
+    "buyer_name": null,
+    "buyer_address": null,
+    "ship_to_address": null
+  },
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": null,
+    "po_number": null,
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": "2025-04-21",
+    "delivery_date": null
+  },
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 12.0,
+    "currency": null
+  },
+  "line_items": [],
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "source_metadata": {
+    "document_summary": {
+      "filename": "Culinary_Ventures_Florida_Frito_Lay_Purchase_Order_04-28-25_2XNW31ZWT2JY1LTJHD__Culinary_Ventures_Frito_Lay_Purchase_Order_04-28-25_1761477447866.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": null,
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {
+      "purchase_order_date": {
+        "raw": "4/21/2025",
+        "normalized": "2025-04-21",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "12",
+        "normalized": "12",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "totals_verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    },
+    "anomalies": []
+  }
+}

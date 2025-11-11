@@ -1,0 +1,76 @@
+{
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": "300571709",
+    "PO_number": "300571709",
+    "invoice_date": null,
+    "order_date": null,
+    "PO_date": null,
+    "delivery_date": null,
+    "due_date": null
+  },
+  "seller_details": {
+    "seller_name": "FRITO LAY INC",
+    "seller_address": "165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+    "tax_id": null,
+    "contact_person": "IRENE ADAMES",
+    "phone": null,
+    "email": null
+  },
+  "buyer_details": {
+    "buyer_name": "KEEFE SUPPLY COMPANY",
+    "buyer_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "tax_id": null,
+    "contact_person": "Arielle Kellerman",
+    "phone": null,
+    "email": "Arielle.Kellerman@keefegroup.com"
+  },
+  "shipping_details": {
+    "ship_to_name": "KCN DC FONTANA (WFONT-325)",
+    "ship_to_address": "13369 VALLEY BLVD., FONTANA, CA 92335",
+    "ship_to_phone": "909-429-6960",
+    "ship_via": null
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 2838.4,
+    "currency": null
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null
+  },
+  "metadata": {
+    "source_filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571709__0_2XNW31ZWT2JYQ5WLYX__PO_141_300571709_0_US_1761482962049.pdf",
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571709__0_2XNW31ZWT2JYQ5WLYX__PO_141_300571709_0_US_1761482962049.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "seller_name": null,
+  "buyer_name": null,
+  "po_number": null,
+  "invoice_number": null,
+  "order_number": null,
+  "po_date": "2025-01-05",
+  "invoice_date": null,
+  "order_date": null,
+  "delivery_date": null,
+  "seller_tax_id": null,
+  "buyer_tax_id": null,
+  "seller_address": null,
+  "buyer_address": null,
+  "shipping_address": null,
+  "contact_information": {
+    "seller_phone": null,
+    "seller_email": null,
+    "buyer_phone": null,
+    "buyer_email": null
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "total_tax": null,
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 66.0,
+    "currency": null
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "metadata": {
+    "source_filename": "Culinary_Ventures_Florida_Frito_Lay_Purchase_Order_05-08-25_2XNW31ZWT2JP6PNGNH__Culinary_Ventures_Frito_Lay_Purchase_Order_05-08-25_1761477447866.pdf",
+    "document_summary": {
+      "filename": "Culinary_Ventures_Florida_Frito_Lay_Purchase_Order_05-08-25_2XNW31ZWT2JP6PNGNH__Culinary_Ventures_Frito_Lay_Purchase_Order_05-08-25_1761477447866.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": null,
+      "day_first_date_probability": 0.5
+    },
+    "original_fields": {
+      "purchase_order_date": {
+        "raw": "5/1/2025",
+        "normalized": "2025-01-05",
+        "confidence": 0.5,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "totals_verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "document_summary": {
+    "filename": "Confirmations_2XNW31ZWT2JYZQ3N88__CTNMW_CHICAGO_BLOOMINGDALE___2003825458-0418_1761477447866.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 2
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.0
+  },
+  "fields": {
+    "purchase_order_date": {
+      "raw": "04/18/2025",
+      "normalized": "2025-04-18",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "CTNMW@CHICAGO BLOOMINGDALE\\nCTNMW@CHICAGO\\nBLOOMINGDALE\\n171 COVINGTON DR\\n171\\nCOVINGTON\\nDR\\nBLOOMINGDALE IL 60108-3107\\nBLOOMINGDALE\\nIL\\n60108-3107\\nORDER NUMBER:\\nORDER\\nNUMBER:\\n1014835959\\n1014835959\\nCUSTOMER NUMBER:\\nCUSTOMER\\nNUMBER:\\n2003825458\\n2003825458\\nCUSTOMER PO:\\nCUSTOMER\\nPO:\\n2003825458-0418\\n2003825458-0418\\nORDER REASON:\\nORDER\\nREASON:\\nSHIPPING LOCATION:\\nSHIPPING\\nLOCATION:\\n2090\\n2090\\nPACK SIZE\\nPACK\\nSIZE\\nDESCRIPTION\\nDESCRIPTION\\nITEM\\nITEM\\nGTIN\\nGTIN\\n000260\\n000260\\n00028400535182\\n00028400535182\\n1\\n1\\n2CT XVL RF CSC PEG\\n2CT\\nXVL\\nRF\\nCSC\\nPEG\\n00270\\n00270\\n0028400362948\\n0028400362948\\n24CT XVL DR NAC PEG\\n24CT\\nXVL\\nDR\\nNAC\\nPEG\\n1\\n1\\n72 CT VFS SVL DR  RF FLAMAS\\n72\\nCT\\nVFS\\nSVL\\nDR\\nRF\\nFLAMAS\\n00280\\n00280\\n0028400628297\\n0028400628297\\n1\\n1",
+      "normalized": {
+        "lines": [
+          "CTNMW@CHICAGO BLOOMINGDALE",
+          "CTNMW@CHICAGO",
+          "BLOOMINGDALE",
+          "171 COVINGTON DR",
+          "171",
+          "COVINGTON",
+          "DR",
+          "BLOOMINGDALE IL 60108-3107",
+          "BLOOMINGDALE",
+          "IL",
+          "60108-3107",
+          "ORDER NUMBER:",
+          "ORDER",
+          "NUMBER:",
+          "1014835959",
+          "1014835959",
+          "CUSTOMER NUMBER:",
+          "CUSTOMER",
+          "NUMBER:",
+          "2003825458",
+          "2003825458",
+          "CUSTOMER PO:",
+          "CUSTOMER",
+          "PO:",
+          "2003825458-0418",
+          "2003825458-0418",
+          "ORDER REASON:",
+          "ORDER",
+          "REASON:",
+          "SHIPPING LOCATION:",
+          "SHIPPING",
+          "LOCATION:",
+          "2090",
+          "2090",
+          "PACK SIZE",
+          "PACK",
+          "SIZE",
+          "DESCRIPTION",
+          "DESCRIPTION",
+          "ITEM",
+          "ITEM",
+          "GTIN",
+          "GTIN",
+          "000260",
+          "000260",
+          "00028400535182",
+          "00028400535182",
+          "1",
+          "1",
+          "2CT XVL RF CSC PEG",
+          "2CT",
+          "XVL",
+          "RF",
+          "CSC",
+          "PEG",
+          "00270",
+          "00270",
+          "0028400362948",
+          "0028400362948",
+          "24CT XVL DR NAC PEG",
+          "24CT",
+          "XVL",
+          "DR",
+          "NAC",
+          "PEG",
+          "1",
+          "1",
+          "72 CT VFS SVL DR  RF FLAMAS",
+          "72",
+          "CT",
+          "VFS",
+          "SVL",
+          "DR",
+          "RF",
+          "FLAMAS",
+          "00280",
+          "00280",
+          "0028400628297",
+          "0028400628297",
+          "1",
+          "1"
+        ]
+      },
+      "evidence": {
+        "page": 2,
+        "bounding_box": [
+          0.030226700251889168,
+          0.16295636687444345,
+          0.09445843828715365,
+          0.17542297417631345
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "60,229.48",
+      "normalized": "60229.48",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 2,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

@@ -1,0 +1,104 @@
+{
+  "document_summary": {
+    "filename": "Emailing__CVM_Quaker_PO_5930-022529_2XNW31ZWT2JYZDFZ3X__CVM_Quaker_PO_5930-022529_1761482975292.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor:",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.0
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "Purchase",
+      "normalized": "Purchase",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "16230 Branch Court Upper\\n16230\\nBranch\\nCourt\\nUpper\\nRCVD\\nRCVD\\nQuantity\\nQuantity\\nPrice\\nPrice\\nExtend Price\\nExtend\\nPrice\\n480\\n480\\n$17.65\\n$17.65\\n8,472.00\\n8,472.00\\n480\\n480\\n$17.65\\n$17.65\\n8,472.00\\n8,472.00\\n480\\n480\\n8,472.00\\n8,472.00\\n$17.65\\n$17.65\\n480\\n480\\n$17.65\\n$17.65\\n8,472.00\\n8,472.00",
+      "normalized": {
+        "lines": [
+          "16230 Branch Court Upper",
+          "16230",
+          "Branch",
+          "Court",
+          "Upper",
+          "RCVD",
+          "RCVD",
+          "Quantity",
+          "Quantity",
+          "Price",
+          "Price",
+          "Extend Price",
+          "Extend",
+          "Price",
+          "480",
+          "480",
+          "$17.65",
+          "$17.65",
+          "8,472.00",
+          "8,472.00",
+          "480",
+          "480",
+          "$17.65",
+          "$17.65",
+          "8,472.00",
+          "8,472.00",
+          "480",
+          "480",
+          "8,472.00",
+          "8,472.00",
+          "$17.65",
+          "$17.65",
+          "480",
+          "480",
+          "$17.65",
+          "$17.65",
+          "8,472.00",
+          "8,472.00"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.5355392156862745,
+          0.1884469696969697,
+          0.6139705882352942,
+          0.20833333333333334
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "1",
+      "normalized": "1",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

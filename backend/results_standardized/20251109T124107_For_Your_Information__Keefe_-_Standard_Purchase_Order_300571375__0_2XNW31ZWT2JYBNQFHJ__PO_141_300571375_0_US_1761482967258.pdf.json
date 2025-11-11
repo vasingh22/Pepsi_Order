@@ -1,0 +1,196 @@
+{
+  "document_summary": {
+    "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571375__0_2XNW31ZWT2JYBNQFHJ__PO_141_300571375_0_US_1761482967258.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor :",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.16666666666666666
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "PURCHASE",
+      "normalized": "PURCHASE",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "bill_to": {
+      "raw": "Vendor :\\nVendor\\n:\\nKEEFE SUPPLY COMPANY\\nKEEFE\\nSUPPLY\\nCOMPANY\\nFRITO LAY INC\\nFRITO\\nLAY\\nINC\\n10880 LIN PAGE PLACE\\n10880\\nLIN\\nPAGE\\nPLACE\\nIRENE ADAMES\\nIRENE\\nADAMES\\n165 S COUNTY RD 300 W\\n165\\nS\\nCOUNTY\\nRD\\n300\\nW\\nSAINT LOUIS, MO  63132\\nSAINT\\nLOUIS,\\nMO\\n63132\\nFRANKFORT IN 460418766\\nFRANKFORT\\nIN\\n460418766\\nVendor Contact:\\nVendor\\nContact:\\nShip To :\\nShip\\nTo\\n:\\nKCN DC FONTANA (WFONT-325)\\nKCN\\nDC\\nFONTANA\\n(WFONT-325)\\n13369 VALLEY BLVD.\\n13369\\nVALLEY\\nBLVD.\\nFONTANA, CA  92335\\nFONTANA,\\nCA\\n92335\\n909-429-6960\\n909-429-6960\\nItem Number\\nItem\\nNumber\\nItem  Description\\nItem\\nDescription\\n7687\\n7687\\nCHEETOS_CHEESE CRUNCHY_FLAMIN\\nCHEETOS_CHEESE\\nCRUNCHY_FLAMIN\\nHOT_8 OZ_16/CS_BAG CLEAR WINDOW__\\nHOT_8\\nOZ_16/CS_BAG\\nCLEAR\\nWINDOW__\\nYour#: 12751\\nYour#:\\n12751",
+      "normalized": {
+        "lines": [
+          "Vendor :",
+          "Vendor",
+          ":",
+          "KEEFE SUPPLY COMPANY",
+          "KEEFE",
+          "SUPPLY",
+          "COMPANY",
+          "FRITO LAY INC",
+          "FRITO",
+          "LAY",
+          "INC",
+          "10880 LIN PAGE PLACE",
+          "10880",
+          "LIN",
+          "PAGE",
+          "PLACE",
+          "IRENE ADAMES",
+          "IRENE",
+          "ADAMES",
+          "165 S COUNTY RD 300 W",
+          "165",
+          "S",
+          "COUNTY",
+          "RD",
+          "300",
+          "W",
+          "SAINT LOUIS, MO  63132",
+          "SAINT",
+          "LOUIS,",
+          "MO",
+          "63132",
+          "FRANKFORT IN 460418766",
+          "FRANKFORT",
+          "IN",
+          "460418766",
+          "Vendor Contact:",
+          "Vendor",
+          "Contact:",
+          "Ship To :",
+          "Ship",
+          "To",
+          ":",
+          "KCN DC FONTANA (WFONT-325)",
+          "KCN",
+          "DC",
+          "FONTANA",
+          "(WFONT-325)",
+          "13369 VALLEY BLVD.",
+          "13369",
+          "VALLEY",
+          "BLVD.",
+          "FONTANA, CA  92335",
+          "FONTANA,",
+          "CA",
+          "92335",
+          "909-429-6960",
+          "909-429-6960",
+          "Item Number",
+          "Item",
+          "Number",
+          "Item  Description",
+          "Item",
+          "Description",
+          "7687",
+          "7687",
+          "CHEETOS_CHEESE CRUNCHY_FLAMIN",
+          "CHEETOS_CHEESE",
+          "CRUNCHY_FLAMIN",
+          "HOT_8 OZ_16/CS_BAG CLEAR WINDOW__",
+          "HOT_8",
+          "OZ_16/CS_BAG",
+          "CLEAR",
+          "WINDOW__",
+          "Your#: 12751",
+          "Your#:",
+          "12751"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04411764705882353,
+          0.04734848484848485,
+          0.10294117647058823,
+          0.061553030303030304
+        ]
+      }
+    },
+    "ship_to": {
+      "raw": "Buyer :\\nBuyer\\n:\\nKCN DC FONTANA (WFONT-325)\\nKCN\\nDC\\nFONTANA\\n(WFONT-325)\\nArielle Kellerman\\nArielle\\nKellerman\\n13369 VALLEY BLVD.\\n13369\\nVALLEY\\nBLVD.\\nArielle.Kellerman@keefegroup.com\\nArielle.Kellerman@keefegroup.com\\nShip Via :\\nShip\\nVia\\n:\\nItem Number\\nItem\\nNumber\\nItem  Description\\nItem\\nDescription\\nCHEETOS_CHEESE CRUNCHY_FLAMIN\\nCHEETOS_CHEESE\\nCRUNCHY_FLAMIN\\nHOT_8 OZ_16/CS_BAG CLEAR WINDOW__\\nHOT_8\\nOZ_16/CS_BAG\\nCLEAR\\nWINDOW__\\nYour#: 12751\\nYour#:\\n12751",
+      "normalized": {
+        "lines": [
+          "Buyer :",
+          "Buyer",
+          ":",
+          "KCN DC FONTANA (WFONT-325)",
+          "KCN",
+          "DC",
+          "FONTANA",
+          "(WFONT-325)",
+          "Arielle Kellerman",
+          "Arielle",
+          "Kellerman",
+          "13369 VALLEY BLVD.",
+          "13369",
+          "VALLEY",
+          "BLVD.",
+          "Arielle.Kellerman@keefegroup.com",
+          "Arielle.Kellerman@keefegroup.com",
+          "Ship Via :",
+          "Ship",
+          "Via",
+          ":",
+          "Item Number",
+          "Item",
+          "Number",
+          "Item  Description",
+          "Item",
+          "Description",
+          "CHEETOS_CHEESE CRUNCHY_FLAMIN",
+          "CHEETOS_CHEESE",
+          "CRUNCHY_FLAMIN",
+          "HOT_8 OZ_16/CS_BAG CLEAR WINDOW__",
+          "HOT_8",
+          "OZ_16/CS_BAG",
+          "CLEAR",
+          "WINDOW__",
+          "Your#: 12751",
+          "Your#:",
+          "12751"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04534313725490196,
+          0.13920454545454544,
+          0.11642156862745098,
+          0.1543560606060606
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "2,838.40",
+      "normalized": "2838.4",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

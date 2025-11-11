@@ -1,0 +1,37 @@
+{
+  "document_summary": {
+    "filename": "Customer__2003670708_2XNW31ZWT2JP31B7B1__doc01306920250430102753_1761480340307.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": null,
+    "day_first_date_probability": 0.16666666666666666
+  },
+  "fields": {},
+  "addresses": {},
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": null,
+    "verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": [
+    {
+      "code": "totals_missing",
+      "message": "No subtotal or grand total candidates identified.",
+      "page": null
+    }
+  ]
+}

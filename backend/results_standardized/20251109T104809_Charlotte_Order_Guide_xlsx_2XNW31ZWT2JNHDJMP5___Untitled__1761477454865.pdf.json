@@ -1,0 +1,37 @@
+{
+  "document_summary": {
+    "filename": "Charlotte_Order_Guide_xlsx_2XNW31ZWT2JNHDJMP5___Untitled__1761477454865.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 3
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": null,
+    "day_first_date_probability": 0.0
+  },
+  "fields": {},
+  "addresses": {},
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": null,
+    "verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": [
+    {
+      "code": "totals_missing",
+      "message": "No subtotal or grand total candidates identified.",
+      "page": null
+    }
+  ]
+}

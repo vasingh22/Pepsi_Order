@@ -1,0 +1,153 @@
+{
+  "seller_name": "Eden's Snacks LLC",
+  "buyer_name": null,
+  "invoice_number": null,
+  "order_number": null,
+  "PO_number": "PO9430",
+  "invoice_date": null,
+  "order_date": null,
+  "PO_date": null,
+  "delivery_date": null,
+  "gst_number": null,
+  "tax_id": null,
+  "seller_address": null,
+  "buyer_address": null,
+  "ship_to_address": "310, ISELIN NJ 08830, United States",
+  "contact_information": {
+    "phone": null,
+    "email": null
+  },
+  "line_items": [],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 1272.0,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "Eden_s_Snacks_LLC__Purchase_Order__PO9430_2XNW31ZWT2JPKTWJK1__Purchase_Order_PO9430_1746464864587_1761482975292.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor:",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.5
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "Purchase",
+        "normalized": "Purchase",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_addresses": {
+      "ship_to": {
+        "raw": "310\\n310\\nISELIN NJ 08830\\nISELIN\\nNJ\\n08830\\nUnited States\\nUnited\\nStates\\nBilling Phone\\nBilling\\nPhone\\nQuantity\\nQuantity\\nUOM\\nUOM\\nRate\\nRate\\nCS\\nCS\\n$41.45\\n$41.45\\n36\\n36\\nCS\\nCS\\n$41.45\\n$41.45\\n72\\n72\\nCS\\nCS\\n$40.26\\n$40.26\\n30\\n30\\nCS\\nCS\\n$40.26\\n$40.26\\n36\\n36\\nCS\\nCS\\n$40.26\\n$40.26\\n108\\n108\\nCS\\nCS\\n$40.26\\n$40.26\\n18\\n18",
+        "normalized": {
+          "lines": [
+            "310",
+            "310",
+            "ISELIN NJ 08830",
+            "ISELIN",
+            "NJ",
+            "08830",
+            "United States",
+            "United",
+            "States",
+            "Billing Phone",
+            "Billing",
+            "Phone",
+            "Quantity",
+            "Quantity",
+            "UOM",
+            "UOM",
+            "Rate",
+            "Rate",
+            "CS",
+            "CS",
+            "$41.45",
+            "$41.45",
+            "36",
+            "36",
+            "CS",
+            "CS",
+            "$41.45",
+            "$41.45",
+            "72",
+            "72",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "30",
+            "30",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "36",
+            "36",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "108",
+            "108",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "18",
+            "18"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.3946078431372549,
+            0.15056818181818182,
+            0.45098039215686275,
+            0.16193181818181818
+          ]
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "1,272",
+        "normalized": "1.272",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

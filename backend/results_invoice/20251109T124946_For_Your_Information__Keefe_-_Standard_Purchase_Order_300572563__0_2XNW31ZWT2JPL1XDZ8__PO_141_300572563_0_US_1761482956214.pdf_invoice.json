@@ -1,0 +1,103 @@
+{
+  "seller_name": "FRITO LAY INC",
+  "buyer_name": "KEEFE SUPPLY COMPANY",
+  "po_number": "300572563",
+  "po_date": null,
+  "invoice_number": null,
+  "invoice_date": null,
+  "delivery_date": null,
+  "gst_number": null,
+  "address_information": {
+    "seller_address": {
+      "raw": "FRITO LAY INC\n165 S COUNTY RD 300 W\nFRANKFORT IN 460418766",
+      "cleaned": "FRITO LAY INC, 165 S COUNTY RD 300 W, FRANKFORT, IN 46041"
+    },
+    "buyer_address": {
+      "raw": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132",
+      "cleaned": "KEEFE SUPPLY COMPANY, 10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132"
+    },
+    "ship_to_address": {
+      "raw": "KCN DC FONTANA (WFONT-325)\n13369 VALLEY BLVD.\nFONTANA, CA 92335",
+      "cleaned": "KCN DC FONTANA (WFONT-325), 13369 VALLEY BLVD., FONTANA, CA 92335"
+    },
+    "contact_information": {
+      "seller_contact_name": "IRENE ADAMES",
+      "buyer_contact_name": "Arielle Kellerman",
+      "buyer_contact_email": "Arielle.Kellerman@keefegroup.com",
+      "shipping_contact_phone": "909-429-6960"
+    }
+  },
+  "line_items": [
+    {
+      "material_id": "10514",
+      "product_code": "16162",
+      "description": "DORITOS_TORTILLA CHIPS_NACHO CHEESE_8 OZ_8/CS_BAG CLEAR WINDOW__",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "amount": null,
+      "hsn_code": null,
+      "discount": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 14877.72,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300572563__0_2XNW31ZWT2JPL1XDZ8__PO_141_300572563_0_US_1761482956214.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.3333333333333333
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "anomalies": [],
+    "source_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "14,877.72",
+        "normalized": "14877.72",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    }
+  }
+}

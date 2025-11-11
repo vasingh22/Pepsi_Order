@@ -1,0 +1,64 @@
+{
+  "invoice_details": {
+    "seller_name": null,
+    "buyer_name": null,
+    "invoice_number": null,
+    "order_number": null,
+    "po_number": null,
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": null,
+    "delivery_date": null,
+    "seller_tax_id": null,
+    "buyer_tax_id": null
+  },
+  "address_details": {
+    "seller_address": null,
+    "buyer_address": null,
+    "shipping_address": null,
+    "contact_info": {
+      "phone": null,
+      "email": null,
+      "website": null
+    }
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 1.0,
+    "amount_due": 1.0,
+    "currency": "USD",
+    "totals_verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "Customer___2003670708_2XNW31ZWT2JY845S38__doc01283220250423105135_1761480340307.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {},
+    "anomalies": []
+  }
+}

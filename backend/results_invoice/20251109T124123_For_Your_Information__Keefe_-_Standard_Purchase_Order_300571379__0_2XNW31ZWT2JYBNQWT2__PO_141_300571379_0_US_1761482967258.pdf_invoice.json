@@ -1,0 +1,114 @@
+{
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": null,
+    "PO_number": "300571379",
+    "invoice_date": null,
+    "order_date": null,
+    "PO_date": null,
+    "delivery_date": null
+  },
+  "seller_details": {
+    "seller_name": "KEEFE SUPPLY COMPANY",
+    "seller_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "gst_number": null,
+    "tax_id": null,
+    "contact_information": {
+      "phone": null,
+      "email": null,
+      "contact_person": "IRENE ADAMES"
+    }
+  },
+  "buyer_details": {
+    "buyer_name": "KCN DC FONTANA (WFONT-325)",
+    "buyer_address": "13369 VALLEY BLVD., FONTANA, CA 92335",
+    "gst_number": null,
+    "tax_id": null,
+    "contact_information": {
+      "phone": "909-429-6960",
+      "email": "Arielle.Kellerman@keefegroup.com",
+      "contact_person": "Arielle Kellerman"
+    }
+  },
+  "shipping_details": {
+    "ship_to_name": "KCN DC FONTANA (WFONT-325)",
+    "ship_to_address": "13369 VALLEY BLVD., FONTANA, CA 92335",
+    "ship_via": null
+  },
+  "line_items": [
+    {
+      "material_id": "10354",
+      "product_code": "16164",
+      "hsn_code": null,
+      "description": "DORITOS TORTILLA CHIPS COOL RANCH 8 OZ_8/CS_BAG CLEAR WINDOW_",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    },
+    {
+      "material_id": "10355",
+      "product_code": "16160",
+      "hsn_code": null,
+      "description": "FRITOS_CORN CHIPS_CHILI CHEESE_10.5 OZ_10/CS_BAG CLEAR WINDOW_",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    },
+    {
+      "material_id": "10525",
+      "product_code": null,
+      "hsn_code": null,
+      "description": "RUFFLES_POTATO CHIPS_CHEDDAR & SOUR",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    }
+  ],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 20758.92,
+    "currency": null
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "source_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571379__0_2XNW31ZWT2JYBNQWT2__PO_141_300571379_0_US_1761482967258.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.3333333333333333
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "anomalies": []
+  }
+}

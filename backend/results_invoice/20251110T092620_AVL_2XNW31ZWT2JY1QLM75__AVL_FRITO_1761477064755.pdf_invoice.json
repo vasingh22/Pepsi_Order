@@ -1,0 +1,67 @@
+{
+  "seller_name": null,
+  "buyer_name": "Allegiant Air",
+  "invoice_number": null,
+  "po_number": null,
+  "invoice_date": "2025-04-21",
+  "po_date": "2025-04-21",
+  "delivery_date": null,
+  "seller_tax_id": null,
+  "buyer_tax_id": null,
+  "seller_address": {
+    "raw": null,
+    "cleaned": null
+  },
+  "buyer_address": {
+    "raw": "Allegiant Air\\nAllegiant\\nAir\\n122 Wright Brothers Way\\n122\\nWright\\nBrothers\\nWay\\nFletcher, NC 28732 USA\\nFletcher,\\nNC\\n28732\\nUSA\\nCases\\nCases\\nUnit price\\nUnit\\nprice\\nSubtotal\\nSubtotal\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n13.83\\n13.83\\n553.28\\n553.28\\n40\\n40\\n20\\n20\\n32.70\\n32.70\\n654.00\\n654.00",
+    "cleaned": "Allegiant Air, 122 Wright Brothers Way, Fletcher, NC 28732 USA"
+  },
+  "ship_to_address": {
+    "raw": "Allegiant Air\\nAllegiant\\nAir\\n122 Wright Brothers Way\\n122\\nWright\\nBrothers\\nWay\\nFletcher, NC 28732 USA\\nFletcher,\\nNC\\n28732\\nUSA\\nCases\\nCases\\nUnit price\\nUnit\\nprice\\nSubtotal\\nSubtotal\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n13.83\\n13.83\\n553.28\\n553.28\\n40\\n40\\n20\\n20\\n32.70\\n32.70\\n654.00\\n654.00",
+    "cleaned": "Allegiant Air, 122 Wright Brothers Way, Fletcher, NC 28732 USA"
+  },
+  "contact_information": {
+    "phone": null,
+    "email": null
+  },
+  "line_items": [],
+  "financials": {
+    "subtotal": 385.63,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 4878.0,
+    "currency": null
+  },
+  "payment_info": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "document_summary": {
+    "filename": "AVL_2XNW31ZWT2JY1QLM75__AVL_FRITO_1761477064755.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Supplier",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.25
+  },
+  "original_fields": {
+    "purchase_order_date": {
+      "raw": "4/21/2025",
+      "normalized": "2025-04-21",
+      "confidence": 0.75,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "anomalies": []
+}
