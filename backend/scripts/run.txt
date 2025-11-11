@@ -1,6 +1,0 @@
-
-
-
-    chmod +x scripts/run_all_samples.sh
-
-       ./scripts/run_all_samples.sh

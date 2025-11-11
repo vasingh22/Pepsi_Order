@@ -4,12 +4,14 @@ __pycache__/
 *$py.class
 *.so
 .Python
+*.class
+
+# Environments
 env/
 venv/
 ENV/
-*.egg-info/
-dist/
-build/
+backend/venv/
+.venv/
 
 # IDEs
 .vscode/
@@ -24,16 +26,24 @@ Thumbs.db
 
 # Temporary files
 .tmp/
+backend/.tmp/
 *.log
 
-# Large data files (optional - uncomment if you don't want to push PDFs and results)
-# backend/PickSample200/*.pdf
-# backend/PickSample200/*.PDF
-# backend/results/*.json
-# backend/ocr-response.json
+# Outputs and large data
+backend/results/
+backend/results_standardized/
+backend/results_invoice/
+backend/PickSample200/*.pdf
+backend/PickSample200/*.PDF
+backend/ocr-response.json
+backend/processing_log.txt
 
 # Excel and CSV mapping files (optional - uncomment if you don't want to push these)
 # backend/file_mapping*.xlsx
 # backend/file_mapping*.csv
 # backend/file_mapping*.txt
 
+# Build artifacts
+*.egg-info/
+dist/
+build/
