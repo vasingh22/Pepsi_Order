@@ -1,0 +1,117 @@
+{
+  "seller_name": "KEEFE SUPPLY COMPANY",
+  "buyer_name": "FRITO LAY INC",
+  "po_number": "300570683",
+  "po_date": null,
+  "invoice_number": null,
+  "invoice_date": null,
+  "delivery_date": null,
+  "gst_number": null,
+  "address_information": {
+    "seller_address": "KEEFE SUPPLY COMPANY, 10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "buyer_address": "FRITO LAY INC, 165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+    "ship_to_address": "KF DC MIDWEST (M-300), 13870 CORPORATE WOODS TRAIL, BRIDGETON, MO 63044",
+    "contact_information": {
+      "phone": "314-264-2900",
+      "email": null
+    }
+  },
+  "line_items": [
+    {
+      "name": "dritos tortilla chips cool ranch 8 OZ 8/CS BAG CLEAR WINDOW",
+      "description": "dritos tortilla chips cool ranch 8 OZ 8/CS BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "product_code": "16164",
+      "material_id": "10354",
+      "discount": null
+    },
+    {
+      "name": "FRITOS_CORN CHIPS_CHILI CHEESE_10.5 OZ_10/CS_BAG CLEAR WINDOW_",
+      "description": "FRITOS_CORN CHIPS_CHILI CHEESE_10.5 OZ_10/CS_BAG CLEAR WINDOW_",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "product_code": "16160",
+      "material_id": null,
+      "discount": null
+    },
+    {
+      "name": "FRITOS_CORN CHIPS_CHILI CHEESE_2",
+      "description": "FRITOS_CORN CHIPS_CHILI CHEESE_2",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "product_code": null,
+      "material_id": "10446",
+      "discount": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 23800.62,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300570683__0_2XNW31ZWT2JNK8W47R__PO_141_300570683_0_US_1761482972518.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.4166666666666667
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "23,800.62",
+        "normalized": "23800.62",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

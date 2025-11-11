@@ -1,0 +1,142 @@
+{
+  "core_invoice_fields": {
+    "seller_name": null,
+    "buyer_name": "Culinary Ventures",
+    "invoice_number": null,
+    "order_number": "1036060807",
+    "po_number": "42525B",
+    "invoice_date": null,
+    "order_date": "2025-04-18",
+    "po_date": "2025-04-18",
+    "delivery_date": null,
+    "gst_number": null,
+    "tax_id": null,
+    "customer_number": "2003825255"
+  },
+  "address_information": {
+    "seller_address": null,
+    "buyer_address": "1835 BURNET AVE, UNION, NJ 07083-4282",
+    "ship_to_address": "1835 BURNET AVE, UNION, NJ 07083-4282",
+    "contact_information": {
+      "phone": null,
+      "email": null
+    }
+  },
+  "line_items": [
+    {
+      "name": "VANILLA CRM MINI 2.12 OZ.",
+      "description": "VANILLA CRM MINI 2.12 OZ.",
+      "quantity": 1,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "00028400450966",
+      "sku": null,
+      "material_id": "00010",
+      "item_id": "00010",
+      "discount": null
+    },
+    {
+      "name": "GM CHOC BROWN BC",
+      "description": "GM CHOC BROWN BC",
+      "quantity": 1,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "00028400103107",
+      "sku": null,
+      "material_id": "00020",
+      "item_id": "00020",
+      "discount": null
+    },
+    {
+      "name": "DORITOS NACHO CHEESE",
+      "description": "DORITOS NACHO CHEESE",
+      "quantity": 1,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "00028400111423",
+      "sku": null,
+      "material_id": "00030",
+      "item_id": "00030",
+      "discount": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": null,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "Culinary_Ventures_P_O___42525b_2XNW31ZWT2JY41TJMN__CULINARY_VENTURES_VENDING_PO_42525B_1761480343282.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {
+      "purchase_order_date": {
+        "raw": "04/18/2025",
+        "normalized": "2025-04-18",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "other_extracted_fields": {
+      "shipping_location": "2098",
+      "order_reason": null
+    },
+    "anomalies": [],
+    "source_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "$",
+        "normalized": null,
+        "confidence": 0.6,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "missing",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    }
+  }
+}

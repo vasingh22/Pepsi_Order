@@ -1,0 +1,124 @@
+{
+  "document_summary": {
+    "filename": "Eden_s_Snacks_LLC__Purchase_Order__PO9313_2XNW31ZWT2JY499MBL__Purchase_Order_PO9313_1745330746876_1761480332791.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor:",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.0
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "Purchase",
+      "normalized": "Purchase",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "711 Brush Ave\\n711\\nBrush\\nAve\\nUnited States\\nUnited\\nStates\\nBilling Phone\\nBilling\\nPhone\\nUOM\\nUOM\\nQuantity\\nQuantity\\nRate\\nRate\\nCS\\nCS\\n$31.31\\n$31.31\\n126\\n126\\nCS\\nCS\\n$41.45\\n$41.45\\n36\\n36\\nCS\\nCS\\n$41.45\\n$41.45\\n108\\n108\\nCS\\nCS\\n$40.26\\n$40.26\\n24\\n24\\nCS\\nCS\\n$40.26\\n$40.26\\n36\\n36\\nCS\\nCS\\n$40.26\\n$40.26\\n144\\n144\\nCS\\nCS\\n$40.26\\n$40.26\\n144\\n144",
+      "normalized": {
+        "lines": [
+          "711 Brush Ave",
+          "711",
+          "Brush",
+          "Ave",
+          "United States",
+          "United",
+          "States",
+          "Billing Phone",
+          "Billing",
+          "Phone",
+          "UOM",
+          "UOM",
+          "Quantity",
+          "Quantity",
+          "Rate",
+          "Rate",
+          "CS",
+          "CS",
+          "$31.31",
+          "$31.31",
+          "126",
+          "126",
+          "CS",
+          "CS",
+          "$41.45",
+          "$41.45",
+          "36",
+          "36",
+          "CS",
+          "CS",
+          "$41.45",
+          "$41.45",
+          "108",
+          "108",
+          "CS",
+          "CS",
+          "$40.26",
+          "$40.26",
+          "24",
+          "24",
+          "CS",
+          "CS",
+          "$40.26",
+          "$40.26",
+          "36",
+          "36",
+          "CS",
+          "CS",
+          "$40.26",
+          "$40.26",
+          "144",
+          "144",
+          "CS",
+          "CS",
+          "$40.26",
+          "$40.26",
+          "144",
+          "144"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.3946078431372549,
+          0.15056818181818182,
+          0.45098039215686275,
+          0.16193181818181818
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "1,278",
+      "normalized": "1.278",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

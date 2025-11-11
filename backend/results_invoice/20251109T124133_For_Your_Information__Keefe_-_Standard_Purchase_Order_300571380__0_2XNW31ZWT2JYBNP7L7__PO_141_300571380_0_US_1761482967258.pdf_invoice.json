@@ -1,0 +1,119 @@
+{
+  "core_invoice_fields": {
+    "seller_name": "FRITO LAY INC",
+    "buyer_name": "KEEFE SUPPLY COMPANY",
+    "po_number": "300571380",
+    "invoice_number": null,
+    "order_number": null,
+    "po_date": null,
+    "invoice_date": null,
+    "order_date": null,
+    "delivery_date": null,
+    "gst_number": null,
+    "tax_id": null
+  },
+  "address_information": {
+    "seller_address": "FRITO LAY INC\n165 S COUNTY RD 300 W\nFRANKFORT IN 460418766",
+    "buyer_address": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132",
+    "ship_to_address": "KCN WSC (WTUAZ-32A)\n6992 E. CENTURY PARK DRIVE, SUITE 100\nTUCSON, AZ 85756",
+    "contact_information": {
+      "phone": "520-200-6399",
+      "email": null,
+      "vendor_contact": null
+    }
+  },
+  "line_items": [
+    {
+      "material_id": "10525",
+      "product_code": "17721",
+      "hsn_code": null,
+      "sku": null,
+      "name": "RUFFLES POTATO CHIPS CHEDDAR & SOUR CREAM_5.5 OZ_15/CS_BAG FOIL_",
+      "description": "RUFFLES POTATO CHIPS CHEDDAR & SOUR CREAM_5.5 OZ_15/CS_BAG FOIL_",
+      "quantity": null,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "discount": null,
+      "amount": null,
+      "total": null
+    },
+    {
+      "material_id": null,
+      "product_code": "12751",
+      "hsn_code": null,
+      "sku": null,
+      "name": "CHEETOS_CHEESE CRUNCHY_FLAMIN HOT_8 OZ_16/CS_BAG CLEAR WINDOW_",
+      "description": "CHEETOS_CHEESE CRUNCHY_FLAMIN HOT_8 OZ_16/CS_BAG CLEAR WINDOW_",
+      "quantity": null,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "discount": null,
+      "amount": null,
+      "total": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 21938.88,
+    "currency": null
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571380__0_2XNW31ZWT2JYBNP7L7__PO_141_300571380_0_US_1761482967258.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.3
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "21,938.88",
+        "normalized": "21938.88",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "seller_info": {
+    "seller_name": null,
+    "seller_address": null,
+    "tax_id": null
+  },
+  "buyer_info": {
+    "buyer_name": "CTNMW@CHICAGO BLOOMINGDALE",
+    "customer_number": "2003825458",
+    "buyer_address": "171 COVINGTON DR, BLOOMINGDALE, IL 60108-3107",
+    "ship_to_address": "CTNMW@CHICAGO BLOOMINGDALE, 171 COVINGTON DR, BLOOMINGDALE, IL 60108-3107",
+    "contact_info": {
+      "phone": null,
+      "email": null
+    }
+  },
+  "invoice_details": {
+    "order_number": "1014835959",
+    "po_number": "2003825458-0418",
+    "order_date": "2025-04-18",
+    "invoice_number": null,
+    "invoice_date": null,
+    "delivery_date": null
+  },
+  "line_items": [
+    {
+      "description": "2CT XVL RF CSC PEG",
+      "quantity": 1,
+      "unit": null,
+      "unit_price": null,
+      "amount": null,
+      "item_id": "000260",
+      "product_code": "00028400535182",
+      "hsn_code": null,
+      "discount": null
+    },
+    {
+      "description": "24CT XVL DR NAC PEG",
+      "quantity": 1,
+      "unit": null,
+      "unit_price": null,
+      "amount": null,
+      "item_id": "00270",
+      "product_code": "0028400362948",
+      "hsn_code": null,
+      "discount": null
+    },
+    {
+      "description": "72 CT VFS SVL DR RF FLAMAS",
+      "quantity": 1,
+      "unit": null,
+      "unit_price": null,
+      "amount": null,
+      "item_id": "00280",
+      "product_code": "0028400628297",
+      "hsn_code": null,
+      "discount": null
+    }
+  ],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 60229.48,
+    "currency": "USD"
+  },
+  "payment_info": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_info": {
+    "order_reason": null,
+    "shipping_location": "2090"
+  },
+  "source_data": {
+    "document_summary": {
+      "filename": "Confirmations_2XNW31ZWT2JYZQ3N88__CTNMW_CHICAGO_BLOOMINGDALE___2003825458-0418_1761477447866.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0
+    },
+    "original_fields": {
+      "purchase_order_date": {
+        "raw": "04/18/2025",
+        "normalized": "2025-04-18",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "seller_name": "KEEFE SUPPLY COMPANY",
+  "buyer_name": "KCN DC FONTANA (WFONT-325)",
+  "po_number": "300570804",
+  "invoice_number": null,
+  "order_number": null,
+  "po_date": null,
+  "invoice_date": null,
+  "order_date": null,
+  "delivery_date": null,
+  "due_date": null,
+  "gst_number": null,
+  "tax_id": null,
+  "seller_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+  "buyer_address": "13369 VALLEY BLVD., FONTANA, CA 92335",
+  "ship_to_address": "KCN DC FONTANA (WFONT-325), 13369 VALLEY BLVD., FONTANA, CA 92335",
+  "contact_information": {
+    "buyer_contact_name": "Arielle Kellerman",
+    "buyer_email": "Arielle.Kellerman@keefegroup.com",
+    "shipping_phone": "909-429-6960",
+    "vendor_contact": null
+  },
+  "line_items": [
+    {
+      "material_id": "80006414",
+      "product_code": "56725",
+      "hsn_code": null,
+      "sku": null,
+      "name": "QUAKER OATMEAL MAPLE BROWN SUGAR",
+      "description": "QUAKER OATMEAL MAPLE BROWN SUGAR_1.51 OZ_150/CS",
+      "quantity": null,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "discount": null,
+      "amount": null,
+      "total": null
+    },
+    {
+      "material_id": null,
+      "product_code": "10030000568491",
+      "hsn_code": null,
+      "sku": null,
+      "name": "QUAKER_INST OATMEAL_VARIETY PK",
+      "description": "QUAKER_INST OATMEAL_VARIETY PK_1.51 OZ_8EA/PK, 96EA/CS_PKT__",
+      "quantity": null,
+      "unit": null,
+      "uom": null,
+      "rate": null,
+      "unit_price": null,
+      "discount": null,
+      "amount": null,
+      "total": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 4819.2,
+    "currency": "USD"
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300570804__0_2XNW31ZWT2JY1ZQ8CS__PO_141_300570804_0_US_1761482972518.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.25
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "4,819.20",
+        "normalized": "4819.2",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

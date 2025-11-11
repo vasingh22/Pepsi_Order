@@ -1,0 +1,215 @@
+{
+  "document_summary": {
+    "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571692__0_2XNW31ZWT2JYPPTKBT__PO_141_300571692_0_US_1761482964669.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor :",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.25
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "PURCHASE",
+      "normalized": "PURCHASE",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "bill_to": {
+      "raw": "Vendor :\\nVendor\\n:\\nKEEFE SUPPLY COMPANY\\nKEEFE\\nSUPPLY\\nCOMPANY\\nQUAKER\\nQUAKER\\n10880 LIN PAGE PLACE\\n10880\\nLIN\\nPAGE\\nPLACE\\n131 S DEARBORN\\n131\\nS\\nDEARBORN\\nSAINT LOUIS, MO  63132\\nSAINT\\nLOUIS,\\nMO\\n63132\\nFL 6\\nFL\\n6\\nCHICAGO IL 60603\\nCHICAGO\\nIL\\n60603\\nVendor Contact:\\nVendor\\nContact:\\nShip To :\\nShip\\nTo\\n:\\nKCN DC RICHMOND (Y-345)\\nKCN\\nDC\\nRICHMOND\\n(Y-345)\\n10464 Cedar Lane\\n10464\\nCedar\\nLane\\nSuite 100\\nSuite\\n100\\nGLEN ALLEN, VA  23059\\nGLEN\\nALLEN,\\nVA\\n23059\\n804-250-7020\\n804-250-7020\\nItem Number\\nItem\\nNumber\\nItem  Description\\nItem\\nDescription\\nCAPN CRUNCH  CEREAL  CRUNCH\\nCAPN\\nCRUNCH\\nCEREAL\\nCRUNCH\\n80007765\\n80007765\\nBERRIES_3.9 OZ_6/CS_POUCH\\nBERRIES_3.9\\nOZ_6/CS_POUCH\\nYour#: 56935\\nYour#:\\n56935",
+      "normalized": {
+        "lines": [
+          "Vendor :",
+          "Vendor",
+          ":",
+          "KEEFE SUPPLY COMPANY",
+          "KEEFE",
+          "SUPPLY",
+          "COMPANY",
+          "QUAKER",
+          "QUAKER",
+          "10880 LIN PAGE PLACE",
+          "10880",
+          "LIN",
+          "PAGE",
+          "PLACE",
+          "131 S DEARBORN",
+          "131",
+          "S",
+          "DEARBORN",
+          "SAINT LOUIS, MO  63132",
+          "SAINT",
+          "LOUIS,",
+          "MO",
+          "63132",
+          "FL 6",
+          "FL",
+          "6",
+          "CHICAGO IL 60603",
+          "CHICAGO",
+          "IL",
+          "60603",
+          "Vendor Contact:",
+          "Vendor",
+          "Contact:",
+          "Ship To :",
+          "Ship",
+          "To",
+          ":",
+          "KCN DC RICHMOND (Y-345)",
+          "KCN",
+          "DC",
+          "RICHMOND",
+          "(Y-345)",
+          "10464 Cedar Lane",
+          "10464",
+          "Cedar",
+          "Lane",
+          "Suite 100",
+          "Suite",
+          "100",
+          "GLEN ALLEN, VA  23059",
+          "GLEN",
+          "ALLEN,",
+          "VA",
+          "23059",
+          "804-250-7020",
+          "804-250-7020",
+          "Item Number",
+          "Item",
+          "Number",
+          "Item  Description",
+          "Item",
+          "Description",
+          "CAPN CRUNCH  CEREAL  CRUNCH",
+          "CAPN",
+          "CRUNCH",
+          "CEREAL",
+          "CRUNCH",
+          "80007765",
+          "80007765",
+          "BERRIES_3.9 OZ_6/CS_POUCH",
+          "BERRIES_3.9",
+          "OZ_6/CS_POUCH",
+          "Your#: 56935",
+          "Your#:",
+          "56935"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04411764705882353,
+          0.04734848484848485,
+          0.10416666666666667,
+          0.061553030303030304
+        ]
+      }
+    },
+    "ship_to": {
+      "raw": "Buyer :\\nBuyer\\n:\\nKCN DC RICHMOND (Y-345)\\nKCN\\nDC\\nRICHMOND\\n(Y-345)\\nArielle Kellerman\\nArielle\\nKellerman\\n10464 Cedar Lane\\n10464\\nCedar\\nLane\\nArielle.Kellerman@keefegroup.com\\nArielle.Kellerman@keefegroup.com\\nSuite 100\\nSuite\\n100\\nGLEN ALLEN, VA  23059\\nGLEN\\nALLEN,\\nVA\\n23059\\nShip Via :\\nShip\\nVia\\n:\\n804-250-7020\\n804-250-7020\\nItem Number\\nItem\\nNumber\\nItem  Description\\nItem\\nDescription\\nCAPN CRUNCH  CEREAL  CRUNCH\\nCAPN\\nCRUNCH\\nCEREAL\\nCRUNCH\\nBERRIES_3.9 OZ_6/CS_POUCH\\nBERRIES_3.9\\nOZ_6/CS_POUCH\\nYour#: 56935\\nYour#:\\n56935\\nQUAKER_INST OATMEAL_ASSORTED\\nQUAKER_INST\\nOATMEAL_ASSORTED\\nFRUIT_1.05 OZ_8EA/BX, 12BX/CS\\nFRUIT_1.05\\nOZ_8EA/BX,\\n12BX/CS\\nYour#: 56828\\nYour#:\\n56828",
+      "normalized": {
+        "lines": [
+          "Buyer :",
+          "Buyer",
+          ":",
+          "KCN DC RICHMOND (Y-345)",
+          "KCN",
+          "DC",
+          "RICHMOND",
+          "(Y-345)",
+          "Arielle Kellerman",
+          "Arielle",
+          "Kellerman",
+          "10464 Cedar Lane",
+          "10464",
+          "Cedar",
+          "Lane",
+          "Arielle.Kellerman@keefegroup.com",
+          "Arielle.Kellerman@keefegroup.com",
+          "Suite 100",
+          "Suite",
+          "100",
+          "GLEN ALLEN, VA  23059",
+          "GLEN",
+          "ALLEN,",
+          "VA",
+          "23059",
+          "Ship Via :",
+          "Ship",
+          "Via",
+          ":",
+          "804-250-7020",
+          "804-250-7020",
+          "Item Number",
+          "Item",
+          "Number",
+          "Item  Description",
+          "Item",
+          "Description",
+          "CAPN CRUNCH  CEREAL  CRUNCH",
+          "CAPN",
+          "CRUNCH",
+          "CEREAL",
+          "CRUNCH",
+          "BERRIES_3.9 OZ_6/CS_POUCH",
+          "BERRIES_3.9",
+          "OZ_6/CS_POUCH",
+          "Your#: 56935",
+          "Your#:",
+          "56935",
+          "QUAKER_INST OATMEAL_ASSORTED",
+          "QUAKER_INST",
+          "OATMEAL_ASSORTED",
+          "FRUIT_1.05 OZ_8EA/BX, 12BX/CS",
+          "FRUIT_1.05",
+          "OZ_8EA/BX,",
+          "12BX/CS",
+          "Your#: 56828",
+          "Your#:",
+          "56828"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04534313725490196,
+          0.13920454545454544,
+          0.11274509803921569,
+          0.1543560606060606
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "3,225.60",
+      "normalized": "3225.6",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

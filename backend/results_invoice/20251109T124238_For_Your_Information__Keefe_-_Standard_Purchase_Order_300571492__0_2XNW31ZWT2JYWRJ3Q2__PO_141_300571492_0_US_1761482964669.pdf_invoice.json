@@ -1,0 +1,170 @@
+{
+  "invoice_details": {
+    "invoice_number": "300571492",
+    "order_number": "300571492",
+    "po_number": "300571492",
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": null,
+    "delivery_date": null,
+    "due_date": null
+  },
+  "seller_details": {
+    "seller_name": "Keefe",
+    "seller_address": null,
+    "gst_number": null,
+    "tax_id": null,
+    "contact_information": {}
+  },
+  "buyer_details": {
+    "buyer_name": "Arielle Kellerman",
+    "buyer_address": "1371-1 TRADEPORT DRIVE, JACKSONVILLE, FL 32218",
+    "contact_information": {
+      "email": "Arielle.Kellerman@keefegroup.com",
+      "phone": "904-741-6776"
+    }
+  },
+  "shipping_details": {
+    "ship_to_name": "Arielle Kellerman",
+    "ship_to_address": "1371-1 TRADEPORT DRIVE, JACKSONVILLE, FL 32218",
+    "ship_via": null
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 27097.26,
+    "currency": null
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null
+  },
+  "source_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571492__0_2XNW31ZWT2JYWRJ3Q2__PO_141_300571492_0_US_1761482964669.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.42857142857142855
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_addresses": {
+      "ship_to": {
+        "raw": "Buyer :\\nBuyer\\n:\\nArielle Kellerman\\nArielle\\nKellerman\\n1371-1 TRADEPORT DRIVE\\n1371-1\\nTRADEPORT\\nDRIVE\\nArielle.Kellerman@keefegroup.com\\nArielle.Kellerman@keefegroup.com\\nJACKSONVILLE, FL  32218\\nJACKSONVILLE,\\nFL\\n32218\\n904-741-6776\\n904-741-6776\\nShip Via :\\nShip\\nVia\\n:\\nItem  Description\\nItem\\nDescription\\nItem  Number\\nItem\\nNumber\\n10354\\n10354\\ndritos  tortilla chips  cool ranch  8\\ndritos\\ntortilla\\nchips\\ncool\\nranch\\n8\\nOZ  8/CS  BAG CLEAR WINDOW\\nOZ\\n8/CS\\nBAG\\nCLEAR\\nWINDOW\\nYour#: 16164\\nYour#:\\n16164\\nFRITOS_CORN CHIPS_CHILI CHEESE_2\\nFRITOS_CORN\\nCHIPS_CHILI\\nCHEESE_2\\nOZ_64/CS_BAG CLEAR WINDOW_\\nOZ_64/CS_BAG\\nCLEAR\\nWINDOW_\\nYour#: 16161\\nYour#:\\n16161\\nDORITOS_TORTILLA CHIPS_NACHO\\nDORITOS_TORTILLA\\nCHIPS_NACHO",
+        "normalized": {
+          "lines": [
+            "Buyer :",
+            "Buyer",
+            ":",
+            "Arielle Kellerman",
+            "Arielle",
+            "Kellerman",
+            "1371-1 TRADEPORT DRIVE",
+            "1371-1",
+            "TRADEPORT",
+            "DRIVE",
+            "Arielle.Kellerman@keefegroup.com",
+            "Arielle.Kellerman@keefegroup.com",
+            "JACKSONVILLE, FL  32218",
+            "JACKSONVILLE,",
+            "FL",
+            "32218",
+            "904-741-6776",
+            "904-741-6776",
+            "Ship Via :",
+            "Ship",
+            "Via",
+            ":",
+            "Item  Description",
+            "Item",
+            "Description",
+            "Item  Number",
+            "Item",
+            "Number",
+            "10354",
+            "10354",
+            "dritos  tortilla chips  cool ranch  8",
+            "dritos",
+            "tortilla",
+            "chips",
+            "cool",
+            "ranch",
+            "8",
+            "OZ  8/CS  BAG CLEAR WINDOW",
+            "OZ",
+            "8/CS",
+            "BAG",
+            "CLEAR",
+            "WINDOW",
+            "Your#: 16164",
+            "Your#:",
+            "16164",
+            "FRITOS_CORN CHIPS_CHILI CHEESE_2",
+            "FRITOS_CORN",
+            "CHIPS_CHILI",
+            "CHEESE_2",
+            "OZ_64/CS_BAG CLEAR WINDOW_",
+            "OZ_64/CS_BAG",
+            "CLEAR",
+            "WINDOW_",
+            "Your#: 16161",
+            "Your#:",
+            "16161",
+            "DORITOS_TORTILLA CHIPS_NACHO",
+            "DORITOS_TORTILLA",
+            "CHIPS_NACHO"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.04534313725490196,
+            0.14015151515151514,
+            0.11274509803921569,
+            0.1534090909090909
+          ]
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "27,097.26",
+        "normalized": "27097.26",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

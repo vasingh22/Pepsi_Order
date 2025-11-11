@@ -1,0 +1,149 @@
+{
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": "1036002581",
+    "po_number": "361735",
+    "invoice_date": null,
+    "order_date": "2025-04-18",
+    "po_date": "2025-04-18",
+    "delivery_date": null,
+    "customer_number": "2003825458",
+    "shipping_location": "2090"
+  },
+  "parties": {
+    "seller": {
+      "name": null,
+      "address": null,
+      "gst_number": null,
+      "tax_id": null,
+      "contact": {
+        "phone": null,
+        "email": null
+      }
+    },
+    "buyer": {
+      "name": "CTNMW@CHICAGO BLOOMINGDALE",
+      "address": "171 COVINGTON DR, BLOOMINGDALE IL 60108-3107",
+      "gst_number": null,
+      "tax_id": null,
+      "contact": {
+        "phone": null,
+        "email": null
+      }
+    },
+    "ship_to": {
+      "name": "CTNMW@CHICAGO BLOOMINGDALE",
+      "address": "171 COVINGTON DR, BLOOMINGDALE IL 60108-3107"
+    }
+  },
+  "line_items": [
+    {
+      "name": "64 CT VFS LSS BKD LAYS REG",
+      "description": "64 CT VFS LSS BKD LAYS REG",
+      "quantity": 1,
+      "unit": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "00028400443968",
+      "sku": null,
+      "material_id": "000260",
+      "item_id": "000260",
+      "discount": null
+    },
+    {
+      "name": "64 CT VFS LSS BKD LAYS BBQ",
+      "description": "64 CT VFS LSS BKD LAYS BBQ",
+      "quantity": 1,
+      "unit": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "0028400443951",
+      "sku": null,
+      "material_id": "00270",
+      "item_id": "00270",
+      "discount": null
+    },
+    {
+      "name": "64 CT VFS LSS SUNCHIP GARDEN",
+      "description": "64 CT VFS LSS SUNCHIP GARDEN",
+      "quantity": 1,
+      "unit": null,
+      "rate": null,
+      "unit_price": null,
+      "amount": null,
+      "total": null,
+      "hsn_code": null,
+      "product_code": "00028400444286",
+      "sku": null,
+      "material_id": "00280",
+      "item_id": "00280",
+      "discount": null
+    }
+  ],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": null,
+    "currency": "USD"
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "source_data": {
+    "document_summary": {
+      "filename": "Confirmations_2XNW31ZWT2JYZQ3N88__CTNMW_CHICAGO_BLOOMINGDALE_361735_1761477447866.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0
+    },
+    "original_fields": {
+      "purchase_order_date": {
+        "raw": "04/18/2025",
+        "normalized": "2025-04-18",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "$",
+        "normalized": null,
+        "confidence": 0.6,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "missing",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "document_summary": {
+    "filename": "Frito_Lay_-_Inv_25458803_-_Extra_Product_Received_2XNW31ZWT2JNL12L8Y__FL_25458803_1761482956214.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": null,
+    "day_first_date_probability": 0.5
+  },
+  "fields": {},
+  "addresses": {},
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": null,
+    "verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": [
+    {
+      "code": "totals_missing",
+      "message": "No subtotal or grand total candidates identified.",
+      "page": null
+    }
+  ]
+}

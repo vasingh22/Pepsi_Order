@@ -1,0 +1,202 @@
+{
+  "document_summary": {
+    "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300571696__0_2XNW31ZWT2JYPQ9ZTJ__PO_141_300571696_0_US_1761482964669.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 2
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor :",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.43333333333333335
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "PURCHASE",
+      "normalized": "PURCHASE",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "bill_to": {
+      "raw": "Vendor :\\nVendor\\n:\\nQUAKER\\nQUAKER\\nKEEFE SUPPLY COMPANY\\nKEEFE\\nSUPPLY\\nCOMPANY\\n10880 LIN PAGE PLACE\\n10880\\nLIN\\nPAGE\\nPLACE\\n131 S DEARBORN\\n131\\nS\\nDEARBORN\\nSAINT LOUIS, MO  63132\\nSAINT\\nLOUIS,\\nMO\\n63132\\nFL 6\\nFL\\n6\\nCHICAGO IL 60603\\nCHICAGO\\nIL\\n60603\\nVendor Contact:\\nVendor\\nContact:\\nShip To :\\nShip\\nTo\\n:\\nKF DC RENO (W-350)\\nKF\\nDC\\nRENO\\n(W-350)\\n55-101 VISTA BLVD.\\n55-101\\nVISTA\\nBLVD.\\nSPARKS, NV  89434\\nSPARKS,\\nNV\\n89434\\n75-355-7006\\n75-355-7006\\nItem  Description\\nItem\\nDescription\\nItem Number\\nItem\\nNumber\\n80009895\\n80009895\\nLAYS STAX  POTATO CHIPS  ORIGINAL  5.75\\nLAYS\\nSTAX\\nPOTATO\\nCHIPS\\nORIGINAL\\n5.75\\nOZ_17/CS_PLASTIC CAN_\\nOZ_17/CS_PLASTIC\\nCAN_\\nYour#: 55093\\nYour#:\\n55093",
+      "normalized": {
+        "lines": [
+          "Vendor :",
+          "Vendor",
+          ":",
+          "QUAKER",
+          "QUAKER",
+          "KEEFE SUPPLY COMPANY",
+          "KEEFE",
+          "SUPPLY",
+          "COMPANY",
+          "10880 LIN PAGE PLACE",
+          "10880",
+          "LIN",
+          "PAGE",
+          "PLACE",
+          "131 S DEARBORN",
+          "131",
+          "S",
+          "DEARBORN",
+          "SAINT LOUIS, MO  63132",
+          "SAINT",
+          "LOUIS,",
+          "MO",
+          "63132",
+          "FL 6",
+          "FL",
+          "6",
+          "CHICAGO IL 60603",
+          "CHICAGO",
+          "IL",
+          "60603",
+          "Vendor Contact:",
+          "Vendor",
+          "Contact:",
+          "Ship To :",
+          "Ship",
+          "To",
+          ":",
+          "KF DC RENO (W-350)",
+          "KF",
+          "DC",
+          "RENO",
+          "(W-350)",
+          "55-101 VISTA BLVD.",
+          "55-101",
+          "VISTA",
+          "BLVD.",
+          "SPARKS, NV  89434",
+          "SPARKS,",
+          "NV",
+          "89434",
+          "75-355-7006",
+          "75-355-7006",
+          "Item  Description",
+          "Item",
+          "Description",
+          "Item Number",
+          "Item",
+          "Number",
+          "80009895",
+          "80009895",
+          "LAYS STAX  POTATO CHIPS  ORIGINAL  5.75",
+          "LAYS",
+          "STAX",
+          "POTATO",
+          "CHIPS",
+          "ORIGINAL",
+          "5.75",
+          "OZ_17/CS_PLASTIC CAN_",
+          "OZ_17/CS_PLASTIC",
+          "CAN_",
+          "Your#: 55093",
+          "Your#:",
+          "55093"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04411764705882353,
+          0.048295454545454544,
+          0.1017156862745098,
+          0.061553030303030304
+        ]
+      }
+    },
+    "ship_to": {
+      "raw": "Buyer :\\nBuyer\\n:\\n55-101 VISTA BLVD.\\n55-101\\nVISTA\\nBLVD.\\nSPARKS, NV  89434\\nSPARKS,\\nNV\\n89434\\n75-355-7006\\n75-355-7006\\nItem  Description\\nItem\\nDescription\\nLAYS STAX  POTATO CHIPS  ORIGINAL  5.75\\nLAYS\\nSTAX\\nPOTATO\\nCHIPS\\nORIGINAL\\n5.75\\nOZ_17/CS_PLASTIC CAN_\\nOZ_17/CS_PLASTIC\\nCAN_\\nYour#: 55093\\nYour#:\\n55093\\nLAYS STAX_POTATO CHIPS_SOUR CREAM &\\nLAYS\\nSTAX_POTATO\\nCHIPS_SOUR\\nCREAM\\n&\\nONION_5.5 OZ_17/CS_PLASTIC CAN_\\nONION_5.5\\nOZ_17/CS_PLASTIC\\nCAN_\\nYour#: 55154\\nYour#:\\n55154\\nRICE A RONI_RICE_HEAT & EAT BEEF_8.8\\nRICE\\nA\\nRONI_RICE_HEAT\\n&\\nEAT\\nBEEF_8.8",
+      "normalized": {
+        "lines": [
+          "Buyer :",
+          "Buyer",
+          ":",
+          "55-101 VISTA BLVD.",
+          "55-101",
+          "VISTA",
+          "BLVD.",
+          "SPARKS, NV  89434",
+          "SPARKS,",
+          "NV",
+          "89434",
+          "75-355-7006",
+          "75-355-7006",
+          "Item  Description",
+          "Item",
+          "Description",
+          "LAYS STAX  POTATO CHIPS  ORIGINAL  5.75",
+          "LAYS",
+          "STAX",
+          "POTATO",
+          "CHIPS",
+          "ORIGINAL",
+          "5.75",
+          "OZ_17/CS_PLASTIC CAN_",
+          "OZ_17/CS_PLASTIC",
+          "CAN_",
+          "Your#: 55093",
+          "Your#:",
+          "55093",
+          "LAYS STAX_POTATO CHIPS_SOUR CREAM &",
+          "LAYS",
+          "STAX_POTATO",
+          "CHIPS_SOUR",
+          "CREAM",
+          "&",
+          "ONION_5.5 OZ_17/CS_PLASTIC CAN_",
+          "ONION_5.5",
+          "OZ_17/CS_PLASTIC",
+          "CAN_",
+          "Your#: 55154",
+          "Your#:",
+          "55154",
+          "RICE A RONI_RICE_HEAT & EAT BEEF_8.8",
+          "RICE",
+          "A",
+          "RONI_RICE_HEAT",
+          "&",
+          "EAT",
+          "BEEF_8.8"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04534313725490196,
+          0.14015151515151514,
+          0.11151960784313726,
+          0.1543560606060606
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": null,
+    "verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": [
+    {
+      "code": "totals_missing",
+      "message": "No subtotal or grand total candidates identified.",
+      "page": null
+    }
+  ]
+}

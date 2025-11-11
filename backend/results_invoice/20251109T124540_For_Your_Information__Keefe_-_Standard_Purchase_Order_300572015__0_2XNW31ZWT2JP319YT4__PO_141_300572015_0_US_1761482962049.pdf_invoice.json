@@ -1,0 +1,122 @@
+{
+  "seller_information": {
+    "seller_name": "KEEFE SUPPLY COMPANY",
+    "seller_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132",
+    "gst_number": null,
+    "contact_information": null
+  },
+  "buyer_information": {
+    "buyer_name": "FRITO LAY INC",
+    "buyer_address": "165 S COUNTY RD 300 W, FRANKFORT IN 460418766",
+    "contact_person": "IRENE ADAMES",
+    "contact_information": null
+  },
+  "shipping_information": {
+    "ship_to_name": "KF DC MIDWEST (M-300)",
+    "ship_to_address": "13870 CORPORATE WOODS TRAIL, BRIDGETON, MO 63044",
+    "contact_information": "314-264-2900"
+  },
+  "invoice_details": {
+    "invoice_number": null,
+    "po_number": "300572015",
+    "order_number": null,
+    "invoice_date": null,
+    "order_date": null,
+    "delivery_date": null
+  },
+  "line_items": [
+    {
+      "material_id": "10446",
+      "product_code": "16161",
+      "description": "FRITOS CORN CHIPS CHILI CHEESE 2 OZ 64/CS BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "total": null,
+      "hsn_code": null,
+      "discount": null
+    },
+    {
+      "material_id": "10525",
+      "product_code": "17721",
+      "description": "RUFFLES_POTATO CHIPS_CHEDDAR & SOUR CREAM_5.5 OZ_15/CS_BAG FOIL__",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "total": null,
+      "hsn_code": null,
+      "discount": null
+    },
+    {
+      "material_id": null,
+      "product_code": null,
+      "description": "CHEETOS_CHEESE CRUNCHY_FLAMIN",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "total": null,
+      "hsn_code": null,
+      "discount": null
+    }
+  ],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 2864.8,
+    "currency": null
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "source_data": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300572015__0_2XNW31ZWT2JP319YT4__PO_141_300572015_0_US_1761482962049.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "2,864.80",
+        "normalized": "2864.8",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

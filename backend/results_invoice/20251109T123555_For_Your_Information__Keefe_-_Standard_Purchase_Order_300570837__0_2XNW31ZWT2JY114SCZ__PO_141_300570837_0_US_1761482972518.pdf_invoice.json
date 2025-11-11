@@ -1,0 +1,172 @@
+{
+  "seller_name": null,
+  "buyer_name": "Arielle Kellerman",
+  "po_number": "300570837",
+  "invoice_number": null,
+  "order_number": null,
+  "po_date": null,
+  "invoice_date": null,
+  "order_date": null,
+  "delivery_date": null,
+  "gst_number": null,
+  "seller_address": null,
+  "buyer_address": "Arielle Kellerman, 1371-1 TRADEPORT DRIVE, JACKSONVILLE, FL 32218",
+  "ship_to_address": "Arielle Kellerman, 1371-1 TRADEPORT DRIVE, JACKSONVILLE, FL 32218",
+  "contact_information": {
+    "email": "Arielle.Kellerman@keefegroup.com",
+    "phone": "904-741-6776"
+  },
+  "line_items": [
+    {
+      "name": "FRITOS CORN CHIPS CHILI CHEESE 2 OZ 64/CS BAG CLEAR WINDOW",
+      "description": "FRITOS CORN CHIPS CHILI CHEESE 2 OZ 64/CS BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "product_code": "16161",
+      "sku": null,
+      "material_id": "10446",
+      "item_id": "10446",
+      "discount": null
+    },
+    {
+      "name": "DORITOS_TORTILLA CHIPS_NACHO CHEESE_1.75 OZ_64/CS_BAG CLEAR WINDOW",
+      "description": "DORITOS_TORTILLA CHIPS_NACHO CHEESE_1.75 OZ_64/CS_BAG CLEAR WINDOW",
+      "quantity": null,
+      "unit": null,
+      "rate": null,
+      "amount": null,
+      "hsn_code": null,
+      "product_code": "16163",
+      "sku": null,
+      "material_id": null,
+      "item_id": null,
+      "discount": null
+    }
+  ],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": null,
+    "currency": null
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300570837__0_2XNW31ZWT2JY114SCZ__PO_141_300570837_0_US_1761482972518.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.4090909090909091
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_addresses": {
+      "ship_to": {
+        "raw": "Buyer :\\nBuyer\\n:\\nArielle Kellerman\\nArielle\\nKellerman\\n1371-1 TRADEPORT DRIVE\\n1371-1\\nTRADEPORT\\nDRIVE\\nArielle.Kellerman@keefegroup.com\\nArielle.Kellerman@keefegroup.com\\nJACKSONVILLE, FL  32218\\nJACKSONVILLE,\\nFL\\n32218\\n904-741-6776\\n904-741-6776\\nShip Via :\\nShip\\nVia\\n:\\nItem  Description\\nItem\\nDescription\\nItem  Number\\nItem\\nNumber\\n10446\\n10446\\nFRITOS  CORN CHIPS  CHILI CHEESE  2\\nFRITOS\\nCORN\\nCHIPS\\nCHILI\\nCHEESE\\n2\\nOZ  64/CS  BAG CLEAR WINDOW\\nOZ\\n64/CS\\nBAG\\nCLEAR\\nWINDOW\\nYour#: 16161\\nYour#:\\n16161\\nDORITOS_TORTILLA CHIPS_NACHO\\nDORITOS_TORTILLA\\nCHIPS_NACHO\\nCHEESE_1.75 OZ_64/CS_BAG CLEAR\\nCHEESE_1.75\\nOZ_64/CS_BAG\\nCLEAR\\nWINDOW\\nWINDOW\\nYour#: 16163\\nYour#:\\n16163",
+        "normalized": {
+          "lines": [
+            "Buyer :",
+            "Buyer",
+            ":",
+            "Arielle Kellerman",
+            "Arielle",
+            "Kellerman",
+            "1371-1 TRADEPORT DRIVE",
+            "1371-1",
+            "TRADEPORT",
+            "DRIVE",
+            "Arielle.Kellerman@keefegroup.com",
+            "Arielle.Kellerman@keefegroup.com",
+            "JACKSONVILLE, FL  32218",
+            "JACKSONVILLE,",
+            "FL",
+            "32218",
+            "904-741-6776",
+            "904-741-6776",
+            "Ship Via :",
+            "Ship",
+            "Via",
+            ":",
+            "Item  Description",
+            "Item",
+            "Description",
+            "Item  Number",
+            "Item",
+            "Number",
+            "10446",
+            "10446",
+            "FRITOS  CORN CHIPS  CHILI CHEESE  2",
+            "FRITOS",
+            "CORN",
+            "CHIPS",
+            "CHILI",
+            "CHEESE",
+            "2",
+            "OZ  64/CS  BAG CLEAR WINDOW",
+            "OZ",
+            "64/CS",
+            "BAG",
+            "CLEAR",
+            "WINDOW",
+            "Your#: 16161",
+            "Your#:",
+            "16161",
+            "DORITOS_TORTILLA CHIPS_NACHO",
+            "DORITOS_TORTILLA",
+            "CHIPS_NACHO",
+            "CHEESE_1.75 OZ_64/CS_BAG CLEAR",
+            "CHEESE_1.75",
+            "OZ_64/CS_BAG",
+            "CLEAR",
+            "WINDOW",
+            "WINDOW",
+            "Your#: 16163",
+            "Your#:",
+            "16163"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.04534313725490196,
+            0.14015151515151514,
+            0.11274509803921569,
+            0.1534090909090909
+          ]
+        }
+      }
+    },
+    "anomalies": [
+      {
+        "code": "totals_missing",
+        "message": "No subtotal or grand total candidates identified.",
+        "page": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "invoice_details": {
+    "invoice_type": "Purchase Order",
+    "po_number": "300572020",
+    "order_number": null,
+    "invoice_number": null,
+    "po_date": null,
+    "order_date": null,
+    "invoice_date": null,
+    "delivery_date": null
+  },
+  "seller_details": {
+    "seller_name": "FRITO LAY INC",
+    "seller_address": "165 S COUNTY RD 300 W, FRANKFORT, IN 46041-8766, USA",
+    "seller_tax_id": null,
+    "contact_person": "IRENE ADAMES",
+    "email": null,
+    "phone": null
+  },
+  "buyer_details": {
+    "buyer_name": "KEEFE SUPPLY COMPANY",
+    "buyer_address": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132, USA",
+    "buyer_tax_id": null,
+    "contact_person": null,
+    "email": null,
+    "phone": null
+  },
+  "shipping_details": {
+    "ship_to_name": "KF DC EDISON (Y-340)",
+    "ship_to_address": "31 MILL ROAD, EDISON, NJ 08837, USA",
+    "phone": "732-509-0133"
+  },
+  "line_items": [
+    {
+      "material_id": "10354",
+      "product_code": "16164",
+      "hsn_code": null,
+      "description": "DORITOS TORTILLA CHIPS COOL RANCH 8 OZ_8/CS_BAG CLEAR WINDOW_",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    },
+    {
+      "material_id": null,
+      "product_code": "66773",
+      "hsn_code": null,
+      "description": "DORITOS_TORTILLA CHIPS_SPICY SWEET CHILI_7.5 OZ_8/CS_CLEAR WINDOW BAG",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    },
+    {
+      "material_id": null,
+      "product_code": null,
+      "hsn_code": null,
+      "description": "DORITOS_TORTILLA CHIPS_FLAMIN HOT",
+      "quantity": null,
+      "unit": null,
+      "unit_price": null,
+      "discount": null,
+      "total": null
+    }
+  ],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 20007.9,
+    "currency": "USD"
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "document_metadata": {
+    "document_summary": {
+      "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300572020__0_2XNW31ZWT2JP3ZHCBK__PO_141_300572020_0_US_1761482959272.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor :",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": "international",
+      "day_first_date_probability": 0.0
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "PURCHASE",
+        "normalized": "PURCHASE",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "20,007.90",
+        "normalized": "20007.9",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "anomalies": []
+  }
+}

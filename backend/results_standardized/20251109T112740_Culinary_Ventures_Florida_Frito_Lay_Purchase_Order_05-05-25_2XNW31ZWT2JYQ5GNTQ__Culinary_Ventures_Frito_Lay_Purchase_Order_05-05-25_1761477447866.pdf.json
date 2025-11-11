@@ -1,0 +1,49 @@
+{
+  "document_summary": {
+    "filename": "Culinary_Ventures_Florida_Frito_Lay_Purchase_Order_05-05-25_2XNW31ZWT2JYQ5GNTQ__Culinary_Ventures_Frito_Lay_Purchase_Order_05-05-25_1761477447866.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": null,
+    "day_first_date_probability": 0.16666666666666666
+  },
+  "fields": {
+    "purchase_order_date": {
+      "raw": "4/28/2025",
+      "normalized": "2025-04-28",
+      "confidence": 0.8333333333333334,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {},
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "24",
+      "normalized": "24",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

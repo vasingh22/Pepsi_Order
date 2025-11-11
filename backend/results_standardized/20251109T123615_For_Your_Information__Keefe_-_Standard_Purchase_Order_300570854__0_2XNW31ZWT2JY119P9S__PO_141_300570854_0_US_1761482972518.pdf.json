@@ -1,0 +1,115 @@
+{
+  "document_summary": {
+    "filename": "For_Your_Information__Keefe_-_Standard_Purchase_Order_300570854__0_2XNW31ZWT2JY119P9S__PO_141_300570854_0_US_1761482972518.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Vendor :",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.3888888888888889
+  },
+  "fields": {
+    "purchase_order_number": {
+      "raw": "PURCHASE",
+      "normalized": "PURCHASE",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "Buyer :\\nBuyer\\n:\\n31 MILL ROAD\\n31\\nMILL\\nROAD\\nEDISON, NJ  08837\\nEDISON,\\nNJ\\n08837\\n732-509-0133\\n732-509-0133\\nItem  Description\\nItem\\nDescription\\nItem  Number\\nItem\\nNumber\\n10354\\n10354\\ndritos  tortilla chips  cool ranch  8\\ndritos\\ntortilla\\nchips\\ncool\\nranch\\n8\\nOZ  8/CS  BAG CLEAR WINDOW\\nOZ\\n8/CS\\nBAG\\nCLEAR\\nWINDOW\\nYour#: 16164\\nYour#:\\n16164\\nDORITOS_TORTILLA CHIPS_NACHO\\nDORITOS_TORTILLA\\nCHIPS_NACHO\\nCHEESE_1.75 OZ_64/CS_BAG CLEAR\\nCHEESE_1.75\\nOZ_64/CS_BAG\\nCLEAR\\nWINDOW\\nWINDOW\\nYour#: 16163\\nYour#:\\n16163",
+      "normalized": {
+        "lines": [
+          "Buyer :",
+          "Buyer",
+          ":",
+          "31 MILL ROAD",
+          "31",
+          "MILL",
+          "ROAD",
+          "EDISON, NJ  08837",
+          "EDISON,",
+          "NJ",
+          "08837",
+          "732-509-0133",
+          "732-509-0133",
+          "Item  Description",
+          "Item",
+          "Description",
+          "Item  Number",
+          "Item",
+          "Number",
+          "10354",
+          "10354",
+          "dritos  tortilla chips  cool ranch  8",
+          "dritos",
+          "tortilla",
+          "chips",
+          "cool",
+          "ranch",
+          "8",
+          "OZ  8/CS  BAG CLEAR WINDOW",
+          "OZ",
+          "8/CS",
+          "BAG",
+          "CLEAR",
+          "WINDOW",
+          "Your#: 16164",
+          "Your#:",
+          "16164",
+          "DORITOS_TORTILLA CHIPS_NACHO",
+          "DORITOS_TORTILLA",
+          "CHIPS_NACHO",
+          "CHEESE_1.75 OZ_64/CS_BAG CLEAR",
+          "CHEESE_1.75",
+          "OZ_64/CS_BAG",
+          "CLEAR",
+          "WINDOW",
+          "WINDOW",
+          "Your#: 16163",
+          "Your#:",
+          "16163"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.04534313725490196,
+          0.14015151515151514,
+          0.11151960784313726,
+          0.1534090909090909
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "24,671.52",
+      "normalized": "24671.52",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

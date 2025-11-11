@@ -1,0 +1,168 @@
+{
+  "seller_info": {
+    "seller_name": "Eden's Snacks LLC",
+    "seller_address": null,
+    "gst_number": null,
+    "contact_info": {
+      "phone": null,
+      "email": null
+    }
+  },
+  "buyer_info": {
+    "buyer_name": null,
+    "buyer_address": null
+  },
+  "shipping_info": {
+    "ship_to_address": "711 Brush Ave, Bronx, NY 10465, United States"
+  },
+  "invoice_details": {
+    "invoice_number": null,
+    "order_number": null,
+    "po_number": "PO9359",
+    "invoice_date": null,
+    "order_date": null,
+    "po_date": null,
+    "delivery_date": null
+  },
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": 1608.0,
+    "currency": "USD"
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "metadata": {
+    "document_summary": {
+      "filename": "Eden_s_Snacks_LLC__Purchase_Order__PO9359_2XNW31ZWT2JYQ33Q2S__Purchase_Order_PO9359_1745860312838_1761480332791.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 2
+    },
+    "document_fingerprint": {
+      "vendor_guess": "Vendor:",
+      "languages": [
+        "en"
+      ],
+      "currency_iso": "USD",
+      "numbering_style": "international",
+      "day_first_date_probability": 0.16666666666666666
+    },
+    "original_fields": {
+      "purchase_order_number": {
+        "raw": "Purchase",
+        "normalized": "Purchase",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 1,
+          "bounding_box": null
+        }
+      }
+    },
+    "original_totals": {
+      "subtotal": null,
+      "tax": null,
+      "grand_total": {
+        "raw": "1,608",
+        "normalized": "1.608",
+        "confidence": 1.0,
+        "evidence": {
+          "page": 2,
+          "bounding_box": null
+        }
+      },
+      "verification": {
+        "status": "insufficient",
+        "recomputed_total": null,
+        "difference": null,
+        "notes": null
+      }
+    },
+    "original_addresses": {
+      "ship_to": {
+        "raw": "711 Brush Ave\\n711\\nBrush\\nAve\\nBronx NY 10465\\nBronx\\nNY\\n10465\\nUnited States\\nUnited\\nStates\\nBilling Phone\\nBilling\\nPhone\\nUOM\\nUOM\\nQuantity\\nQuantity\\nRate\\nRate\\nCS\\nCS\\n$40.26\\n$40.26\\n48\\n48\\nCS\\nCS\\n$40.26\\n$40.26\\n108\\n108\\nCS\\nCS\\n$40.26\\n$40.26\\n18\\n18\\nCS\\nCS\\n$40.26\\n$40.26\\n36\\n36\\nCS\\nCS\\n$40.26\\n$40.26\\n48\\n48\\nCS\\nCS\\n$40.26\\n$40.26\\n72\\n72\\nCS\\nCS\\n$40.26\\n$40.26\\n48\\n48",
+        "normalized": {
+          "lines": [
+            "711 Brush Ave",
+            "711",
+            "Brush",
+            "Ave",
+            "Bronx NY 10465",
+            "Bronx",
+            "NY",
+            "10465",
+            "United States",
+            "United",
+            "States",
+            "Billing Phone",
+            "Billing",
+            "Phone",
+            "UOM",
+            "UOM",
+            "Quantity",
+            "Quantity",
+            "Rate",
+            "Rate",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "48",
+            "48",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "108",
+            "108",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "18",
+            "18",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "36",
+            "36",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "48",
+            "48",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "72",
+            "72",
+            "CS",
+            "CS",
+            "$40.26",
+            "$40.26",
+            "48",
+            "48"
+          ]
+        },
+        "evidence": {
+          "page": 1,
+          "bounding_box": [
+            0.3946078431372549,
+            0.15056818181818182,
+            0.45098039215686275,
+            0.16193181818181818
+          ]
+        }
+      }
+    },
+    "anomalies": []
+  }
+}
