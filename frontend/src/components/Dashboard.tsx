@@ -1,20 +1,23 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import type { DragEvent, ChangeEvent } from "react";
 import { uploadAndExtractPDF, listInvoices } from "../utils/api";
-
-interface FileWithPreview {
-  file: File;
-  preview?: string;
-}
-
-interface InvoiceData {
-  filename: string;
-  data: any;
-  modified_at: string;
-}
+import * as XLSX from "xlsx";
+import type {
+  FileWithPreview,
+  ValueWrapper,
+  Address,
+  LineItem,
+  TaxDetail,
+  PaymentInformation,
+  InvoiceDataStructure,
+  InvoiceData,
+  ExtractedInvoiceData,
+} from "../types/invoiceData";
 
 // Helper function to safely extract values from objects or return the value directly
-const extractValue = (val: any): any => {
+const extractValue = (
+  val: ValueWrapper | undefined
+): string | number | null => {
   if (val === null || val === undefined) return null;
   if (typeof val === "object" && val !== null && "value" in val) {
     return val.value;
@@ -23,7 +26,10 @@ const extractValue = (val: any): any => {
 };
 
 // Helper function to safely render text
-const safeRenderText = (val: any, defaultText: string = "N/A"): string => {
+const safeRenderText = (
+  val: ValueWrapper | undefined,
+  defaultText: string = "N/A"
+): string => {
   const extracted = extractValue(val);
   if (extracted === null || extracted === undefined) return defaultText;
   if (typeof extracted === "object") return JSON.stringify(extracted);
@@ -53,19 +59,7 @@ const Dashboard = () => {
   ];
   const maxSize = 10 * 1024 * 1024; // 10MB
 
-  // Load invoices on mount
-  useEffect(() => {
-    loadInvoices();
-  }, []);
-
-  // Update edited JSON when selected invoice changes
-  useEffect(() => {
-    if (selectedInvoice) {
-      setEditedJson(JSON.stringify(selectedInvoice.data, null, 2));
-    }
-  }, [selectedInvoice]);
-
-  const loadInvoices = async () => {
+  const loadInvoices = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -86,10 +80,24 @@ const Dashboard = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [selectedInvoice]);
+
+  // Load invoices on mount
+  useEffect(() => {
+    loadInvoices();
+  }, [loadInvoices]);
+
+  // Update edited JSON when selected invoice changes
+  useEffect(() => {
+    if (selectedInvoice) {
+      setEditedJson(JSON.stringify(selectedInvoice.data, null, 2));
+    }
+  }, [selectedInvoice]);
 
   // Helper to extract invoice data from different JSON structures
-  const extractInvoiceData = (data: any) => {
+  const extractInvoiceData = (
+    data: InvoiceDataStructure
+  ): ExtractedInvoiceData => {
     const addressInfo = data.address_information || {};
     const contactInfo = addressInfo.contact_information || {};
     const paymentInfo = data.payment_information || {};
@@ -99,24 +107,44 @@ const Dashboard = () => {
     // Handle structure 1: core_invoice_fields format
     if (data.core_invoice_fields) {
       return {
-        sellerName: extractValue(data.core_invoice_fields.seller_name),
-        buyerName: extractValue(data.core_invoice_fields.buyer_name),
-        invoiceNumber: extractValue(data.core_invoice_fields.invoice_number),
-        orderNumber: extractValue(data.core_invoice_fields.order_number),
-        poNumber: extractValue(data.core_invoice_fields.po_number),
-        invoiceDate: extractValue(data.core_invoice_fields.invoice_date),
-        orderDate: extractValue(data.core_invoice_fields.order_date),
-        poDate: extractValue(data.core_invoice_fields.po_date),
-        deliveryDate: extractValue(data.core_invoice_fields.delivery_date),
-        customerId: extractValue(data.core_invoice_fields.customer_id),
-        gstNumber: extractValue(data.core_invoice_fields.gst_number),
-        taxId: extractValue(data.core_invoice_fields.tax_id),
+        sellerName: extractValue(data.core_invoice_fields.seller_name) as
+          | string
+          | null,
+        buyerName: extractValue(data.core_invoice_fields.buyer_name) as
+          | string
+          | null,
+        invoiceNumber: extractValue(data.core_invoice_fields.invoice_number) as
+          | string
+          | null,
+        orderNumber: extractValue(data.core_invoice_fields.order_number) as
+          | string
+          | null,
+        poNumber: extractValue(data.core_invoice_fields.po_number) as
+          | string
+          | null,
+        invoiceDate: extractValue(data.core_invoice_fields.invoice_date) as
+          | string
+          | null,
+        orderDate: extractValue(data.core_invoice_fields.order_date) as
+          | string
+          | null,
+        poDate: extractValue(data.core_invoice_fields.po_date) as string | null,
+        deliveryDate: extractValue(data.core_invoice_fields.delivery_date) as
+          | string
+          | null,
+        customerId: extractValue(data.core_invoice_fields.customer_id) as
+          | string
+          | null,
+        gstNumber: extractValue(data.core_invoice_fields.gst_number) as
+          | string
+          | null,
+        taxId: extractValue(data.core_invoice_fields.tax_id) as string | null,
         buyerAddress: addressInfo.buyer_address || null,
         sellerAddress: addressInfo.seller_address || null,
         shipToAddress: addressInfo.ship_to_address || null,
         contactInfo: contactInfo,
         lineItems: data.line_items || [],
-        totals: data.totals_summary || {},
+        totals: data.totals_summary || null,
         financial: financialInfo,
         payment: paymentInfo,
       };
@@ -125,18 +153,36 @@ const Dashboard = () => {
     // Handle structure 2: seller_information format
     if (data.seller_information || data.buyer_information) {
       return {
-        sellerName: extractValue(data.seller_information?.seller_name),
-        buyerName: extractValue(data.buyer_information?.buyer_name),
-        invoiceNumber: extractValue(data.invoice_details?.invoice_number),
-        orderNumber: extractValue(data.invoice_details?.order_number),
-        poNumber: extractValue(data.invoice_details?.po_number),
-        invoiceDate: extractValue(data.invoice_details?.invoice_date),
-        orderDate: extractValue(data.invoice_details?.order_date),
-        poDate: extractValue(data.invoice_details?.po_date),
-        deliveryDate: extractValue(data.invoice_details?.delivery_date),
+        sellerName: extractValue(data.seller_information?.seller_name) as
+          | string
+          | null,
+        buyerName: extractValue(data.buyer_information?.buyer_name) as
+          | string
+          | null,
+        invoiceNumber: extractValue(data.invoice_details?.invoice_number) as
+          | string
+          | null,
+        orderNumber: extractValue(data.invoice_details?.order_number) as
+          | string
+          | null,
+        poNumber: extractValue(data.invoice_details?.po_number) as
+          | string
+          | null,
+        invoiceDate: extractValue(data.invoice_details?.invoice_date) as
+          | string
+          | null,
+        orderDate: extractValue(data.invoice_details?.order_date) as
+          | string
+          | null,
+        poDate: extractValue(data.invoice_details?.po_date) as string | null,
+        deliveryDate: extractValue(data.invoice_details?.delivery_date) as
+          | string
+          | null,
         customerId: null,
-        gstNumber: extractValue(data.seller_information?.gst_number),
-        taxId: extractValue(data.seller_information?.tax_id),
+        gstNumber: extractValue(data.seller_information?.gst_number) as
+          | string
+          | null,
+        taxId: extractValue(data.seller_information?.tax_id) as string | null,
         buyerAddress: data.buyer_information?.buyer_address || null,
         sellerAddress: data.seller_information?.seller_address || null,
         shipToAddress: data.buyer_information?.ship_to_address || null,
@@ -150,18 +196,18 @@ const Dashboard = () => {
 
     // Handle structure 3: flat structure
     return {
-      sellerName: extractValue(data.seller_name),
-      buyerName: extractValue(data.buyer_name),
-      invoiceNumber: extractValue(data.invoice_number),
-      orderNumber: extractValue(data.order_number),
-      poNumber: extractValue(data.po_number || data.PO_number),
-      invoiceDate: extractValue(data.invoice_date),
-      orderDate: extractValue(data.order_date),
-      poDate: extractValue(data.po_date || data.PO_date),
-      deliveryDate: extractValue(data.delivery_date),
+      sellerName: extractValue(data.seller_name) as string | null,
+      buyerName: extractValue(data.buyer_name) as string | null,
+      invoiceNumber: extractValue(data.invoice_number) as string | null,
+      orderNumber: extractValue(data.order_number) as string | null,
+      poNumber: extractValue(data.po_number || data.PO_number) as string | null,
+      invoiceDate: extractValue(data.invoice_date) as string | null,
+      orderDate: extractValue(data.order_date) as string | null,
+      poDate: extractValue(data.po_date || data.PO_date) as string | null,
+      deliveryDate: extractValue(data.delivery_date) as string | null,
       customerId: null,
-      gstNumber: extractValue(data.gst_number),
-      taxId: extractValue(data.tax_id),
+      gstNumber: extractValue(data.gst_number) as string | null,
+      taxId: extractValue(data.tax_id) as string | null,
       buyerAddress: data.buyer_address || null,
       sellerAddress: data.seller_address || null,
       shipToAddress: data.ship_to_address || null,
@@ -173,7 +219,7 @@ const Dashboard = () => {
     };
   };
 
-  const getStatusFromInvoice = (invoiceData: any): string => {
+  const getStatusFromInvoice = (invoiceData: InvoiceDataStructure): string => {
     // Determine status based on invoice data
     if (!invoiceData) return "Pending";
 
@@ -192,7 +238,7 @@ const Dashboard = () => {
 
     // Check if any line items are missing prices
     if (hasItems) {
-      const hasMissingPrices = invoice.lineItems.some((item: any) => {
+      const hasMissingPrices = invoice.lineItems.some((item: LineItem) => {
         const price = extractValue(item.unit_price || item.rate);
         const total = extractValue(item.total || item.amount);
         return price === null || total === null;
@@ -213,7 +259,7 @@ const Dashboard = () => {
     return "Pending";
   };
 
-  const getStatusMessage = (invoiceData: any): string => {
+  const getStatusMessage = (invoiceData: InvoiceDataStructure): string => {
     if (!invoiceData) return "No data available";
 
     const invoice = extractInvoiceData(invoiceData);
@@ -229,7 +275,7 @@ const Dashboard = () => {
     }
 
     if (invoice.lineItems && invoice.lineItems.length > 0) {
-      const hasMissingPrices = invoice.lineItems.some((item: any) => {
+      const hasMissingPrices = invoice.lineItems.some((item: LineItem) => {
         const price = extractValue(item.unit_price || item.rate);
         const total = extractValue(item.total || item.amount);
         return price === null || total === null;
@@ -391,23 +437,296 @@ const Dashboard = () => {
   };
 
   const handleJsonChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setEditedJson(e.target.value);
-  };
+    const newJson = e.target.value;
+    setEditedJson(newJson);
 
-  const handleSaveJson = () => {
+    // Try to parse and update the preview in real-time
     try {
-      const parsed = JSON.parse(editedJson);
+      const parsed = JSON.parse(newJson) as InvoiceDataStructure;
       if (selectedInvoice) {
         setSelectedInvoice({
           ...selectedInvoice,
           data: parsed,
         });
       }
-      alert("JSON updated successfully!");
+    } catch (err) {
+      // Invalid JSON - don't update the preview, but keep the text in the editor
+      // The user can continue editing to fix the JSON
+      console.error("JSON parse error (preview not updated):", err);
+    }
+  };
+
+  const handleSaveJson = () => {
+    try {
+      const parsed = JSON.parse(editedJson) as InvoiceDataStructure;
+      if (selectedInvoice) {
+        setSelectedInvoice({
+          ...selectedInvoice,
+          data: parsed,
+        });
+        alert("JSON saved successfully!");
+      }
     } catch (err) {
       console.error("JSON parse error:", err);
       alert("Invalid JSON format. Please check your syntax.");
     }
+  };
+
+  const handleExportToExcel = () => {
+    if (!selectedInvoice) {
+      alert("Please select an invoice to export.");
+      return;
+    }
+
+    const data = selectedInvoice.data;
+    const invoice = extractInvoiceData(data);
+
+    // Create a new workbook
+    const workbook = XLSX.utils.book_new();
+
+    // Helper function to format address
+    const formatAddress = (address: Address | string | null): string => {
+      if (!address) return "";
+      if (typeof address === "string") return address;
+      if (address.full_address) return address.full_address;
+      const parts = [
+        address.street_address,
+        [address.city, address.state, address.zip_code]
+          .filter(Boolean)
+          .join(", "),
+        address.country,
+      ].filter(Boolean);
+      return parts.join("\n");
+    };
+
+    // Sheet 1: Invoice Summary
+    const summaryData = [
+      ["Invoice Summary", ""],
+      ["", ""],
+      ["Buyer Name", safeRenderText(invoice.buyerName)],
+      ["Buyer Address", formatAddress(invoice.buyerAddress)],
+      ["", ""],
+      ["Seller Name", safeRenderText(invoice.sellerName)],
+      ["Seller Address", formatAddress(invoice.sellerAddress)],
+      ["", ""],
+      ["Ship To Address", formatAddress(invoice.shipToAddress)],
+      ["", ""],
+      ["PO Number", safeRenderText(invoice.poNumber)],
+      ["Order Number", safeRenderText(invoice.orderNumber)],
+      ["Invoice Number", safeRenderText(invoice.invoiceNumber)],
+      [
+        "Order Date",
+        safeRenderText(
+          invoice.orderDate || invoice.poDate || invoice.invoiceDate
+        ),
+      ],
+      ["Delivery Date", safeRenderText(invoice.deliveryDate)],
+      ["Customer ID", safeRenderText(invoice.customerId)],
+      ["GST Number", safeRenderText(invoice.gstNumber)],
+      ["Tax ID", safeRenderText(invoice.taxId)],
+      ["", ""],
+    ];
+
+    // Add contact information
+    if (invoice.contactInfo) {
+      summaryData.push(["Contact Information", ""]);
+      if (invoice.contactInfo.phone) {
+        summaryData.push(["Phone", safeRenderText(invoice.contactInfo.phone)]);
+      }
+      if (invoice.contactInfo.email) {
+        summaryData.push(["Email", safeRenderText(invoice.contactInfo.email)]);
+      }
+      if (invoice.contactInfo.seller_contact) {
+        summaryData.push([
+          "Seller Contact",
+          safeRenderText(invoice.contactInfo.seller_contact),
+        ]);
+      }
+      if (invoice.contactInfo.buyer_contact_person) {
+        summaryData.push([
+          "Buyer Contact",
+          safeRenderText(invoice.contactInfo.buyer_contact_person),
+        ]);
+      }
+      summaryData.push(["", ""]);
+    }
+
+    // Add financial summary
+    const subtotal = extractValue(
+      invoice.totals?.subtotal || invoice.financial?.subtotal
+    );
+    const tax = extractValue(
+      invoice.totals?.tax || invoice.financial?.tax_details?.[0]?.amount
+    );
+    const grandTotal = extractValue(
+      invoice.totals?.total ||
+        invoice.totals?.grand_total ||
+        invoice.financial?.grand_total
+    );
+
+    summaryData.push(["Financial Summary", ""]);
+    if (subtotal !== null && subtotal !== undefined) {
+      summaryData.push([
+        "Subtotal",
+        `${invoice.financial?.currency || "$"}${parseFloat(
+          String(subtotal)
+        ).toFixed(2)}`,
+      ]);
+    }
+    if (
+      invoice.financial?.tax_details &&
+      Array.isArray(invoice.financial.tax_details)
+    ) {
+      invoice.financial.tax_details.forEach((taxDetail: TaxDetail) => {
+        const taxType = extractValue(taxDetail.type) || "Tax";
+        const taxRate = extractValue(taxDetail.rate);
+        const taxAmount = extractValue(taxDetail.amount);
+        if (taxAmount !== null && taxAmount !== undefined) {
+          summaryData.push([
+            `${taxType}${
+              taxRate !== null && taxRate !== undefined ? ` (${taxRate}%)` : ""
+            }`,
+            `${invoice.financial?.currency || "$"}${parseFloat(
+              String(taxAmount)
+            ).toFixed(2)}`,
+          ]);
+        }
+      });
+    } else if (tax !== null && tax !== undefined) {
+      summaryData.push([
+        "Tax",
+        `${invoice.financial?.currency || "$"}${parseFloat(String(tax)).toFixed(
+          2
+        )}`,
+      ]);
+    }
+    if (
+      invoice.financial?.discount_total !== null &&
+      invoice.financial?.discount_total !== undefined
+    ) {
+      summaryData.push([
+        "Discount Total",
+        `-${invoice.financial?.currency || "$"}${parseFloat(
+          String(extractValue(invoice.financial.discount_total))
+        ).toFixed(2)}`,
+      ]);
+    }
+    if (
+      invoice.financial?.shipping_charges !== null &&
+      invoice.financial?.shipping_charges !== undefined
+    ) {
+      summaryData.push([
+        "Shipping Charges",
+        `${invoice.financial?.currency || "$"}${parseFloat(
+          String(extractValue(invoice.financial.shipping_charges))
+        ).toFixed(2)}`,
+      ]);
+    }
+    if (grandTotal !== null && grandTotal !== undefined) {
+      summaryData.push([
+        "Grand Total",
+        `${invoice.financial?.currency || "$"}${parseFloat(
+          String(grandTotal)
+        ).toFixed(2)}`,
+      ]);
+    }
+
+    // Add payment information
+    if (invoice.payment) {
+      summaryData.push(["", ""]);
+      summaryData.push(["Payment Information", ""]);
+      if (invoice.payment.payment_terms) {
+        summaryData.push([
+          "Payment Terms",
+          safeRenderText(invoice.payment.payment_terms),
+        ]);
+      }
+      if (invoice.payment.payment_mode) {
+        summaryData.push([
+          "Payment Mode",
+          safeRenderText(invoice.payment.payment_mode),
+        ]);
+      }
+      if (invoice.payment.due_date) {
+        summaryData.push([
+          "Due Date",
+          safeRenderText(invoice.payment.due_date),
+        ]);
+      }
+    }
+
+    const summarySheet = XLSX.utils.aoa_to_sheet(summaryData);
+    XLSX.utils.book_append_sheet(workbook, summarySheet, "Invoice Summary");
+
+    // Sheet 2: Line Items
+    if (invoice.lineItems && invoice.lineItems.length > 0) {
+      const lineItemsData = [
+        [
+          "Item ID",
+          "Material ID",
+          "Product Code",
+          "Description",
+          "Quantity",
+          "Unit",
+          "Unit Price",
+          "Discount",
+          "Total",
+          "HSN Code",
+          "Other Details",
+        ],
+      ];
+
+      invoice.lineItems.forEach((item: LineItem) => {
+        const itemId = extractValue(item.item_id);
+        const materialId = extractValue(item.material_id);
+        const productCode = extractValue(item.product_code);
+        const description = extractValue(item.description || item.name);
+        const quantity = extractValue(item.quantity);
+        const unit = extractValue(item.unit);
+        const unitPrice = extractValue(item.unit_price || item.rate);
+        const discount = extractValue(item.discount);
+        const total = extractValue(item.total || item.amount);
+        const hsnCode = extractValue(item.hsn_code);
+        const otherDetails = extractValue(item.other_details);
+
+        lineItemsData.push([
+          safeRenderText(itemId, "-"),
+          safeRenderText(materialId, "-"),
+          safeRenderText(productCode, "-"),
+          safeRenderText(description, "-"),
+          safeRenderText(quantity, "-"),
+          safeRenderText(unit, "-"),
+          unitPrice !== null && unitPrice !== undefined
+            ? parseFloat(String(unitPrice)).toFixed(2)
+            : "-",
+          discount !== null && discount !== undefined
+            ? parseFloat(String(discount)).toFixed(2)
+            : "-",
+          total !== null && total !== undefined
+            ? parseFloat(String(total)).toFixed(2)
+            : "-",
+          safeRenderText(hsnCode, "-"),
+          safeRenderText(otherDetails, "-"),
+        ]);
+      });
+
+      const lineItemsSheet = XLSX.utils.aoa_to_sheet(lineItemsData);
+      XLSX.utils.book_append_sheet(workbook, lineItemsSheet, "Line Items");
+    }
+
+    // Generate filename
+    const orderNumber = safeRenderText(
+      invoice.orderNumber ||
+        invoice.poNumber ||
+        invoice.invoiceNumber ||
+        "Invoice"
+    );
+    const filename = `${orderNumber}_${
+      new Date().toISOString().split("T")[0]
+    }.xlsx`;
+
+    // Write the file
+    XLSX.writeFile(workbook, filename);
   };
 
   const renderInvoiceDetails = () => {
@@ -865,7 +1184,7 @@ const Dashboard = () => {
                 </tr>
               </thead>
               <tbody>
-                {invoice.lineItems.map((item: any, index: number) => {
+                {invoice.lineItems.map((item: LineItem, index: number) => {
                   const itemId = extractValue(item.item_id);
                   const materialId = extractValue(item.material_id);
                   const productCode = extractValue(item.product_code);
@@ -909,12 +1228,12 @@ const Dashboard = () => {
                       </td>
                       <td className="border border-gray-400 p-1.5 text-xs text-gray-800 text-right font-medium">
                         {unitPrice !== null && unitPrice !== undefined
-                          ? `$${parseFloat(unitPrice).toFixed(2)}`
+                          ? `$${parseFloat(String(unitPrice)).toFixed(2)}`
                           : "-"}
                       </td>
                       <td className="border border-gray-400 p-1.5 text-xs text-gray-800 text-right">
                         {discount !== null && discount !== undefined
-                          ? `$${parseFloat(discount).toFixed(2)}`
+                          ? `$${parseFloat(String(discount)).toFixed(2)}`
                           : "-"}
                       </td>
                       <td
@@ -925,7 +1244,7 @@ const Dashboard = () => {
                         }`}
                       >
                         {total !== null && total !== undefined
-                          ? `$${parseFloat(total).toFixed(2)}`
+                          ? `$${parseFloat(String(total)).toFixed(2)}`
                           : "-"}
                       </td>
                       <td className="border border-gray-400 p-1.5 text-xs text-gray-600">
@@ -972,7 +1291,7 @@ const Dashboard = () => {
                   </td>
                   <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
                     {invoice.financial?.currency || "$"}
-                    {parseFloat(subtotal).toFixed(2)}
+                    {parseFloat(String(subtotal)).toFixed(2)}
                   </td>
                 </tr>
               ) : null}
@@ -980,7 +1299,7 @@ const Dashboard = () => {
               Array.isArray(invoice.financial.tax_details) &&
               invoice.financial.tax_details.length > 0
                 ? invoice.financial.tax_details.map(
-                    (taxDetail: any, idx: number) => {
+                    (taxDetail: TaxDetail, idx: number) => {
                       const taxType = extractValue(taxDetail.type) || "Tax";
                       const taxRate = extractValue(taxDetail.rate);
                       const taxAmount = extractValue(taxDetail.amount);
@@ -995,7 +1314,7 @@ const Dashboard = () => {
                           <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
                             {invoice.financial?.currency || "$"}
                             {taxAmount !== null && taxAmount !== undefined
-                              ? parseFloat(taxAmount).toFixed(2)
+                              ? parseFloat(String(taxAmount)).toFixed(2)
                               : "0.00"}
                           </td>
                         </tr>
@@ -1013,7 +1332,7 @@ const Dashboard = () => {
                   </td>
                   <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
                     {invoice.financial?.currency || "$"}
-                    {parseFloat(tax).toFixed(2)}
+                    {parseFloat(String(tax)).toFixed(2)}
                   </td>
                 </tr>
               ) : null}
@@ -1026,7 +1345,7 @@ const Dashboard = () => {
                   <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right text-red-600">
                     -{invoice.financial?.currency || "$"}
                     {parseFloat(
-                      extractValue(invoice.financial.discount_total)
+                      String(extractValue(invoice.financial.discount_total))
                     ).toFixed(2)}
                   </td>
                 </tr>
@@ -1040,7 +1359,7 @@ const Dashboard = () => {
                   <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
                     {invoice.financial?.currency || "$"}
                     {parseFloat(
-                      extractValue(invoice.financial.shipping_charges)
+                      String(extractValue(invoice.financial.shipping_charges))
                     ).toFixed(2)}
                   </td>
                 </tr>
@@ -1052,7 +1371,7 @@ const Dashboard = () => {
                   </td>
                   <td className="border-2 border-gray-500 p-2 text-base font-bold text-green-900 text-right">
                     {invoice.financial?.currency || "$"}
-                    {parseFloat(grandTotal).toFixed(2)}
+                    {parseFloat(String(grandTotal)).toFixed(2)}
                   </td>
                 </tr>
               ) : (
@@ -1071,11 +1390,10 @@ const Dashboard = () => {
 
         {/* Payment Information - Excel Style */}
         {invoice.payment &&
-          Object.keys(invoice.payment).some(
-            (key) =>
-              invoice.payment[key] !== null &&
-              invoice.payment[key] !== undefined
-          ) && (
+          Object.keys(invoice.payment).some((key) => {
+            const value = invoice.payment[key as keyof PaymentInformation];
+            return value !== null && value !== undefined;
+          }) && (
             <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
               <table
                 className="w-full border-collapse table-fixed"
@@ -1136,17 +1454,12 @@ const Dashboard = () => {
             <span>✓</span>
             <span>Approve</span>
           </button>
-          <button className="px-4 py-3 bg-blue-500 text-white rounded-lg text-sm font-semibold hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
-            <span>✏️</span>
-            <span>Edit Field</span>
-          </button>
-          <button className="px-4 py-3 bg-orange-500 text-white rounded-lg text-sm font-semibold hover:bg-orange-600 transition-all flex items-center justify-center gap-2">
-            <span>🔄</span>
-            <span>Re-parse</span>
-          </button>
-          <button className="px-4 py-3 bg-yellow-500 text-white rounded-lg text-sm font-semibold hover:bg-yellow-600 transition-all flex items-center justify-center gap-2">
-            <span>⏭</span>
-            <span>Skip</span>
+          <button
+            onClick={handleExportToExcel}
+            className="px-4 py-3 bg-emerald-500 text-white rounded-lg text-sm font-semibold hover:bg-emerald-600 transition-all flex items-center justify-center gap-2"
+          >
+            <span>📥</span>
+            <span>Download Excel</span>
           </button>
           <button className="col-span-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
             <span>💾</span>
@@ -1169,13 +1482,13 @@ const Dashboard = () => {
             <button
               onClick={loadInvoices}
               disabled={isLoading}
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-semibold hover:bg-blue-600 transition-all disabled:opacity-50"
+              className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-500 transition-all disabled:opacity-50"
             >
               {isLoading ? "Loading..." : "🔄 Refresh"}
             </button>
             <button
               onClick={() => setShowUploadSidebar(!showUploadSidebar)}
-              className="px-4 py-2 bg-purple-500 text-white rounded-lg text-sm font-semibold hover:bg-purple-600 transition-all"
+              className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg text-sm font-semibold hover:bg-gray-500 transition-all"
             >
               {showUploadSidebar ? "Hide Upload" : "Show Upload"}
             </button>
