@@ -10,11 +10,11 @@ class Settings(BaseModel):
 
     app_name: str = "Invoice OCR Service"
     sample_dir: Path = Field(
-        default=Path("/Users/vasingh/Desktop/Backend/backend/PickSample200"),
+        default_factory=lambda: Path(__file__).parent.parent / "PickSample200",
         description="Directory containing reference/sample PDF invoices.",
     )
     temp_dir: Path = Field(
-        default=Path("/Users/vasingh/Desktop/Backend/backend/.tmp"),
+        default_factory=lambda: Path(__file__).parent.parent / ".tmp",
         description="Directory for temporary storage of uploaded files.",
     )
     default_languages: List[str] = Field(
