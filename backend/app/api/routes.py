@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from uuid import uuid4
 
 from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
@@ -172,4 +172,278 @@ def _persist_result(result: OCRResult) -> None:
 
     with output_path.open("w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2, ensure_ascii=False)
+
+
+@router.get("/invoices", summary="List all extracted invoices")
+async def list_invoices() -> Dict[str, Any]:
+    """List all invoices from successful and needs_review folders."""
+    base_dir = Path.cwd().parent if Path.cwd().name == "backend" else Path.cwd()
+    successful_dir = base_dir / "extracted_final_v2" / "successful"
+    needs_review_dir = base_dir / "extracted_final_v2" / "needs_review"
+    
+    invoices = []
+    
+    # Load successful invoices
+    if successful_dir.exists():
+        for file_path in successful_dir.glob("*.json"):
+            try:
+                with file_path.open("r", encoding="utf-8") as f:
+                    data = json.load(f)
+                invoices.append({
+                    "filename": file_path.name,
+                    "data": data,
+                    "status": "successful",
+                    "modified_at": datetime.fromtimestamp(file_path.stat().st_mtime).isoformat()
+                })
+            except Exception as e:
+                print(f"Error loading {file_path}: {e}")
+    
+    # Load needs_review invoices
+    if needs_review_dir.exists():
+        for file_path in needs_review_dir.glob("*.json"):
+            try:
+                with file_path.open("r", encoding="utf-8") as f:
+                    data = json.load(f)
+                invoices.append({
+                    "filename": file_path.name,
+                    "data": data,
+                    "status": "needs_review",
+                    "modified_at": datetime.fromtimestamp(file_path.stat().st_mtime).isoformat()
+                })
+            except Exception as e:
+                print(f"Error loading {file_path}: {e}")
+    
+    # Sort by filename
+    invoices.sort(key=lambda x: x["filename"])
+    
+    return {"invoices": invoices}
+
+
+@router.get("/invoices/{filename:path}", summary="Get a specific invoice by filename")
+async def get_invoice(filename: str) -> Dict[str, Any]:
+    """Get a specific invoice by filename from successful or needs_review folders."""
+    base_dir = Path.cwd().parent if Path.cwd().name == "backend" else Path.cwd()
+    successful_dir = base_dir / "extracted_final_v2" / "successful"
+    needs_review_dir = base_dir / "extracted_final_v2" / "needs_review"
+    
+    # Try successful first
+    file_path = successful_dir / filename
+    if not file_path.exists():
+        # Try needs_review
+        file_path = needs_review_dir / filename
+    
+    if not file_path.exists():
+        raise HTTPException(status_code=404, detail=f"Invoice {filename} not found")
+    
+    try:
+        with file_path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        status = "successful" if successful_dir in file_path.parents else "needs_review"
+        
+        return {
+            "filename": filename,
+            "data": data,
+            "status": status,
+            "modified_at": datetime.fromtimestamp(file_path.stat().st_mtime).isoformat()
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading invoice: {str(e)}")
+
+
+def _parse_line_items_from_ocr_text(text: str) -> List[Dict[str, Any]]:
+    """Parse line items from OCR text.
+    
+    Expected format in text:
+    ITEM GTIN DESCRIPTION QUANTITY UNIT RATE VALUE
+    Example: 00010 00028400363136 2CT XVL TO SAL VER 30 CS 3.78 CS 1,013.4
+    """
+    line_items = []
+    
+    # Find the line items section (after headers like ITEM, GTIN, DESCRIPTION, etc.)
+    # The text might have the header and items in a continuous string
+    
+    # Look for pattern: 5-digit item number followed by 12-14 digit GTIN
+    # Pattern: 00010 00028400363136 ... description ... quantity ... unit ... rate ... value
+    pattern = r'(\d{5})\s+(\d{12,14})\s+(.+?)\s+(\d+(?:,\d{3})*(?:\.\d+)?)\s+([A-Z]{1,4})\s+(\d+(?:,\d{3})*(?:\.\d+)?)\s+[A-Z]{1,4}\s+(\d+(?:,\d{3})*(?:\.\d+)?)'
+    
+    matches = re.finditer(pattern, text)
+    
+    for match in matches:
+        try:
+            item_id = match.group(1)
+            gtin = match.group(2)
+            description = match.group(3).strip()
+            quantity = match.group(4).replace(',', '')
+            unit = match.group(5)
+            rate = match.group(6).replace(',', '')
+            value = match.group(7).replace(',', '')
+            
+            # Clean up description (remove extra spaces, numbers at start if any)
+            description = re.sub(r'^\d+\s+', '', description)  # Remove leading numbers
+            description = ' '.join(description.split())  # Normalize whitespace
+            
+            line_items.append({
+                "item_id": item_id,
+                "gtin": gtin,
+                "description": description,
+                "quantity": quantity,
+                "unit": unit,
+                "unit_price": float(rate) if rate else None,
+                "total": float(value) if value else None,
+            })
+        except Exception as e:
+            # Skip matches that can't be parsed
+            continue
+    
+    # If regex didn't work, try a simpler approach - look for lines starting with 5-digit numbers
+    if not line_items:
+        lines = text.split('\n')
+        
+        # Find header row
+        header_found = False
+        for i, line in enumerate(lines):
+            if 'ITEM' in line.upper() and 'GTIN' in line.upper():
+                header_found = True
+                # Start parsing from next line
+                for j in range(i + 1, min(i + 100, len(lines))):  # Limit to next 100 lines
+                    line_text = lines[j].strip()
+                    if not line_text or len(line_text) < 10:
+                        continue
+                    
+                    # Check if line starts with 5-digit number (item ID)
+                    parts = line_text.split()
+                    if len(parts) >= 6 and (parts[0].isdigit() and len(parts[0]) == 5):
+                        try:
+                            item_id = parts[0]
+                            # Find GTIN (long number)
+                            gtin = None
+                            gtin_idx = -1
+                            for idx, part in enumerate(parts[1:6], 1):
+                                if len(part) >= 12 and part.isdigit():
+                                    gtin = part
+                                    gtin_idx = idx
+                                    break
+                            
+                            if not gtin:
+                                continue
+                            
+                            # Description is between GTIN and quantity
+                            desc_start = gtin_idx + 1
+                            desc_end = -1
+                            qty = None
+                            unit = None
+                            rate = None
+                            value = None
+                            
+                            # Find quantity (number followed by unit like "CS")
+                            for idx in range(desc_start, len(parts)):
+                                if parts[idx].replace(',', '').replace('.', '').isdigit():
+                                    try:
+                                        test_qty = float(parts[idx].replace(',', ''))
+                                        if 0 < test_qty < 10000:
+                                            qty = parts[idx]
+                                            unit = parts[idx + 1] if idx + 1 < len(parts) else "CS"
+                                            desc_end = idx
+                                            # Rate should be after unit
+                                            if idx + 2 < len(parts):
+                                                try:
+                                                    rate = float(parts[idx + 2].replace(',', ''))
+                                                except:
+                                                    pass
+                                            # Value is usually the last large number
+                                            for k in range(len(parts) - 1, max(idx + 2, len(parts) - 3), -1):
+                                                try:
+                                                    test_val = float(parts[k].replace(',', ''))
+                                                    if test_val > 10:  # Values are usually > 10
+                                                        value = test_val
+                                                        break
+                                                except:
+                                                    pass
+                                            break
+                                    except:
+                                        pass
+                            
+                            if desc_end > desc_start and qty:
+                                description = ' '.join(parts[desc_start:desc_end])
+                                line_items.append({
+                                    "item_id": item_id,
+                                    "gtin": gtin,
+                                    "description": description,
+                                    "quantity": qty.replace(',', ''),
+                                    "unit": unit or "CS",
+                                    "unit_price": rate,
+                                    "total": value,
+                                })
+                        except Exception:
+                            continue
+                break
+    
+    return line_items
+
+
+@router.get("/invoices/{filename:path}/ocr", summary="Get OCR data for a specific invoice")
+async def get_invoice_ocr(filename: str) -> Dict[str, Any]:
+    """Get OCR data for a specific invoice from results_ocr-final folder."""
+    base_dir = Path.cwd().parent if Path.cwd().name == "backend" else Path.cwd()
+    ocr_dir = base_dir / "results_ocr-final"
+    
+    # Try to find the OCR file - it might have a different name pattern
+    # Look for files that match the invoice filename pattern
+    ocr_file = None
+    
+    # First, try exact match with .json extension
+    potential_names = [
+        filename.replace("_extracted.json", ".pdf.json"),
+        filename.replace("_extracted", ".pdf.json"),
+        filename + ".json",
+    ]
+    
+    # Also try to extract the base name from the extracted filename
+    if "_extracted" in filename:
+        base_name = filename.split("_extracted")[0]
+        potential_names.append(f"{base_name}.pdf.json")
+    
+    for name in potential_names:
+        file_path = ocr_dir / name
+        if file_path.exists():
+            ocr_file = file_path
+            break
+    
+    # If not found, try to find by matching the beginning of the filename
+    if not ocr_file:
+        for file_path in ocr_dir.glob("*.json"):
+            # Check if the OCR filename starts with the same timestamp pattern
+            if filename.startswith("20251112T") and file_path.name.startswith("20251112T"):
+                # Extract the number part and compare
+                try:
+                    inv_num = filename.split("_")[0].split("T")[1] if "_" in filename else ""
+                    ocr_num = file_path.name.split("_")[0].split("T")[1] if "_" in file_path.name else ""
+                    if inv_num and ocr_num and inv_num == ocr_num:
+                        ocr_file = file_path
+                        break
+                except:
+                    pass
+    
+    if not ocr_file:
+        raise HTTPException(status_code=404, detail=f"OCR file for {filename} not found")
+    
+    try:
+        with ocr_file.open("r", encoding="utf-8") as f:
+            ocr_data = json.load(f)
+        
+        # Extract line items from OCR text
+        line_items = []
+        if "pages" in ocr_data:
+            # Combine all page text
+            full_text = "\n".join([page.get("text", "") for page in ocr_data.get("pages", [])])
+            line_items = _parse_line_items_from_ocr_text(full_text)
+        
+        return {
+            "filename": ocr_file.name,
+            "ocr_data": ocr_data,
+            "line_items": line_items,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading OCR file: {str(e)}")
 

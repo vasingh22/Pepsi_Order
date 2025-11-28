@@ -104,7 +104,57 @@ const Dashboard = () => {
     const financialInfo =
       data.financial_information || data.financial_summary || {};
 
-    // Handle structure 1: core_invoice_fields format
+    // Handle structure 1: Invoice_Header_Fields format (new)
+    if (data.Invoice_Header_Fields) {
+      const headerFields = data.Invoice_Header_Fields;
+      const lineItemFields = data.Line_Item_Fields || {};
+      const confidenceValidation = data.Confidence_and_Validation || {};
+      const validationChecks = data.Validation_and_Quality_Checks || {};
+      
+      // Convert MaterialIDList to LineItem format for compatibility
+      const lineItems: LineItem[] = (lineItemFields.MaterialIDList || []).map((materialId, index) => ({
+        material_id: materialId,
+        item_id: String(index + 1).padStart(2, '0'),
+      }));
+
+      return {
+        fileName: headerFields.FileName || null,
+        sourceOrderID: headerFields.SourceOrderID || null,
+        poNumber: headerFields.PONumber || null,
+        rdd: headerFields.RDD || null,
+        shippingAddress: headerFields.ShippingAddress || null,
+        billingAddress: headerFields.BillingAddress || null,
+        materialIDList: lineItemFields.MaterialIDList || [],
+        materialIDCount: lineItemFields.MaterialIDCount || 0,
+        lineItemCount: lineItemFields.LineItemCount || 0,
+        overallConfidence: confidenceValidation.overall_confidence || null,
+        needsHumanReview: confidenceValidation.needs_human_review || false,
+        validationErrors: confidenceValidation.validation_errors || [],
+        validationChecks: validationChecks,
+        // Map to standard fields for compatibility
+        buyerName: headerFields.FileName || null,
+        sellerName: null,
+        invoiceNumber: null,
+        orderNumber: headerFields.SourceOrderID || null,
+        invoiceDate: null,
+        orderDate: null,
+        poDate: null,
+        deliveryDate: headerFields.RDD || null,
+        customerId: null,
+        gstNumber: null,
+        taxId: null,
+        buyerAddress: headerFields.ShippingAddress || null,
+        sellerAddress: null,
+        shipToAddress: headerFields.ShippingAddress || null,
+        contactInfo: {},
+        lineItems: lineItems,
+        totals: null,
+        financial: {},
+        payment: {},
+      };
+    }
+
+    // Handle structure 2: core_invoice_fields format
     if (data.core_invoice_fields) {
       return {
         sellerName: extractValue(data.core_invoice_fields.seller_name) as
@@ -150,7 +200,7 @@ const Dashboard = () => {
       };
     }
 
-    // Handle structure 2: seller_information format
+    // Handle structure 3: seller_information format
     if (data.seller_information || data.buyer_information) {
       return {
         sellerName: extractValue(data.seller_information?.seller_name) as
@@ -194,7 +244,7 @@ const Dashboard = () => {
       };
     }
 
-    // Handle structure 3: flat structure
+    // Handle structure 4: flat structure
     return {
       sellerName: extractValue(data.seller_name) as string | null,
       buyerName: extractValue(data.buyer_name) as string | null,
@@ -219,16 +269,35 @@ const Dashboard = () => {
     };
   };
 
-  const getStatusFromInvoice = (invoiceData: InvoiceDataStructure): string => {
+  const getStatusFromInvoice = (invoiceData: InvoiceDataStructure, invoiceStatus?: string): string => {
     // Determine status based on invoice data
     if (!invoiceData) return "Pending";
 
+    // If status is provided from API (successful/needs_review), use it
+    if (invoiceStatus === "needs_review") {
+      return "Flagged";
+    }
+    if (invoiceStatus === "successful") {
+      const invoice = extractInvoiceData(invoiceData);
+      // Check if it still needs human review based on confidence
+      if (invoice.needsHumanReview) {
+        return "Flagged";
+      }
+      return "Approved";
+    }
+
     const invoice = extractInvoiceData(invoiceData);
+    
+    // Check for needs_human_review flag (new structure)
+    if (invoice.needsHumanReview) {
+      return "Flagged";
+    }
+
     const hasOrderNumber =
-      !!invoice.orderNumber || !!invoice.poNumber || !!invoice.invoiceNumber;
-    const hasBuyer = !!invoice.buyerName;
+      !!invoice.orderNumber || !!invoice.poNumber || !!invoice.invoiceNumber || !!invoice.sourceOrderID;
+    const hasBuyer = !!invoice.buyerName || !!invoice.fileName;
     const hasDate =
-      !!invoice.orderDate || !!invoice.poDate || !!invoice.invoiceDate;
+      !!invoice.orderDate || !!invoice.poDate || !!invoice.invoiceDate || !!invoice.rdd;
     const hasItems = invoice.lineItems && invoice.lineItems.length > 0;
 
     // Check for missing critical data
@@ -264,13 +333,18 @@ const Dashboard = () => {
 
     const invoice = extractInvoiceData(invoiceData);
 
-    if (!invoice.orderNumber && !invoice.poNumber && !invoice.invoiceNumber) {
+    // Check validation errors from new structure
+    if (invoice.validationErrors && invoice.validationErrors.length > 0) {
+      return invoice.validationErrors.join(", ");
+    }
+
+    if (!invoice.orderNumber && !invoice.poNumber && !invoice.invoiceNumber && !invoice.sourceOrderID) {
       return "Missing order/PO number";
     }
-    if (!invoice.buyerName) {
+    if (!invoice.buyerName && !invoice.fileName) {
       return "Missing buyer information";
     }
-    if (!invoice.orderDate && !invoice.poDate && !invoice.invoiceDate) {
+    if (!invoice.orderDate && !invoice.poDate && !invoice.invoiceDate && !invoice.rdd) {
       return "Missing date information";
     }
 
@@ -290,6 +364,21 @@ const Dashboard = () => {
       invoiceData.source_metadata?.totals_verification?.status === "mismatch";
     if (totalsMismatch) {
       return "Total mismatch detected";
+    }
+
+    // Check validation checks
+    if (invoice.validationChecks) {
+      const checks = invoice.validationChecks;
+      if (checks["All Mandatory Fields extracted"] === false) {
+        return "Missing mandatory fields";
+      }
+      if (checks["LineItem=IDs"] === false) {
+        return "Line item count mismatch";
+      }
+    }
+
+    if (invoice.needsHumanReview) {
+      return "Needs human review";
     }
 
     return "Ready for review";
@@ -740,7 +829,7 @@ const Dashboard = () => {
 
     const data = selectedInvoice.data;
     const invoice = extractInvoiceData(data);
-    const status = getStatusFromInvoice(data);
+    const status = getStatusFromInvoice(data, selectedInvoice.status);
     const statusMessage = getStatusMessage(data);
 
     // Get totals from either totals_summary or financial_summary
@@ -765,7 +854,7 @@ const Dashboard = () => {
             <h2 className="text-xl font-bold text-gray-800 break-all">
               Order:{" "}
               {safeRenderText(
-                invoice.orderNumber || invoice.poNumber || invoice.invoiceNumber
+                invoice.orderNumber || invoice.poNumber || invoice.invoiceNumber || invoice.sourceOrderID || invoice.fileName || "N/A"
               )}
             </h2>
             <span
@@ -782,7 +871,101 @@ const Dashboard = () => {
               <span className="text-sm text-yellow-800">{statusMessage}</span>
             </div>
           )}
+          {/* Confidence and Validation Info */}
+          {(invoice.overallConfidence !== null && invoice.overallConfidence !== undefined) && (
+            <div className="mt-2 flex items-center gap-4 text-sm">
+              <span className="text-gray-600">
+                Confidence: <span className="font-semibold">{(invoice.overallConfidence * 100).toFixed(1)}%</span>
+              </span>
+              {invoice.needsHumanReview && (
+                <span className="text-orange-600 font-semibold">⚠ Needs Human Review</span>
+              )}
+            </div>
+          )}
         </div>
+
+        {/* Invoice Header Fields (New Structure) */}
+        {(invoice.fileName || invoice.sourceOrderID || invoice.poNumber || invoice.rdd) && (
+          <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
+            <table
+              className="w-full border-collapse table-fixed"
+              style={{ minWidth: "100%" }}
+            >
+              <thead>
+                <tr className="bg-gray-300">
+                  <th
+                    className="border-2 border-gray-500 p-2 text-left text-sm font-bold text-gray-900"
+                    colSpan={2}
+                  >
+                    Invoice Header Information
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {invoice.fileName && (
+                  <tr className="bg-white">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900" style={{ width: "30%" }}>
+                      File Name
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800">
+                      {safeRenderText(invoice.fileName)}
+                    </td>
+                  </tr>
+                )}
+                {invoice.sourceOrderID && (
+                  <tr className="bg-gray-50">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      Source Order ID
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800">
+                      {safeRenderText(invoice.sourceOrderID)}
+                    </td>
+                  </tr>
+                )}
+                {invoice.poNumber && (
+                  <tr className="bg-white">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      PO Number
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800">
+                      {safeRenderText(invoice.poNumber)}
+                    </td>
+                  </tr>
+                )}
+                {invoice.rdd && (
+                  <tr className="bg-gray-50">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      Required Delivery Date (RDD)
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800">
+                      {safeRenderText(invoice.rdd)}
+                    </td>
+                  </tr>
+                )}
+                {invoice.shippingAddress && (
+                  <tr className="bg-white">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      Shipping Address
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800 whitespace-pre-line">
+                      {safeRenderText(invoice.shippingAddress)}
+                    </td>
+                  </tr>
+                )}
+                {invoice.billingAddress && (
+                  <tr className="bg-gray-50">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      Billing Address
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800 whitespace-pre-line">
+                      {safeRenderText(invoice.billingAddress)}
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        )}
 
         {/* Buyer/Seller Info - Excel Style */}
         <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
@@ -1106,287 +1289,103 @@ const Dashboard = () => {
           </table>
         </div>
 
-        {/* Line Items - Excel Style */}
-        {invoice.lineItems.length > 0 && (
-          <div className="overflow-x-auto border-2 border-gray-400 rounded w-full">
+        {/* Material IDs (New Structure) */}
+        {invoice.materialIDList && invoice.materialIDList.length > 0 && (
+          <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
             <table
               className="w-full border-collapse table-fixed"
-              style={{ minWidth: "100%", width: "100%" }}
+              style={{ minWidth: "100%" }}
             >
               <thead>
                 <tr className="bg-gray-300">
                   <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "8%" }}
+                    className="border-2 border-gray-500 p-2 text-left text-sm font-bold text-gray-900"
+                    style={{ width: "20%" }}
                   >
-                    Item ID
+                    Material IDs Summary
                   </th>
                   <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "8%" }}
+                    className="border-2 border-gray-500 p-2 text-left text-sm font-bold text-gray-900"
+                    style={{ width: "80%" }}
                   >
-                    Material ID
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "8%" }}
-                  >
-                    Product Code
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "25%" }}
-                  >
-                    Description
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-center text-xs font-bold text-gray-900"
-                    style={{ width: "7%" }}
-                  >
-                    Quantity
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-center text-xs font-bold text-gray-900"
-                    style={{ width: "6%" }}
-                  >
-                    Unit
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-right text-xs font-bold text-gray-900"
-                    style={{ width: "9%" }}
-                  >
-                    Unit Price
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-right text-xs font-bold text-gray-900"
-                    style={{ width: "7%" }}
-                  >
-                    Discount
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-right text-xs font-bold text-gray-900"
-                    style={{ width: "9%" }}
-                  >
-                    Total
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "8%" }}
-                  >
-                    HSN Code
-                  </th>
-                  <th
-                    className="border-2 border-gray-500 p-2 text-left text-xs font-bold text-gray-900"
-                    style={{ width: "5%" }}
-                  >
-                    Other Details
+                    Material ID List
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {invoice.lineItems.map((item: LineItem, index: number) => {
-                  const itemId = extractValue(item.item_id);
-                  const materialId = extractValue(item.material_id);
-                  const productCode = extractValue(item.product_code);
-                  const description = extractValue(
-                    item.description || item.name
-                  );
-                  const quantity = extractValue(item.quantity);
-                  const unit = extractValue(item.unit);
-                  const unitPrice = extractValue(item.unit_price || item.rate);
-                  const discount = extractValue(item.discount);
-                  const total = extractValue(item.total || item.amount);
-                  const hsnCode = extractValue(item.hsn_code);
-                  const otherDetails = extractValue(item.other_details);
-
-                  return (
-                    <tr
-                      key={index}
-                      className={
-                        index % 2 === 0
-                          ? "bg-white hover:bg-blue-50"
-                          : "bg-gray-50 hover:bg-blue-50"
-                      }
-                    >
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800 font-medium">
-                        {safeRenderText(itemId, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800 font-medium">
-                        {safeRenderText(materialId, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800">
-                        {safeRenderText(productCode, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800">
-                        {safeRenderText(description, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800 text-center font-semibold">
-                        {safeRenderText(quantity, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-600 text-center">
-                        {safeRenderText(unit, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800 text-right font-medium">
-                        {unitPrice !== null && unitPrice !== undefined
-                          ? `$${parseFloat(String(unitPrice)).toFixed(2)}`
-                          : "-"}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-800 text-right">
-                        {discount !== null && discount !== undefined
-                          ? `$${parseFloat(String(discount)).toFixed(2)}`
-                          : "-"}
-                      </td>
-                      <td
-                        className={`border border-gray-400 p-1.5 text-xs text-gray-900 text-right font-bold ${
-                          total === null || total === undefined
-                            ? "bg-red-100"
-                            : "bg-green-50"
-                        }`}
-                      >
-                        {total !== null && total !== undefined
-                          ? `$${parseFloat(String(total)).toFixed(2)}`
-                          : "-"}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-600">
-                        {safeRenderText(hsnCode, "-")}
-                      </td>
-                      <td className="border border-gray-400 p-1.5 text-xs text-gray-600">
-                        {safeRenderText(otherDetails, "-")}
-                      </td>
-                    </tr>
-                  );
-                })}
+                <tr className="bg-white">
+                  <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                    <div>Material ID Count: <span className="text-blue-600">{invoice.materialIDCount || 0}</span></div>
+                    <div className="mt-1">Line Item Count: <span className="text-blue-600">{invoice.lineItemCount || 0}</span></div>
+                  </td>
+                  <td className="border-2 border-gray-500 p-2 text-gray-800">
+                    <div className="flex flex-wrap gap-2">
+                      {invoice.materialIDList.map((materialId, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-blue-50 border border-blue-200 rounded text-xs font-mono"
+                        >
+                          {materialId}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+                {invoice.validationChecks && (
+                  <tr className="bg-gray-50">
+                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
+                      Validation Checks
+                    </td>
+                    <td className="border-2 border-gray-500 p-2 text-gray-800 text-sm">
+                      <div className="grid grid-cols-2 gap-2">
+                        {invoice.validationChecks["Count>0"] !== undefined && (
+                          <div>
+                            Count &gt; 0:{" "}
+                            <span className={invoice.validationChecks["Count>0"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                              {invoice.validationChecks["Count>0"] ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        )}
+                        {invoice.validationChecks["LineItem=IDs"] !== undefined && (
+                          <div>
+                            LineItem = IDs:{" "}
+                            <span className={invoice.validationChecks["LineItem=IDs"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                              {invoice.validationChecks["LineItem=IDs"] ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        )}
+                        {invoice.validationChecks["Length>5"] !== undefined && (
+                          <div>
+                            Length &gt; 5:{" "}
+                            <span className={invoice.validationChecks["Length>5"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                              {invoice.validationChecks["Length>5"] ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        )}
+                        {invoice.validationChecks["OnlyNumeric"] !== undefined && (
+                          <div>
+                            Only Numeric:{" "}
+                            <span className={invoice.validationChecks["OnlyNumeric"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                              {invoice.validationChecks["OnlyNumeric"] ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        )}
+                        {invoice.validationChecks["All Mandatory Fields extracted"] !== undefined && (
+                          <div className="col-span-2">
+                            All Mandatory Fields extracted:{" "}
+                            <span className={invoice.validationChecks["All Mandatory Fields extracted"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                              {invoice.validationChecks["All Mandatory Fields extracted"] ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
         )}
-
-        {/* Financial Summary - Excel Style */}
-        <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
-          <table
-            className="w-full border-collapse table-fixed"
-            style={{ minWidth: "100%" }}
-          >
-            <thead>
-              <tr className="bg-gray-300">
-                <th
-                  className="border-2 border-gray-500 p-2 text-left text-sm font-bold text-gray-900"
-                  style={{ width: "70%" }}
-                >
-                  Financial Summary
-                </th>
-                <th
-                  className="border-2 border-gray-500 p-2 text-right text-sm font-bold text-gray-900"
-                  style={{ width: "30%" }}
-                >
-                  Amount
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {subtotal !== null && subtotal !== undefined ? (
-                <tr className="bg-white">
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800">
-                    Subtotal
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
-                    {invoice.financial?.currency || "$"}
-                    {parseFloat(String(subtotal)).toFixed(2)}
-                  </td>
-                </tr>
-              ) : null}
-              {invoice.financial?.tax_details &&
-              Array.isArray(invoice.financial.tax_details) &&
-              invoice.financial.tax_details.length > 0
-                ? invoice.financial.tax_details.map(
-                    (taxDetail: TaxDetail, idx: number) => {
-                      const taxType = extractValue(taxDetail.type) || "Tax";
-                      const taxRate = extractValue(taxDetail.rate);
-                      const taxAmount = extractValue(taxDetail.amount);
-                      return (
-                        <tr key={idx} className="bg-white">
-                          <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800">
-                            {taxType}{" "}
-                            {taxRate !== null && taxRate !== undefined
-                              ? `(${taxRate}%)`
-                              : ""}
-                          </td>
-                          <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
-                            {invoice.financial?.currency || "$"}
-                            {taxAmount !== null && taxAmount !== undefined
-                              ? parseFloat(String(taxAmount)).toFixed(2)
-                              : "0.00"}
-                          </td>
-                        </tr>
-                      );
-                    }
-                  )
-                : null}
-              {tax !== null &&
-              tax !== undefined &&
-              (!invoice.financial?.tax_details ||
-                invoice.financial.tax_details.length === 0) ? (
-                <tr className="bg-white">
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800">
-                    Tax
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
-                    {invoice.financial?.currency || "$"}
-                    {parseFloat(String(tax)).toFixed(2)}
-                  </td>
-                </tr>
-              ) : null}
-              {invoice.financial?.discount_total !== null &&
-              invoice.financial?.discount_total !== undefined ? (
-                <tr className="bg-white">
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800">
-                    Discount Total
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right text-red-600">
-                    -{invoice.financial?.currency || "$"}
-                    {parseFloat(
-                      String(extractValue(invoice.financial.discount_total))
-                    ).toFixed(2)}
-                  </td>
-                </tr>
-              ) : null}
-              {invoice.financial?.shipping_charges !== null &&
-              invoice.financial?.shipping_charges !== undefined ? (
-                <tr className="bg-white">
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800">
-                    Shipping Charges
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-900 text-right">
-                    {invoice.financial?.currency || "$"}
-                    {parseFloat(
-                      String(extractValue(invoice.financial.shipping_charges))
-                    ).toFixed(2)}
-                  </td>
-                </tr>
-              ) : null}
-              {grandTotal !== null && grandTotal !== undefined ? (
-                <tr className="bg-green-200">
-                  <td className="border-2 border-gray-500 p-2 text-base font-bold text-gray-900">
-                    Grand Total
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-base font-bold text-green-900 text-right">
-                    {invoice.financial?.currency || "$"}
-                    {parseFloat(String(grandTotal)).toFixed(2)}
-                  </td>
-                </tr>
-              ) : (
-                <tr className="bg-gray-50">
-                  <td
-                    className="border-2 border-gray-500 p-2 text-sm font-semibold text-gray-800"
-                    colSpan={2}
-                  >
-                    No financial information available
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
 
         {/* Payment Information - Excel Style */}
         {invoice.payment &&
@@ -1637,13 +1636,15 @@ const Dashboard = () => {
                   </div>
                 ) : (
                   invoices.map((invoice) => {
-                    const status = getStatusFromInvoice(invoice.data);
+                    const status = getStatusFromInvoice(invoice.data, invoice.status);
                     const statusMessage = getStatusMessage(invoice.data);
                     const invoiceData = extractInvoiceData(invoice.data);
                     const displayId = safeRenderText(
                       invoiceData.orderNumber ||
                         invoiceData.poNumber ||
                         invoiceData.invoiceNumber ||
+                        invoiceData.sourceOrderID ||
+                        invoiceData.fileName ||
                         invoice.filename.substring(0, 20) + "..."
                     );
 

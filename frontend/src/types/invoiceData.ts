@@ -124,8 +124,44 @@ export interface SourceMetadata {
   };
 }
 
+// New structure: Invoice_Header_Fields format (from extracted_final_v2)
+export interface InvoiceHeaderFields {
+  FileName?: string | null;
+  SourceOrderID?: string | null;
+  PONumber?: string | null;
+  RDD?: string | null; // Required Delivery Date
+  ShippingAddress?: string | null;
+  BillingAddress?: string | null;
+}
+
+export interface LineItemFields {
+  MaterialIDList?: string[];
+  MaterialIDCount?: number;
+  LineItemCount?: number;
+}
+
+export interface ValidationQualityChecks {
+  "Count>0"?: boolean;
+  "LineItem=IDs"?: boolean;
+  "Length>5"?: boolean;
+  "OnlyNumeric"?: boolean;
+  "All Mandatory Fields extracted"?: boolean;
+}
+
+export interface ConfidenceValidation {
+  overall_confidence?: number;
+  needs_human_review?: boolean;
+  validation_errors?: string[];
+}
+
 export interface InvoiceDataStructure {
-  // Structure 1: core_invoice_fields format
+  // Structure 1: Invoice_Header_Fields format (new)
+  Invoice_Header_Fields?: InvoiceHeaderFields;
+  Line_Item_Fields?: LineItemFields;
+  Validation_and_Quality_Checks?: ValidationQualityChecks;
+  Confidence_and_Validation?: ConfidenceValidation;
+
+  // Structure 2: core_invoice_fields format
   core_invoice_fields?: CoreInvoiceFields;
   address_information?: AddressInformation;
   line_items?: LineItem[];
@@ -134,12 +170,12 @@ export interface InvoiceDataStructure {
   financial_summary?: FinancialInformation;
   payment_information?: PaymentInformation;
 
-  // Structure 2: seller_information format
+  // Structure 3: seller_information format
   seller_information?: SellerInformation;
   buyer_information?: BuyerInformation;
   invoice_details?: InvoiceDetails;
 
-  // Structure 3: flat structure
+  // Structure 4: flat structure
   seller_name?: ValueWrapper;
   buyer_name?: ValueWrapper;
   invoice_number?: ValueWrapper;
@@ -167,6 +203,7 @@ export interface InvoiceData {
   filename: string;
   data: InvoiceDataStructure;
   modified_at: string;
+  status?: "successful" | "needs_review";
 }
 
 export interface ExtractedInvoiceData {
@@ -190,5 +227,18 @@ export interface ExtractedInvoiceData {
   totals: TotalsSummary | null;
   financial: FinancialInformation;
   payment: PaymentInformation;
+  // New fields for Invoice_Header_Fields structure
+  fileName?: string | null;
+  sourceOrderID?: string | null;
+  rdd?: string | null;
+  shippingAddress?: string | null;
+  billingAddress?: string | null;
+  materialIDList?: string[];
+  materialIDCount?: number;
+  lineItemCount?: number;
+  overallConfidence?: number;
+  needsHumanReview?: boolean;
+  validationErrors?: string[];
+  validationChecks?: ValidationQualityChecks;
 }
 

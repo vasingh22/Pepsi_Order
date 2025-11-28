@@ -73,3 +73,23 @@ export const getInvoice = async (filename: string): Promise<any> => {
   }
 };
 
+/**
+ * Get OCR data and parsed line items for a specific invoice
+ * @param filename The invoice filename
+ * @returns Promise with OCR data and parsed line items
+ */
+export const getInvoiceOCR = async (filename: string): Promise<any> => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/invoices/${encodeURIComponent(filename)}/ocr`);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch OCR data: ${response.statusText}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching OCR data:', error);
+    throw error;
+  }
+};
+
