@@ -1,0 +1,148 @@
+{
+  "document_summary": {
+    "filename": "Confirmation_PO_05052025____SAP_1037350684_2XNW31ZWT2JYF9YRJK__KWIK_VENDING_SERVICE__SAP_1037350684_1761477447866.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 2
+  },
+  "document_fingerprint": {
+    "vendor_guess": null,
+    "languages": [
+      "en"
+    ],
+    "currency_iso": "USD",
+    "numbering_style": "international",
+    "day_first_date_probability": 0.5
+  },
+  "fields": {
+    "purchase_order_date": {
+      "raw": "05/05/2025",
+      "normalized": "2025-05-05",
+      "confidence": 0.5,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "KWIK VENDING SERVICE\\nKWIK\\nVENDING\\nSERVICE\\n451 W 500 N\\n451\\nW\\n500\\nN\\nSALT LAKE CITY UT 84103-1243\\nSALT\\nLAKE\\nCITY\\nUT\\n84103-1243\\nORDER NUMBER:\\nORDER\\nNUMBER:\\n1037350684\\n1037350684\\nCUSTOMER NUMBER:\\nCUSTOMER\\nNUMBER:\\n2003673112\\n2003673112\\nCUSTOMER PO:\\nCUSTOMER\\nPO:\\n05052025\\n05052025\\nORDER REASON:\\nORDER\\nREASON:\\nSHIPPING LOCATION:\\nSHIPPING\\nLOCATION:\\n2106\\n2106\\nITEM\\nITEM\\nGTIN\\nGTIN\\nPACK SIZE\\nPACK\\nSIZE\\nDESCRIPTION\\nDESCRIPTION\\nLSS LAYS SOURCREAM ONION\\nLSS\\nLAYS\\nSOURCREAM\\nONION\\n000260\\n000260\\n00028400443616\\n00028400443616\\n1\\n1\\n00270\\n00270\\n00028400535182\\n00028400535182\\n2CT XVL RF CSC PEG\\n2CT\\nXVL\\nRF\\nCSC\\nPEG\\n1\\n1\\n00280\\n00280\\n00028400363310\\n00028400363310\\n1\\n1\\n24CT XVL MT MV JAL\\n24CT\\nXVL\\nMT\\nMV\\nJAL",
+      "normalized": {
+        "lines": [
+          "KWIK VENDING SERVICE",
+          "KWIK",
+          "VENDING",
+          "SERVICE",
+          "451 W 500 N",
+          "451",
+          "W",
+          "500",
+          "N",
+          "SALT LAKE CITY UT 84103-1243",
+          "SALT",
+          "LAKE",
+          "CITY",
+          "UT",
+          "84103-1243",
+          "ORDER NUMBER:",
+          "ORDER",
+          "NUMBER:",
+          "1037350684",
+          "1037350684",
+          "CUSTOMER NUMBER:",
+          "CUSTOMER",
+          "NUMBER:",
+          "2003673112",
+          "2003673112",
+          "CUSTOMER PO:",
+          "CUSTOMER",
+          "PO:",
+          "05052025",
+          "05052025",
+          "ORDER REASON:",
+          "ORDER",
+          "REASON:",
+          "SHIPPING LOCATION:",
+          "SHIPPING",
+          "LOCATION:",
+          "2106",
+          "2106",
+          "ITEM",
+          "ITEM",
+          "GTIN",
+          "GTIN",
+          "PACK SIZE",
+          "PACK",
+          "SIZE",
+          "DESCRIPTION",
+          "DESCRIPTION",
+          "LSS LAYS SOURCREAM ONION",
+          "LSS",
+          "LAYS",
+          "SOURCREAM",
+          "ONION",
+          "000260",
+          "000260",
+          "00028400443616",
+          "00028400443616",
+          "1",
+          "1",
+          "00270",
+          "00270",
+          "00028400535182",
+          "00028400535182",
+          "2CT XVL RF CSC PEG",
+          "2CT",
+          "XVL",
+          "RF",
+          "CSC",
+          "PEG",
+          "1",
+          "1",
+          "00280",
+          "00280",
+          "00028400363310",
+          "00028400363310",
+          "1",
+          "1",
+          "24CT XVL MT MV JAL",
+          "24CT",
+          "XVL",
+          "MT",
+          "MV",
+          "JAL"
+        ]
+      },
+      "evidence": {
+        "page": 2,
+        "bounding_box": [
+          0.030226700251889168,
+          0.16295636687444345,
+          0.09445843828715365,
+          0.17542297417631345
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": null,
+    "tax": null,
+    "grand_total": {
+      "raw": "$",
+      "normalized": null,
+      "confidence": 0.6,
+      "evidence": {
+        "page": 2,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "missing",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

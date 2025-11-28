@@ -1,0 +1,124 @@
+{
+  "document_summary": {
+    "filename": "AVL_2XNW31ZWT2JY1QLM75__AVL_FRITO_1761477064755.pdf",
+    "document_type_guess": "Unknown",
+    "page_count": 1
+  },
+  "document_fingerprint": {
+    "vendor_guess": "Supplier",
+    "languages": [
+      "en"
+    ],
+    "currency_iso": null,
+    "numbering_style": "international",
+    "day_first_date_probability": 0.25
+  },
+  "fields": {
+    "purchase_order_date": {
+      "raw": "4/21/2025",
+      "normalized": "2025-04-21",
+      "confidence": 0.75,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    }
+  },
+  "addresses": {
+    "ship_to": {
+      "raw": "Allegiant Air\\nAllegiant\\nAir\\n122 Wright Brothers Way\\n122\\nWright\\nBrothers\\nWay\\nFletcher, NC 28732 USA\\nFletcher,\\nNC\\n28732\\nUSA\\nCases\\nCases\\nUnit price\\nUnit\\nprice\\nSubtotal\\nSubtotal\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n15\\n15\\n25.71\\n25.71\\n385.63\\n385.63\\n13.83\\n13.83\\n553.28\\n553.28\\n40\\n40\\n20\\n20\\n32.70\\n32.70\\n654.00\\n654.00",
+      "normalized": {
+        "lines": [
+          "Allegiant Air",
+          "Allegiant",
+          "Air",
+          "122 Wright Brothers Way",
+          "122",
+          "Wright",
+          "Brothers",
+          "Way",
+          "Fletcher, NC 28732 USA",
+          "Fletcher,",
+          "NC",
+          "28732",
+          "USA",
+          "Cases",
+          "Cases",
+          "Unit price",
+          "Unit",
+          "price",
+          "Subtotal",
+          "Subtotal",
+          "15",
+          "15",
+          "25.71",
+          "25.71",
+          "385.63",
+          "385.63",
+          "15",
+          "15",
+          "25.71",
+          "25.71",
+          "385.63",
+          "385.63",
+          "15",
+          "15",
+          "25.71",
+          "25.71",
+          "385.63",
+          "385.63",
+          "13.83",
+          "13.83",
+          "553.28",
+          "553.28",
+          "40",
+          "40",
+          "20",
+          "20",
+          "32.70",
+          "32.70",
+          "654.00",
+          "654.00"
+        ]
+      },
+      "evidence": {
+        "page": 1,
+        "bounding_box": [
+          0.5931372549019608,
+          0.24053030303030304,
+          0.6544117647058824,
+          0.2566287878787879
+        ]
+      }
+    }
+  },
+  "line_items": [],
+  "totals": {
+    "subtotal": {
+      "raw": "385.63",
+      "normalized": "385.63",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "tax": null,
+    "grand_total": {
+      "raw": "4,878.00",
+      "normalized": "4878",
+      "confidence": 1.0,
+      "evidence": {
+        "page": 1,
+        "bounding_box": null
+      }
+    },
+    "verification": {
+      "status": "insufficient",
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "anomalies": []
+}

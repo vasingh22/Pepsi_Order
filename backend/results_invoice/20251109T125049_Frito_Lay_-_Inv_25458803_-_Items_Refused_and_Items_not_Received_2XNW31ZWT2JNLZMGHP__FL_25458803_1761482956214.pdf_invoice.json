@@ -1,0 +1,70 @@
+{
+  "invoice_details": {
+    "store_name": null,
+    "seller_name": null,
+    "buyer_name": null,
+    "customer_name": null,
+    "invoice_number": null,
+    "order_number": null,
+    "PO_number": null,
+    "invoice_date": null,
+    "order_date": null,
+    "PO_date": null,
+    "delivery_date": null,
+    "gst_number": null,
+    "tax_id": null
+  },
+  "address_information": {
+    "seller_address": null,
+    "buyer_address": null,
+    "ship_to_address": null,
+    "contact_information": {
+      "phone": null,
+      "email": null
+    }
+  },
+  "line_items": [],
+  "financial_information": {
+    "subtotal": null,
+    "tax_details": [],
+    "discount_total": null,
+    "shipping_charges": null,
+    "grand_total": null,
+    "currency": null
+  },
+  "payment_information": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "additional_metadata": {
+    "document_summary": {
+      "filename": "Frito_Lay_-_Inv_25458803_-_Items_Refused_and_Items_not_Received_2XNW31ZWT2JNLZMGHP__FL_25458803_1761482956214.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 1
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": null,
+      "day_first_date_probability": 0.5
+    },
+    "original_fields": {},
+    "totals_verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    },
+    "anomalies": [
+      {
+        "code": "totals_missing",
+        "message": "No subtotal or grand total candidates identified.",
+        "page": null
+      }
+    ]
+  }
+}

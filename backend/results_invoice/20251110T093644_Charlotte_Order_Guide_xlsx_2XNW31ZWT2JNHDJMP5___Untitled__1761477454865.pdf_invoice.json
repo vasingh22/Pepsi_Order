@@ -1,0 +1,60 @@
+{
+  "seller_name": null,
+  "buyer_name": null,
+  "invoice_number": null,
+  "invoice_date": null,
+  "po_number": null,
+  "po_date": null,
+  "delivery_date": null,
+  "seller_tax_id": null,
+  "buyer_tax_id": null,
+  "seller_address": null,
+  "buyer_address": null,
+  "shipping_address": null,
+  "seller_contact": null,
+  "buyer_contact": null,
+  "line_items": [],
+  "financial_summary": {
+    "subtotal": null,
+    "tax_details": [],
+    "total_discount": null,
+    "shipping_charges": null,
+    "grand_total": null,
+    "currency": null,
+    "totals_verification": {
+      "status": null,
+      "recomputed_total": null,
+      "difference": null,
+      "notes": null
+    }
+  },
+  "payment_details": {
+    "payment_terms": null,
+    "payment_mode": null,
+    "due_date": null
+  },
+  "document_metadata": {
+    "document_summary": {
+      "filename": "Charlotte_Order_Guide_xlsx_2XNW31ZWT2JNHDJMP5___Untitled__1761477454865.pdf",
+      "document_type_guess": "Unknown",
+      "page_count": 3
+    },
+    "document_fingerprint": {
+      "vendor_guess": null,
+      "languages": [
+        "en"
+      ],
+      "currency_iso": null,
+      "numbering_style": null,
+      "day_first_date_probability": 0.0
+    },
+    "anomalies": [
+      {
+        "code": "totals_missing",
+        "message": "No subtotal or grand total candidates identified.",
+        "page": null
+      }
+    ]
+  },
+  "raw_extracted_fields": {}
+}
