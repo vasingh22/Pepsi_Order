@@ -1,0 +1,42 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC RENO (W-350)",
+    "SourceOrderID": "QUAKER",
+    "PONumber": "300572556",
+    "RDD": "2025/05/19",
+    "ShippingAddress": "KF DC RENO (W-350)\n55-101 VISTA BLVD.\nSPARKS, NV 89434",
+    "BillingAddress": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "80011242",
+      "80007764",
+      "80007765",
+      "80007766",
+      "80009896",
+      "80009982",
+      "80010210",
+      "80010830",
+      "80011239",
+      "80011240",
+      "80011241"
+    ],
+    "MaterialIDCount": 11,
+    "LineItemCount": 11
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

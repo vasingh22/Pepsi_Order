@@ -1,0 +1,35 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Allegiant Air",
+    "SourceOrderID": null,
+    "PONumber": "111663",
+    "RDD": null,
+    "ShippingAddress": "Allegiant Air\nOutlet #11061350\n57 Wayne Newton Blvd.\nLas Vegas, NV 89119 USA",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "002840044439",
+      "0002840007700",
+      "0002840047903"
+    ],
+    "MaterialIDCount": 3,
+    "LineItemCount": 3
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "RDD: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

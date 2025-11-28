@@ -1,0 +1,33 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Quaker Sales & Distribution",
+    "SourceOrderID": "146870",
+    "PONumber": "R58P4350",
+    "RDD": "2025/05/21",
+    "ShippingAddress": "2730 S. 98th St.\nEdwardsville KS 66111",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "65200000",
+      "65202000"
+    ],
+    "MaterialIDCount": 2,
+    "LineItemCount": 2
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

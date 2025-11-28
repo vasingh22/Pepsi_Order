@@ -1,0 +1,8 @@
+Extraction Summary - 2025-11-24 10:14:19.591980
+Model: Gemini 1.5 Flash
+Total: 200
+Successful: 77
+Needs Review: 123
+Errors: 0
+
+Error Details:

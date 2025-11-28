@@ -1,0 +1,40 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Colonial Wholesale Dist. LLC",
+    "SourceOrderID": "087",
+    "PONumber": "105003",
+    "RDD": "2025/05/07",
+    "ShippingAddress": "10889 Crossroads Commerce Blvd\nTampa, Florida 33610",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "13788",
+      "13789",
+      "13790",
+      "13791",
+      "6792",
+      "6793",
+      "6794",
+      "6795",
+      "6796",
+      "6797"
+    ],
+    "MaterialIDCount": 10,
+    "LineItemCount": 10
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

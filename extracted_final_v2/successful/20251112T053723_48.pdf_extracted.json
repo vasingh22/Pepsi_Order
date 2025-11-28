@@ -1,0 +1,38 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Allegiant Air",
+    "SourceOrderID": "11061369",
+    "PONumber": "111690",
+    "RDD": "2025/05/07",
+    "ShippingAddress": "931 Airport Service Rd, Nashville, TN 37214 USA",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "002840044375",
+      "0002840044366",
+      "0002840044439",
+      "0002840020871",
+      "0002840047903",
+      "0002840047906",
+      "0002840007700",
+      "00284004443"
+    ],
+    "MaterialIDCount": 8,
+    "LineItemCount": 8
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

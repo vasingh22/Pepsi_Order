@@ -1,0 +1,39 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KCN DC FONTANA (WFONT-325)",
+    "SourceOrderID": null,
+    "PONumber": "300571149",
+    "RDD": "2025/05/07",
+    "ShippingAddress": "KCN DC FONTANA (WFONT-325)\n13369 VALLEY BLVD.\nFONTANA, CA 92335",
+    "BillingAddress": "FRITO LAY INC\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10355",
+      "10513",
+      "10514",
+      "10525",
+      "7687",
+      "7690"
+    ],
+    "MaterialIDCount": 7,
+    "LineItemCount": 7
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

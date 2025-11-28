@@ -1,0 +1,39 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "TRCI Warehouse",
+    "SourceOrderID": "5078",
+    "PONumber": "194930",
+    "RDD": null,
+    "ShippingAddress": "82911 Beach Access Road Umatilla, Or 97882-2179",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "4451",
+      "4441",
+      "44366",
+      "4368",
+      "4355",
+      "44354",
+      "1061",
+      "54239"
+    ],
+    "MaterialIDCount": 8,
+    "LineItemCount": 8
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.85,
+    "needs_human_review": true,
+    "validation_errors": [
+      "RDD: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

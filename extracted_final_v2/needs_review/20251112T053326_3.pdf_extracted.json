@@ -1,0 +1,76 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "08 - Shamrock Foods Co Automated",
+    "SourceOrderID": "0112322 - FRITO LAY NORTH AMERICA",
+    "PONumber": "201062900",
+    "RDD": "2025/09/19",
+    "ShippingAddress": "2926 W. Encanto Bivd Phoenix AZ 85009",
+    "BillingAddress": "3900 E. Camelback Rd. Ste. 300 Phoenix AZ 85018"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "0041686",
+      "1937581",
+      "1937591",
+      "2274711",
+      "2435681",
+      "2448781",
+      "2802821",
+      "2859791",
+      "2859871",
+      "2859881",
+      "2859951",
+      "2859961",
+      "2859981",
+      "2859991",
+      "2860011",
+      "2860021",
+      "2860031",
+      "2869421",
+      "2873291",
+      "2948331",
+      "2948351",
+      "3076841",
+      "233263851",
+      "3270931",
+      "3366971",
+      "3366981",
+      "3457861",
+      "3457871",
+      "3457881",
+      "3604171",
+      "3694661",
+      "4004141",
+      "4022101",
+      "4051041",
+      "4213031",
+      "4432121",
+      "4525471",
+      "4645181",
+      "4645191",
+      "4645531",
+      "4654751",
+      "4751751",
+      "4878431",
+      "4919271",
+      "5062711"
+    ],
+    "MaterialIDCount": 45,
+    "LineItemCount": 45
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

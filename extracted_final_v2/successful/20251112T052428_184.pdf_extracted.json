@@ -1,0 +1,33 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC EDISON (Y-340)",
+    "SourceOrderID": null,
+    "PONumber": "300572022",
+    "RDD": "2025/05/15",
+    "ShippingAddress": "31 MILL ROAD, EDISON, NJ 08837",
+    "BillingAddress": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10514",
+      "7689",
+      "80003280"
+    ],
+    "MaterialIDCount": 3,
+    "LineItemCount": 3
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "SourceOrderID: Missing/null"
+    ]
+  }
+}

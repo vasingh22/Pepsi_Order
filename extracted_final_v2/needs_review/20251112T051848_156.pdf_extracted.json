@@ -1,0 +1,35 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC MIDWEST (M-300)",
+    "SourceOrderID": "300571357",
+    "PONumber": null,
+    "RDD": "2025/05/08",
+    "ShippingAddress": "KF DC MIDWEST (M-300)\n13870 CORPORATE WOODS TRAIL\nBRIDGETON, MO 63044",
+    "BillingAddress": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10525",
+      "80003280",
+      "80008042"
+    ],
+    "MaterialIDCount": 3,
+    "LineItemCount": 3
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "PONumber: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

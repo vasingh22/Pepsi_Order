@@ -1,0 +1,32 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Quaker Sales & Distribution",
+    "SourceOrderID": "0001483",
+    "PONumber": "B34319",
+    "RDD": "2025/05/05",
+    "ShippingAddress": "PO Box 644943\nPittsburgh, PA 15264-4943",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "3977",
+      "03955"
+    ],
+    "MaterialIDCount": 2,
+    "LineItemCount": 2
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

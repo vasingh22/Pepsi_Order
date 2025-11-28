@@ -1,0 +1,34 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "FRITO LAY INC",
+    "SourceOrderID": "KEEFE SUPPLY COMPANY",
+    "PONumber": "300572560",
+    "RDD": "2025/05/19",
+    "ShippingAddress": "6992 E. CENTURY PARK DRIVE, SUITE 100 TUCSON, AZ 85756",
+    "BillingAddress": "165 S COUNTY RD 300 W FRANKFORT IN 460418766"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10355",
+      "10514",
+      "7687",
+      "80005365"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

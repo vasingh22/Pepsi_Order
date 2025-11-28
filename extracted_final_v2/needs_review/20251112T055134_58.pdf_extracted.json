@@ -1,0 +1,36 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": null,
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "030"
+    ],
+    "MaterialIDCount": 1,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.5875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Missing/null",
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

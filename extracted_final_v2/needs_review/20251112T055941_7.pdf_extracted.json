@@ -1,0 +1,31 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Vistar Rocky Mountain",
+    "SourceOrderID": null,
+    "PONumber": "848040080",
+    "RDD": "2025/05/14",
+    "ShippingAddress": "6721 York St, Denver CO 80229",
+    "BillingAddress": "PO BOX 6579, Greenwood Village CO 80155"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [],
+    "MaterialIDCount": 0,
+    "LineItemCount": 3
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": false,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.7125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Not found in OCR (possible hallucination)",
+      "MaterialIDList: 3 IDs not in OCR"
+    ]
+  }
+}

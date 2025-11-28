@@ -1,0 +1,62 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Minneapolis Vending",
+    "SourceOrderID": null,
+    "PONumber": "12354277",
+    "RDD": "2025/04/28",
+    "ShippingAddress": "2220 County Road H2 - Mounds View, MN 55112",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "25115",
+      "4400",
+      "75356",
+      "36131",
+      "44368",
+      "36134",
+      "44374",
+      "36289",
+      "76003",
+      "4375",
+      "36294",
+      "4379",
+      "76638",
+      "35821",
+      "36317",
+      "45096",
+      "10310",
+      "45091",
+      "36109",
+      "4359",
+      "3111",
+      "70762",
+      "72575",
+      "76203",
+      "36345",
+      "53518",
+      "4439",
+      "70766",
+      "4365",
+      "4427",
+      "4428"
+    ],
+    "MaterialIDCount": 31,
+    "LineItemCount": 31
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

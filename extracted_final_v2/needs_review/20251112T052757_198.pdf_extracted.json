@@ -1,0 +1,51 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "RESTAURANT DEPOT LLC",
+    "SourceOrderID": "0021885",
+    "PONumber": "603-67891",
+    "RDD": "2025/04/29",
+    "ShippingAddress": "1335 CESAR E CHAVEZ PKWY\nSAN DIEGO, CA 92113",
+    "BillingAddress": "1710 WHITESTONE EXPRESSWAY\nWHITESTONE, NY 11357-3054"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "00",
+      "00",
+      "00",
+      "00",
+      "00000000",
+      "00",
+      "0230097",
+      "0230154",
+      "0230169",
+      "0231371",
+      "0232198",
+      "0233004",
+      "0233414",
+      "0234010",
+      "0234096",
+      "0234097",
+      "0234295",
+      "0234388",
+      "0234401",
+      "0234539"
+    ],
+    "MaterialIDCount": 20,
+    "LineItemCount": 20
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

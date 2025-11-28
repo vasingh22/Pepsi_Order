@@ -1,0 +1,34 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KCN WSC (WTUAZ-32A)",
+    "SourceOrderID": "KEEFE SUPPLY COMPANY",
+    "PONumber": "300572017",
+    "RDD": "2025/05/14",
+    "ShippingAddress": "6992 E. CENTURY PARK DRIVE, SUITE 100\nTUCSON, AZ 85756",
+    "BillingAddress": "10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10514",
+      "7687",
+      "80008042"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

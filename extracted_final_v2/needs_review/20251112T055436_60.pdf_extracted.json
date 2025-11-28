@@ -1,0 +1,53 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Culinary Ventures Vending",
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": "2025/05/01",
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "2328",
+      "2334",
+      "76637",
+      "35821",
+      "76635",
+      "36109",
+      "3111",
+      "70762",
+      "36120",
+      "74946",
+      "36131",
+      "36134",
+      "36123",
+      "36316",
+      "36125",
+      "49151",
+      "76003",
+      "36330",
+      "317",
+      "72840"
+    ],
+    "MaterialIDCount": 20,
+    "LineItemCount": 20
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.75,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

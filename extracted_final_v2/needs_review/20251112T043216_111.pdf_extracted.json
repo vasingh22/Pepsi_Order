@@ -1,0 +1,40 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Ross Distribution Center",
+    "SourceOrderID": "43430148",
+    "PONumber": "80590775",
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": "5130 Hacienda Drive Dublin, CA 94568"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "38135",
+      "62605",
+      "38126",
+      "38317",
+      "38313",
+      "38120",
+      "38321",
+      "38316"
+    ],
+    "MaterialIDCount": 8,
+    "LineItemCount": 8
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Not found in OCR (possible hallucination)",
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null"
+    ]
+  }
+}

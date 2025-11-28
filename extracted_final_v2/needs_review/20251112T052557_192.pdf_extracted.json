@@ -1,0 +1,35 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC OHIO (C-370)",
+    "SourceOrderID": "QUAKER",
+    "PONumber": "300572555",
+    "RDD": "2025/05/19",
+    "ShippingAddress": "KF DC OHIO (C-370)\n21848 COMMERCE PARKWAY\nSTRONGSVILLE, OH 44149",
+    "BillingAddress": "KEEFE SUPPLY COMPANY\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "80002791",
+      "80006414",
+      "80007535",
+      "80009823"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Ross Procurement Inc.",
+    "SourceOrderID": "43430148",
+    "PONumber": "80590411",
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": "5130 Hacienda Drive Dublin, CA 94568"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "38321",
+      "38124",
+      "38131",
+      "36316",
+      "38118",
+      "38134",
+      "38135",
+      "38294"
+    ],
+    "MaterialIDCount": 8,
+    "LineItemCount": 8
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.85,
+    "needs_human_review": true,
+    "validation_errors": [
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null"
+    ]
+  }
+}

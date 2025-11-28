@@ -1,0 +1,39 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KCN DC RICHMOND (Y-345)",
+    "SourceOrderID": null,
+    "PONumber": "300571157",
+    "RDD": "2025/05/07",
+    "ShippingAddress": "10464 Cedar Lane\nSuite 100\nGLEN ALLEN, VA 23059",
+    "BillingAddress": "10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10446",
+      "10513",
+      "10525",
+      "7689",
+      "7690",
+      "80008042"
+    ],
+    "MaterialIDCount": 7,
+    "LineItemCount": 7
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

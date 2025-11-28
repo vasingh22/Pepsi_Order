@@ -1,0 +1,34 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC TEXAS (T-380)",
+    "SourceOrderID": "KEEFE SUPPLY COMPANY",
+    "PONumber": "300572253",
+    "RDD": "2025/05/16",
+    "ShippingAddress": "3101 MARQUIS DRIVE, SUITE 200 GARLAND, TX 75042",
+    "BillingAddress": "10880 LIN PAGE PLACE SAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10446",
+      "10513",
+      "7683",
+      "7690"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

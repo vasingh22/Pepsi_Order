@@ -1,0 +1,42 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": null,
+    "SourceOrderID": "43430148",
+    "PONumber": "80590753",
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": "5130 Hacienda Drive, Dublin, CA 94568"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "75358",
+      "38107",
+      "38320",
+      "38109",
+      "3111",
+      "78424",
+      "7291",
+      "53518",
+      "38294",
+      "38331"
+    ],
+    "MaterialIDCount": 10,
+    "LineItemCount": 10
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Missing/null",
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null"
+    ]
+  }
+}

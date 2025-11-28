@@ -1,0 +1,56 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": null,
+    "SourceOrderID": "FRITO LAY",
+    "PONumber": "PO9430",
+    "RDD": "2025/05/12",
+    "ShippingAddress": "Brent Cirinelli GROCERY HAULERS, INC. 485 ROUTE 1 SOUTH, BLDG F, SUITE 310 ISELIN NJ 08830",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "0246",
+      "0005",
+      "4355",
+      "4358",
+      "4359",
+      "44387",
+      "4365",
+      "44374",
+      "4375",
+      "4366",
+      "4428",
+      "44361",
+      "44379",
+      "4353",
+      "44367",
+      "4399",
+      "44360",
+      "44368",
+      "66457",
+      "21972",
+      "72575",
+      "49010",
+      "56882",
+      "62829",
+      "49093"
+    ],
+    "MaterialIDCount": 25,
+    "LineItemCount": 25
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

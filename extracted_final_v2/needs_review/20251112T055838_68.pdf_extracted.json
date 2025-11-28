@@ -1,0 +1,74 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "VENDORS SUPPLY",
+    "SourceOrderID": null,
+    "PONumber": "16497506",
+    "RDD": "2025/04/29",
+    "ShippingAddress": "6448 GANO ROAD, P.O. BOX 62883, CINCINNATI, OH 45262",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "11137",
+      "36126",
+      "77291",
+      "74847",
+      "07785",
+      "62984",
+      "11130",
+      "72575",
+      "44441",
+      "44396",
+      "45301",
+      "44363",
+      "44365",
+      "44366",
+      "44367",
+      "44368",
+      "44428",
+      "44427",
+      "44355",
+      "44354",
+      "44353",
+      "44379",
+      "44375",
+      "44374",
+      "21972",
+      "69002",
+      "44359",
+      "44358",
+      "44399",
+      "44394",
+      "44439",
+      "44391",
+      "44388",
+      "70766",
+      "32619",
+      "32621",
+      "75356",
+      "20871",
+      "36317",
+      "36134",
+      "36289",
+      "36331",
+      "36313"
+    ],
+    "MaterialIDCount": 43,
+    "LineItemCount": 44
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8375,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

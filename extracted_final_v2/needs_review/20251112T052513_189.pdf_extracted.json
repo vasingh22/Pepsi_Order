@@ -1,0 +1,36 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KCN DC FONTANA (WFONT-325)",
+    "SourceOrderID": null,
+    "PONumber": "300572243",
+    "RDD": "2025/05/16",
+    "ShippingAddress": "13369 VALLEY BLVD. FONTANA, CA 92335",
+    "BillingAddress": "10880 LIN PAGE PLACE SAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10355",
+      "10514",
+      "10525",
+      "7687"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

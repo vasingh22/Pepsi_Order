@@ -1,0 +1,56 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Edens Bronx",
+    "SourceOrderID": "FRITO LAY",
+    "PONumber": "PO9306",
+    "RDD": "2025/04/28",
+    "ShippingAddress": "711 Brush Ave\nBronx NY 10465",
+    "BillingAddress": "485F Route 1 South\nSuite 310\nIselin, NJ 08830"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "4355",
+      "4358",
+      "4359",
+      "43",
+      "4365",
+      "44374",
+      "4375",
+      "4366",
+      "4427",
+      "4428",
+      "4439",
+      "44361",
+      "4379",
+      "4353",
+      "4399",
+      "44360",
+      "44368",
+      "71451",
+      "66457",
+      "21972",
+      "4441",
+      "72575",
+      "4396",
+      "56882",
+      "49010",
+      "11137"
+    ],
+    "MaterialIDCount": 26,
+    "LineItemCount": 26
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": null,
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": "2025/05/08",
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "76637",
+      "35821",
+      "36109",
+      "36111",
+      "70762",
+      "36120",
+      "36131",
+      "36134",
+      "36135",
+      "75356",
+      "36123",
+      "36316",
+      "36125",
+      "36289",
+      "36293",
+      "70764",
+      "49151",
+      "76003",
+      "36345",
+      "36317",
+      "72840",
+      "70766",
+      "36325"
+    ],
+    "MaterialIDCount": 23,
+    "LineItemCount": 23
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.6875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Missing/null",
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}
