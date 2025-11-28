@@ -1,0 +1,38 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC OLIVE BRANCH",
+    "SourceOrderID": "KEEFE SUPPLY COMPANY",
+    "PONumber": "300572021",
+    "RDD": "2025/05/14",
+    "ShippingAddress": "KF DC OLIVE BRANCH (FOB-335)\n1865 Progress Way\nSuite 101\nOlive Branch, MS 38654",
+    "BillingAddress": "FRITO LAY INC\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10513",
+      "7683",
+      "7690",
+      "80003280",
+      "80005365",
+      "80010089"
+    ],
+    "MaterialIDCount": 7,
+    "LineItemCount": 7
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "CULINARY VENTURES VENDING",
+    "SourceOrderID": null,
+    "PONumber": "42525B",
+    "RDD": "2025/04/25",
+    "ShippingAddress": "1835 BURNET AVE UNION NJ 07083-4282",
+    "BillingAddress": "1835 BURNET AVE UNION NJ 07083-4282"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "00010",
+      "00020",
+      "00030",
+      "00040",
+      "00050",
+      "00060",
+      "00070",
+      "00080",
+      "00090",
+      "000000",
+      "00110",
+      "00120",
+      "00130",
+      "00140",
+      "00150",
+      "00160"
+    ],
+    "MaterialIDCount": 16,
+    "LineItemCount": 16
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

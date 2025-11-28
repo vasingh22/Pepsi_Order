@@ -1,0 +1,43 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Ross Distribution Center",
+    "SourceOrderID": "43430148",
+    "PONumber": "80590782",
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "49151",
+      "47691",
+      "69353",
+      "38312",
+      "38289",
+      "38317",
+      "75358",
+      "38320",
+      "38109",
+      "3111"
+    ],
+    "MaterialIDCount": 10,
+    "LineItemCount": 10
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.75,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Not found in OCR (possible hallucination)",
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

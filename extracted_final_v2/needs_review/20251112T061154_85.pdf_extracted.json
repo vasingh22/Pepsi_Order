@@ -1,0 +1,80 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "CTHFREEINESTAR EVANSVILLE",
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": "2025/04/03",
+    "ShippingAddress": "21:30 BERGDULT KD\nEUARSUXLLE IN 47711-2878",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "02843174",
+      "30028894",
+      "301120739",
+      "02804399",
+      "300000000",
+      "00028400441392",
+      "3888551",
+      "028400443878",
+      "300036126",
+      "02828400077002",
+      "02840027",
+      "3009309",
+      "02840044279",
+      "30020775",
+      "0028400443654",
+      "30020754",
+      "00284843746",
+      "30020757",
+      "0029400443661",
+      "30020755",
+      "0028400143593",
+      "309020744",
+      "0028400443753",
+      "0028400450959",
+      "30019950",
+      "02029400479066",
+      "023400443685",
+      "3000361510",
+      "0028408443609",
+      "30020746",
+      "00028400443548",
+      "300020740",
+      "70028400444286",
+      "020444002",
+      "3999999",
+      "10028460443791",
+      "309820760",
+      "00028400479035",
+      "300027586",
+      "028408231",
+      "380824817",
+      "58028400535182",
+      "30028682",
+      "002840753582",
+      "30842838",
+      "00028400361262"
+    ],
+    "MaterialIDCount": 46,
+    "LineItemCount": 26
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.709840425531915,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Missing/null",
+      "MaterialIDList: 1 IDs not in OCR"
+    ]
+  }
+}

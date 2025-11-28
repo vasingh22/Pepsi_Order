@@ -1,0 +1,74 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "YJGGUS SROOKS",
+    "SourceOrderID": null,
+    "PONumber": "080669",
+    "RDD": "2025/04/24",
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "67879",
+      "6899",
+      "87700",
+      "2009",
+      "1999",
+      "92972",
+      "96098",
+      "1911",
+      "8777",
+      "2922",
+      "16922",
+      "8822",
+      "261221",
+      "97111",
+      "8911",
+      "6922",
+      "8922",
+      "9999",
+      "4777",
+      "9797",
+      "67978",
+      "97978",
+      "07979",
+      "1797",
+      "9609",
+      "1609",
+      "98700",
+      "61978",
+      "76091",
+      "37822",
+      "322222",
+      "177664",
+      "177664",
+      "36911",
+      "16793",
+      "68793",
+      "92222",
+      "177963",
+      "177969",
+      "32622"
+    ],
+    "MaterialIDCount": 40,
+    "LineItemCount": 88
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.6449712643678162,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Not found in OCR (possible hallucination)",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null",
+      "MaterialIDList: 47 IDs not in OCR"
+    ]
+  }
+}

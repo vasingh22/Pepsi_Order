@@ -1,0 +1,73 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Vistar Rocky Mountain",
+    "SourceOrderID": "293950",
+    "PONumber": "84776739 0",
+    "RDD": "2025/05/05",
+    "ShippingAddress": "6721 York St, Denver CO 80229",
+    "BillingAddress": "PO BOX 6579, Greenwood Village CO 80155"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "FRI10310",
+      "FRI12527",
+      "FRI20871",
+      "FRI25111",
+      "FRI25113",
+      "FRI35821",
+      "FRI36109",
+      "FRI36123",
+      "FRI36134",
+      "FRI36135",
+      "FRI36294",
+      "FRI36313",
+      "FRI36316",
+      "FRI36317",
+      "FRI36325",
+      "FRI36330",
+      "FRI36331",
+      "FRI36345",
+      "FRI44355",
+      "FR144358",
+      "FR144359",
+      "FR144365",
+      "FR144366",
+      "FRI44386",
+      "FRI44395",
+      "FRI44399",
+      "FRI44427",
+      "FRI44428",
+      "FRI44441",
+      "FRI45091",
+      "FRI45092",
+      "FRI45093",
+      "FRI45095",
+      "FRI45096",
+      "FRI50235",
+      "FRI70227",
+      "FRI70764",
+      "FRI70766",
+      "FRI71559",
+      "FRI76621",
+      "FRI76636",
+      "FRI76638",
+      "FRI77291"
+    ],
+    "MaterialIDCount": 43,
+    "LineItemCount": 44
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.959659090909091,
+    "needs_human_review": false,
+    "validation_errors": [
+      "MaterialIDList: 1 IDs not in OCR"
+    ]
+  }
+}

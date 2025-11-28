@@ -1,0 +1,59 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "NIS",
+    "SourceOrderID": null,
+    "PONumber": "018619",
+    "RDD": null,
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "0011",
+      "9222",
+      "67879",
+      "9098",
+      "2889",
+      "18679",
+      "7622",
+      "17785",
+      "17785",
+      "2822",
+      "8222",
+      "6922",
+      "589221",
+      "789221",
+      "79222",
+      "199222",
+      "178111",
+      "9977",
+      "2222",
+      "92622",
+      "177988",
+      "177992",
+      "926221",
+      "916221"
+    ],
+    "MaterialIDCount": 24,
+    "LineItemCount": 41
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.598170731707317,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Not found in OCR (possible hallucination)",
+      "RDD: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null",
+      "MaterialIDList: 17 IDs not in OCR"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "CTNSE@MONTGOMERY",
+    "SourceOrderID": "2003524351",
+    "PONumber": "20800429",
+    "RDD": "2025/05/08",
+    "ShippingAddress": "CTNSE@MONTGOMERY\n2080 MCMILLAN ST\nAUBURN AL 36832-4272",
+    "BillingAddress": "CTNSE@MONTGOMERY\n2080 MCMILLAN ST\nAUBURN AL 36832-4272"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "00010",
+      "00020",
+      "00030",
+      "00040",
+      "00050",
+      "00060",
+      "00070",
+      "00080",
+      "00090",
+      "00100",
+      "0110",
+      "00120",
+      "00130",
+      "00140",
+      "00150",
+      "00160",
+      "00170",
+      "00180",
+      "00190",
+      "00000",
+      "00210",
+      "00220",
+      "00230",
+      "00240",
+      "00250",
+      "00260"
+    ],
+    "MaterialIDCount": 26,
+    "LineItemCount": 26
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 1.0,
+    "needs_human_review": false,
+    "validation_errors": []
+  }
+}

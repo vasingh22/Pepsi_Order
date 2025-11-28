@@ -1,0 +1,52 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "A.W. MARSHALL CO.",
+    "SourceOrderID": null,
+    "PONumber": "271931",
+    "RDD": null,
+    "ShippingAddress": "A.W. MARSHALL CO.\n47 NORTH 500 WEST\nSLC, UT 84116",
+    "BillingAddress": "A.W. MARSHALL CO.\nP.O. BOX 16127\nSLC, UT 84116"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "44366",
+      "44368",
+      "44365",
+      "4375",
+      "44367",
+      "10310",
+      "44374",
+      "4428",
+      "4359",
+      "4358",
+      "44354",
+      "4399",
+      "44360",
+      "441",
+      "45091",
+      "45096",
+      "4427",
+      "4355",
+      "4446",
+      "44361",
+      "4363"
+    ],
+    "MaterialIDCount": 21,
+    "LineItemCount": 21
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.85,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "RDD: Missing/null"
+    ]
+  }
+}

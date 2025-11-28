@@ -1,0 +1,55 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Edens Bronx",
+    "SourceOrderID": null,
+    "PONumber": "PO9362",
+    "RDD": "2025/05/06",
+    "ShippingAddress": "711 Brush Ave Bronx NY 10465",
+    "BillingAddress": "485F Route 1 South Suite 310 Iselin, NJ 08830"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "36111",
+      "36109",
+      "70762",
+      "74946",
+      "36294",
+      "36289",
+      "70764",
+      "36293",
+      "49151",
+      "73301",
+      "69353",
+      "76621",
+      "36131",
+      "75356",
+      "36134",
+      "36123",
+      "36135",
+      "53518",
+      "35821",
+      "76638",
+      "36316",
+      "36317",
+      "72840",
+      "36330"
+    ],
+    "MaterialIDCount": 24,
+    "LineItemCount": 24
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

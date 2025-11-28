@@ -1,0 +1,37 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC JACKSONVILLE (F-330)",
+    "SourceOrderID": "KEEFE SUPPLY COMPANY",
+    "PONumber": "300572561",
+    "RDD": "2025/05/19",
+    "ShippingAddress": "KF DC JACKSONVILLE (F-330)\n1371-1 TRADEPORT DRIVE\nJACKSONVILLE, FL 32218",
+    "BillingAddress": "FRITO LAY INC\n10880 LIN PAGE PLACE\nSAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10514",
+      "10525",
+      "7683",
+      "7690",
+      "80005365"
+    ],
+    "MaterialIDCount": 6,
+    "LineItemCount": 6
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "GOURMET FOODS INTERNATIONAL",
+    "SourceOrderID": "19092",
+    "PONumber": "782183",
+    "RDD": "2025/04/29",
+    "ShippingAddress": "370 PANTHERSVILLE RD\nDECATUR, GA 30034",
+    "BillingAddress": "370 PANTHERSVILLE RD\nDECATUR, GA 30034"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "49358",
+      "49357",
+      "49276",
+      "49277",
+      "49275"
+    ],
+    "MaterialIDCount": 5,
+    "LineItemCount": 5
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 1.0,
+    "needs_human_review": false,
+    "validation_errors": []
+  }
+}

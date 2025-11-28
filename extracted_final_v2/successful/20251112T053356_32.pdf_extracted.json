@@ -1,0 +1,32 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Frito-Lay, Inc. (VENDING)",
+    "SourceOrderID": "0000112",
+    "PONumber": "B34332",
+    "RDD": "2025/05/05",
+    "ShippingAddress": "Frito-Lay, Inc. (VENDING)\nAVI FOODSYSTEMS INC. HQ_WHSE\n75 Remittance Dr Ste 1844\nChicago, IL 60675-1844",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "76636",
+      "V18167"
+    ],
+    "MaterialIDCount": 2,
+    "LineItemCount": 1
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

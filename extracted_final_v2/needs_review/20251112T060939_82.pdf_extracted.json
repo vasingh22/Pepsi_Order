@@ -1,0 +1,80 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": null,
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": "2025/04/29",
+    "ShippingAddress": null,
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "028400353174",
+      "30028894",
+      "002340043531",
+      "30020739",
+      "028400443999",
+      "300020756",
+      "0028400444392",
+      "38838791",
+      "028400443678",
+      "30036126",
+      "9028406077002",
+      "30023389",
+      "028400413951",
+      "30020763",
+      "30020754",
+      "02843746",
+      "60020757",
+      "0028400443661",
+      "3032072K",
+      "002840043593",
+      "301020744",
+      "02840043753",
+      "3000297553",
+      "6028409450959",
+      "300039950",
+      "96028400479056",
+      "3092287",
+      "36603615",
+      "0028400445885",
+      "028400362948",
+      "388976898",
+      "80023400443540",
+      "30020740",
+      "88828400441286",
+      "30002077",
+      "02840044002",
+      "00025400143791",
+      "30020760",
+      "50028400479035",
+      "300027585",
+      "100294003612311",
+      "0789753562",
+      "301042338",
+      "0028400351267",
+      "3002359"
+    ],
+    "MaterialIDCount": 45,
+    "LineItemCount": 43
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": false,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.6421875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "FileName: Missing/null",
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "ShippingAddress: Missing/null",
+      "BillingAddress: Missing/null",
+      "MaterialIDList: 3 IDs not in OCR"
+    ]
+  }
+}

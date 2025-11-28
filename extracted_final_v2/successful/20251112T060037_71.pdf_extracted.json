@@ -1,0 +1,59 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "VENDORS SUPPLY",
+    "SourceOrderID": null,
+    "PONumber": "16502206",
+    "RDD": "2025/05/01",
+    "ShippingAddress": "VENDORS SUPPLY OHIO 6448 GANO ROAD P.O. BOX 62883 CINCINNATI,OH 45262",
+    "BillingAddress": "FRITO LAY, INC. 75 Remittance Dr- suite 1844 Chicago,IL 60675-1844 United States of America"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "177195",
+      "177270",
+      "177311",
+      "177488",
+      "177532",
+      "177533",
+      "177547",
+      "177548",
+      "177549",
+      "177584",
+      "177596",
+      "177599",
+      "177601",
+      "177602",
+      "177603",
+      "177644",
+      "177664",
+      "177684",
+      "177691",
+      "177805",
+      "177908",
+      "177911",
+      "177914",
+      "177941",
+      "177943",
+      "177960",
+      "177972",
+      "177975",
+      "177981"
+    ],
+    "MaterialIDCount": 29,
+    "LineItemCount": 29
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "SourceOrderID: Missing/null"
+    ]
+  }
+}

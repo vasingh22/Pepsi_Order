@@ -1,0 +1,37 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC RENO (W-350)",
+    "SourceOrderID": null,
+    "PONumber": "300571160",
+    "RDD": "2025/05/07",
+    "ShippingAddress": "55-101 VISTA BLVD., SPARKS, NV 89434",
+    "BillingAddress": "10880 LIN PAGE PLACE, SAINT LOUIS, MO 63132"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "7683",
+      "7687",
+      "10514",
+      "10525",
+      "10354",
+      "10446",
+      "10513"
+    ],
+    "MaterialIDCount": 7,
+    "LineItemCount": 7
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "SourceOrderID: Missing/null"
+    ]
+  }
+}

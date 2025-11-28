@@ -1,0 +1,54 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Culinary Ventures Vending",
+    "SourceOrderID": null,
+    "PONumber": null,
+    "RDD": "2025/04/24",
+    "ShippingAddress": "6250 NW 27th Way\nFort Lauderdale FI. 3309",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "2328",
+      "35821",
+      "36109",
+      "36111",
+      "70762",
+      "36131",
+      "36134",
+      "36135",
+      "75356",
+      "36123",
+      "36316",
+      "36125",
+      "36294",
+      "36289",
+      "69353",
+      "36293",
+      "70764",
+      "330",
+      "36317",
+      "72840",
+      "70766",
+      "36325"
+    ],
+    "MaterialIDCount": 22,
+    "LineItemCount": 22
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": false,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": false
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "PONumber: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

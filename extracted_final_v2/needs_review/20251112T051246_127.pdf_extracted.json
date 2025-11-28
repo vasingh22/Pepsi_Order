@@ -1,0 +1,33 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "AHCC CORRECTIONAL INDUSTRIES",
+    "SourceOrderID": "SWV026867200",
+    "PONumber": "FFPO54024",
+    "RDD": "2025/05/22",
+    "ShippingAddress": "AHCC CORR. IND. WHSE DOOR 6\n11919 W SPRAGUE AVE; WEST GATE\nAIRWAY HEIGHTS WA 99001-1959",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10674",
+      "10699"
+    ],
+    "MaterialIDCount": 2,
+    "LineItemCount": 2
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Culinary Ventures Maryland",
+    "SourceOrderID": "Quaker",
+    "PONumber": "5930:022529",
+    "RDD": "2025/04/28",
+    "ShippingAddress": "1200 Distribution Drive, Carlisle, PA 17013-7456",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "01502",
+      "01505",
+      "01507",
+      "01146"
+    ],
+    "MaterialIDCount": 4,
+    "LineItemCount": 4
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

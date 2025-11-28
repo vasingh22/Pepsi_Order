@@ -1,0 +1,76 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Shamrock Foods Company",
+    "SourceOrderID": "0112322",
+    "PONumber": "201062900",
+    "RDD": "2025/09/19",
+    "ShippingAddress": "08 - Shamrock Foods Co Automated\nArizona Automated Warehouse\n2926 W. Encanto Bivd\nPhoenix AZ 85009",
+    "BillingAddress": "Shamrock Foods Company\nAttn: Accounts Payable\nDEPT 7244\n3900 E. Camelback Rd. Ste. 300\nPhoenix AZ 85018"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "00028400775397",
+      "00028400198462",
+      "00028400111379",
+      "00028400324304",
+      "00028400320788",
+      "00028400317481",
+      "00028400425377",
+      "0002840044415",
+      "00028400443609",
+      "00028400443661",
+      "00028400443685",
+      "00028400443913",
+      "00028400444002",
+      "00028400443968",
+      "00028400444514",
+      "0002840044439",
+      "0002840044460",
+      "00028400435789",
+      "00028400444392",
+      "00028400450928",
+      "00028400450911",
+      "00028400103107",
+      "00028400159401",
+      "00028400336253",
+      "00028400360968",
+      "00028400490931",
+      "00028400251150",
+      "00028400251136",
+      "00028400251112",
+      "00028400568821",
+      "00028400491518",
+      "00028400623995",
+      "00028400628297",
+      "00028400629843",
+      "00028400661546",
+      "00028400205108",
+      "00028400309004",
+      "00028400363303",
+      "00028400361347",
+      "00028400363136",
+      "00028400361118",
+      "00028400499323",
+      "00028400702270",
+      "00028400363174",
+      "00028400725750"
+    ],
+    "MaterialIDCount": 45,
+    "LineItemCount": 45
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

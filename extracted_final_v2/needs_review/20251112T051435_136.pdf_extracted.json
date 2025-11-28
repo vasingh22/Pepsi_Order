@@ -1,0 +1,43 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KF DC MIDWEST (M-300)",
+    "SourceOrderID": null,
+    "PONumber": "300570830",
+    "RDD": "2025/05/05",
+    "ShippingAddress": "13870 CORPORATE WOODS TRAIL BRIDGETON, MO 63044",
+    "BillingAddress": "165 S COUNTY RD 300 W FRANKFORT IN 460418766"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "10354",
+      "10355",
+      "10514",
+      "10525",
+      "7683",
+      "7687",
+      "7690",
+      "80000892",
+      "80003280",
+      "80005365",
+      "800000000"
+    ],
+    "MaterialIDCount": 11,
+    "LineItemCount": 11
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.8125,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "KCN DC FONTANA (WFONT-325)",
+    "SourceOrderID": "300571688",
+    "PONumber": "QUAKER",
+    "RDD": "2025/05/12",
+    "ShippingAddress": "13369 VALLEY BLVD.\nFONTANA, CA 92335",
+    "BillingAddress": "131 S DEARBORN\nCHICAGO IL 60603"
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "80007535",
+      "80009825",
+      "80009982"
+    ],
+    "MaterialIDCount": 3,
+    "LineItemCount": 3
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "ShippingAddress: Not found in OCR (possible hallucination)",
+      "BillingAddress: Not found in OCR (possible hallucination)"
+    ]
+  }
+}

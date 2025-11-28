@@ -1,0 +1,31 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Frito-Lay, Inc. (VENDING)",
+    "SourceOrderID": "0000112",
+    "PONumber": "B34195",
+    "RDD": "2025/04/30",
+    "ShippingAddress": "75 Remittance Dr Ste 1844\nChicago, IL 60675-1844",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "36289"
+    ],
+    "MaterialIDCount": 1,
+    "LineItemCount": 1
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": false,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.9375,
+    "needs_human_review": false,
+    "validation_errors": [
+      "BillingAddress: Missing/null"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "Invoice_Header_Fields": {
+    "FileName": "Rolling Frito-Lay Sales",
+    "SourceOrderID": null,
+    "PONumber": "61828166",
+    "RDD": "2021/04/17",
+    "ShippingAddress": "247 W GRAND PRIYIN, STE D Legacy Drive 7701 Plano KBTY TX 77449-6458",
+    "BillingAddress": null
+  },
+  "Line_Item_Fields": {
+    "MaterialIDList": [
+      "300020746",
+      "300019951",
+      "300020756",
+      "300020758",
+      "300020744",
+      "300036751",
+      "300028682",
+      "380020768",
+      "300020747",
+      "300020754",
+      "300020743",
+      "300020752",
+      "300020781",
+      "300020775",
+      "300020740",
+      "30037247",
+      "300020765",
+      "300020741",
+      "300020263"
+    ],
+    "MaterialIDCount": 19,
+    "LineItemCount": 19
+  },
+  "Validation_and_Quality_Checks": {
+    "Count>0": true,
+    "LineItem=IDs": true,
+    "Length>5": true,
+    "OnlyNumeric": true,
+    "All Mandatory Fields extracted": true
+  },
+  "Confidence_and_Validation": {
+    "overall_confidence": 0.875,
+    "needs_human_review": true,
+    "validation_errors": [
+      "SourceOrderID: Missing/null",
+      "BillingAddress: Missing/null"
+    ]
+  }
+}
