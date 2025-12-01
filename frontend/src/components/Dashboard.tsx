@@ -110,12 +110,14 @@ const Dashboard = () => {
       const lineItemFields = data.Line_Item_Fields || {};
       const confidenceValidation = data.Confidence_and_Validation || {};
       const validationChecks = data.Validation_and_Quality_Checks || {};
-      
+
       // Convert MaterialIDList to LineItem format for compatibility
-      const lineItems: LineItem[] = (lineItemFields.MaterialIDList || []).map((materialId, index) => ({
-        material_id: materialId,
-        item_id: String(index + 1).padStart(2, '0'),
-      }));
+      const lineItems: LineItem[] = (lineItemFields.MaterialIDList || []).map(
+        (materialId, index) => ({
+          material_id: materialId,
+          item_id: String(index + 1).padStart(2, "0"),
+        })
+      );
 
       return {
         fileName: headerFields.FileName || null,
@@ -127,7 +129,7 @@ const Dashboard = () => {
         materialIDList: lineItemFields.MaterialIDList || [],
         materialIDCount: lineItemFields.MaterialIDCount || 0,
         lineItemCount: lineItemFields.LineItemCount || 0,
-        overallConfidence: confidenceValidation.overall_confidence || null,
+        overallConfidence: confidenceValidation.overall_confidence ?? undefined,
         needsHumanReview: confidenceValidation.needs_human_review || false,
         validationErrors: confidenceValidation.validation_errors || [],
         validationChecks: validationChecks,
@@ -269,7 +271,10 @@ const Dashboard = () => {
     };
   };
 
-  const getStatusFromInvoice = (invoiceData: InvoiceDataStructure, invoiceStatus?: string): string => {
+  const getStatusFromInvoice = (
+    invoiceData: InvoiceDataStructure,
+    invoiceStatus?: string
+  ): string => {
     // Determine status based on invoice data
     if (!invoiceData) return "Pending";
 
@@ -287,17 +292,23 @@ const Dashboard = () => {
     }
 
     const invoice = extractInvoiceData(invoiceData);
-    
+
     // Check for needs_human_review flag (new structure)
     if (invoice.needsHumanReview) {
       return "Flagged";
     }
 
     const hasOrderNumber =
-      !!invoice.orderNumber || !!invoice.poNumber || !!invoice.invoiceNumber || !!invoice.sourceOrderID;
+      !!invoice.orderNumber ||
+      !!invoice.poNumber ||
+      !!invoice.invoiceNumber ||
+      !!invoice.sourceOrderID;
     const hasBuyer = !!invoice.buyerName || !!invoice.fileName;
     const hasDate =
-      !!invoice.orderDate || !!invoice.poDate || !!invoice.invoiceDate || !!invoice.rdd;
+      !!invoice.orderDate ||
+      !!invoice.poDate ||
+      !!invoice.invoiceDate ||
+      !!invoice.rdd;
     const hasItems = invoice.lineItems && invoice.lineItems.length > 0;
 
     // Check for missing critical data
@@ -338,13 +349,23 @@ const Dashboard = () => {
       return invoice.validationErrors.join(", ");
     }
 
-    if (!invoice.orderNumber && !invoice.poNumber && !invoice.invoiceNumber && !invoice.sourceOrderID) {
+    if (
+      !invoice.orderNumber &&
+      !invoice.poNumber &&
+      !invoice.invoiceNumber &&
+      !invoice.sourceOrderID
+    ) {
       return "Missing order/PO number";
     }
     if (!invoice.buyerName && !invoice.fileName) {
       return "Missing buyer information";
     }
-    if (!invoice.orderDate && !invoice.poDate && !invoice.invoiceDate && !invoice.rdd) {
+    if (
+      !invoice.orderDate &&
+      !invoice.poDate &&
+      !invoice.invoiceDate &&
+      !invoice.rdd
+    ) {
       return "Missing date information";
     }
 
@@ -832,19 +853,6 @@ const Dashboard = () => {
     const status = getStatusFromInvoice(data, selectedInvoice.status);
     const statusMessage = getStatusMessage(data);
 
-    // Get totals from either totals_summary or financial_summary
-    const subtotal = extractValue(
-      invoice.totals?.subtotal || invoice.financial?.subtotal
-    );
-    const tax = extractValue(
-      invoice.totals?.tax || invoice.financial?.tax_details?.[0]?.amount
-    );
-    const grandTotal = extractValue(
-      invoice.totals?.total ||
-        invoice.totals?.grand_total ||
-        invoice.financial?.grand_total
-    );
-
     return (
       <div className="space-y-4">
         {/* Status Header */}
@@ -854,7 +862,12 @@ const Dashboard = () => {
             <h2 className="text-xl font-bold text-gray-800 break-all">
               Order:{" "}
               {safeRenderText(
-                invoice.orderNumber || invoice.poNumber || invoice.invoiceNumber || invoice.sourceOrderID || invoice.fileName || "N/A"
+                invoice.orderNumber ||
+                  invoice.poNumber ||
+                  invoice.invoiceNumber ||
+                  invoice.sourceOrderID ||
+                  invoice.fileName ||
+                  "N/A"
               )}
             </h2>
             <span
@@ -872,20 +885,29 @@ const Dashboard = () => {
             </div>
           )}
           {/* Confidence and Validation Info */}
-          {(invoice.overallConfidence !== null && invoice.overallConfidence !== undefined) && (
-            <div className="mt-2 flex items-center gap-4 text-sm">
-              <span className="text-gray-600">
-                Confidence: <span className="font-semibold">{(invoice.overallConfidence * 100).toFixed(1)}%</span>
-              </span>
-              {invoice.needsHumanReview && (
-                <span className="text-orange-600 font-semibold">⚠ Needs Human Review</span>
-              )}
-            </div>
-          )}
+          {invoice.overallConfidence !== null &&
+            invoice.overallConfidence !== undefined && (
+              <div className="mt-2 flex items-center gap-4 text-sm">
+                <span className="text-gray-600">
+                  Confidence:{" "}
+                  <span className="font-semibold">
+                    {(invoice.overallConfidence * 100).toFixed(1)}%
+                  </span>
+                </span>
+                {invoice.needsHumanReview && (
+                  <span className="text-orange-600 font-semibold">
+                    ⚠ Needs Human Review
+                  </span>
+                )}
+              </div>
+            )}
         </div>
 
         {/* Invoice Header Fields (New Structure) */}
-        {(invoice.fileName || invoice.sourceOrderID || invoice.poNumber || invoice.rdd) && (
+        {(invoice.fileName ||
+          invoice.sourceOrderID ||
+          invoice.poNumber ||
+          invoice.rdd) && (
           <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
             <table
               className="w-full border-collapse table-fixed"
@@ -904,7 +926,10 @@ const Dashboard = () => {
               <tbody>
                 {invoice.fileName && (
                   <tr className="bg-white">
-                    <td className="border-2 border-gray-500 p-2 font-bold text-gray-900" style={{ width: "30%" }}>
+                    <td
+                      className="border-2 border-gray-500 p-2 font-bold text-gray-900"
+                      style={{ width: "30%" }}
+                    >
                       File Name
                     </td>
                     <td className="border-2 border-gray-500 p-2 text-gray-800">
@@ -1199,96 +1224,6 @@ const Dashboard = () => {
           </table>
         </div>
 
-        {/* Order Details - Excel Style */}
-        <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
-          <table
-            className="w-full border-collapse table-fixed"
-            style={{ minWidth: "100%" }}
-          >
-            <tbody>
-              <tr className="bg-gray-200">
-                <td
-                  className="border-2 border-gray-500 p-2 font-bold text-gray-900"
-                  style={{ width: "15%" }}
-                >
-                  PO Number
-                </td>
-                <td
-                  className="border-2 border-gray-500 p-2 text-gray-800"
-                  style={{ width: "18%" }}
-                >
-                  {safeRenderText(invoice.poNumber)}
-                </td>
-                <td
-                  className="border-2 border-gray-500 p-2 font-bold text-gray-900"
-                  style={{ width: "15%" }}
-                >
-                  Order Number
-                </td>
-                <td
-                  className="border-2 border-gray-500 p-2 text-gray-800"
-                  style={{ width: "18%" }}
-                >
-                  {safeRenderText(invoice.orderNumber)}
-                </td>
-                <td
-                  className="border-2 border-gray-500 p-2 font-bold text-gray-900"
-                  style={{ width: "15%" }}
-                >
-                  Invoice Number
-                </td>
-                <td
-                  className="border-2 border-gray-500 p-2 text-gray-800"
-                  style={{ width: "19%" }}
-                >
-                  {safeRenderText(invoice.invoiceNumber)}
-                </td>
-              </tr>
-              <tr className="bg-white">
-                <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                  Order Date
-                </td>
-                <td className="border-2 border-gray-500 p-2 text-gray-800">
-                  {safeRenderText(
-                    invoice.orderDate || invoice.poDate || invoice.invoiceDate
-                  )}
-                </td>
-                <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                  Delivery Date
-                </td>
-                <td className="border-2 border-gray-500 p-2 text-gray-800">
-                  {safeRenderText(invoice.deliveryDate)}
-                </td>
-                <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                  Customer ID
-                </td>
-                <td className="border-2 border-gray-500 p-2 text-gray-800">
-                  {safeRenderText(invoice.customerId)}
-                </td>
-              </tr>
-              {(invoice.gstNumber || invoice.taxId) && (
-                <tr className="bg-gray-50">
-                  <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                    GST Number
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 text-gray-800">
-                    {safeRenderText(invoice.gstNumber)}
-                  </td>
-                  <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                    Tax ID
-                  </td>
-                  <td
-                    className="border-2 border-gray-500 p-2 text-gray-800"
-                    colSpan={3}
-                  >
-                    {safeRenderText(invoice.taxId)}
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-
         {/* Material IDs (New Structure) */}
         {invoice.materialIDList && invoice.materialIDList.length > 0 && (
           <div className="border-2 border-gray-400 rounded overflow-hidden w-full">
@@ -1315,8 +1250,18 @@ const Dashboard = () => {
               <tbody>
                 <tr className="bg-white">
                   <td className="border-2 border-gray-500 p-2 font-bold text-gray-900">
-                    <div>Material ID Count: <span className="text-blue-600">{invoice.materialIDCount || 0}</span></div>
-                    <div className="mt-1">Line Item Count: <span className="text-blue-600">{invoice.lineItemCount || 0}</span></div>
+                    <div>
+                      Material ID Count:{" "}
+                      <span className="text-blue-600">
+                        {invoice.materialIDCount || 0}
+                      </span>
+                    </div>
+                    <div className="mt-1">
+                      Line Item Count:{" "}
+                      <span className="text-blue-600">
+                        {invoice.lineItemCount || 0}
+                      </span>
+                    </div>
                   </td>
                   <td className="border-2 border-gray-500 p-2 text-gray-800">
                     <div className="flex flex-wrap gap-2">
@@ -1341,40 +1286,84 @@ const Dashboard = () => {
                         {invoice.validationChecks["Count>0"] !== undefined && (
                           <div>
                             Count &gt; 0:{" "}
-                            <span className={invoice.validationChecks["Count>0"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                            <span
+                              className={
+                                invoice.validationChecks["Count>0"]
+                                  ? "text-green-600 font-semibold"
+                                  : "text-red-600 font-semibold"
+                              }
+                            >
                               {invoice.validationChecks["Count>0"] ? "✓" : "✗"}
                             </span>
                           </div>
                         )}
-                        {invoice.validationChecks["LineItem=IDs"] !== undefined && (
+                        {invoice.validationChecks["LineItem=IDs"] !==
+                          undefined && (
                           <div>
                             LineItem = IDs:{" "}
-                            <span className={invoice.validationChecks["LineItem=IDs"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
-                              {invoice.validationChecks["LineItem=IDs"] ? "✓" : "✗"}
+                            <span
+                              className={
+                                invoice.validationChecks["LineItem=IDs"]
+                                  ? "text-green-600 font-semibold"
+                                  : "text-red-600 font-semibold"
+                              }
+                            >
+                              {invoice.validationChecks["LineItem=IDs"]
+                                ? "✓"
+                                : "✗"}
                             </span>
                           </div>
                         )}
                         {invoice.validationChecks["Length>5"] !== undefined && (
                           <div>
                             Length &gt; 5:{" "}
-                            <span className={invoice.validationChecks["Length>5"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
+                            <span
+                              className={
+                                invoice.validationChecks["Length>5"]
+                                  ? "text-green-600 font-semibold"
+                                  : "text-red-600 font-semibold"
+                              }
+                            >
                               {invoice.validationChecks["Length>5"] ? "✓" : "✗"}
                             </span>
                           </div>
                         )}
-                        {invoice.validationChecks["OnlyNumeric"] !== undefined && (
+                        {invoice.validationChecks["OnlyNumeric"] !==
+                          undefined && (
                           <div>
                             Only Numeric:{" "}
-                            <span className={invoice.validationChecks["OnlyNumeric"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
-                              {invoice.validationChecks["OnlyNumeric"] ? "✓" : "✗"}
+                            <span
+                              className={
+                                invoice.validationChecks["OnlyNumeric"]
+                                  ? "text-green-600 font-semibold"
+                                  : "text-red-600 font-semibold"
+                              }
+                            >
+                              {invoice.validationChecks["OnlyNumeric"]
+                                ? "✓"
+                                : "✗"}
                             </span>
                           </div>
                         )}
-                        {invoice.validationChecks["All Mandatory Fields extracted"] !== undefined && (
+                        {invoice.validationChecks[
+                          "All Mandatory Fields extracted"
+                        ] !== undefined && (
                           <div className="col-span-2">
                             All Mandatory Fields extracted:{" "}
-                            <span className={invoice.validationChecks["All Mandatory Fields extracted"] ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}>
-                              {invoice.validationChecks["All Mandatory Fields extracted"] ? "✓" : "✗"}
+                            <span
+                              className={
+                                invoice.validationChecks[
+                                  "All Mandatory Fields extracted"
+                                ]
+                                  ? "text-green-600 font-semibold"
+                                  : "text-red-600 font-semibold"
+                              }
+                            >
+                              {invoice.validationChecks[
+                                "All Mandatory Fields extracted"
+                              ]
+                                ? "✓"
+                                : "✗"}
                             </span>
                           </div>
                         )}
@@ -1636,7 +1625,10 @@ const Dashboard = () => {
                   </div>
                 ) : (
                   invoices.map((invoice) => {
-                    const status = getStatusFromInvoice(invoice.data, invoice.status);
+                    const status = getStatusFromInvoice(
+                      invoice.data,
+                      invoice.status
+                    );
                     const statusMessage = getStatusMessage(invoice.data);
                     const invoiceData = extractInvoiceData(invoice.data);
                     const displayId = safeRenderText(

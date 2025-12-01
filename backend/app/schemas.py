@@ -33,3 +33,5 @@ class OCRResult(BaseModel):
 class SampleList(BaseModel):
     samples: List[str]
 
+
+
